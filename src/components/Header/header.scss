@@ -1,0 +1,56 @@
+@import "../../sass/variables.scss";
+@import "../../sass/mixins.scss";
+.header {
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+  .header__content {
+    min-height: calc(100vh);
+    margin-left: calc(3vw + 4%);
+    max-width: 957px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    @media (min-width: $desctops_l+1) {
+    }
+    @media (max-width: $mobile_l+1) {
+      width: 100%;
+      display: block;
+      padding: 0 20px;
+      margin-left: 0;
+    }
+    .header__row--top {
+      position: relative;
+
+      @media (max-width: $mobile_l+1) {
+        position: static;
+        margin-top: 100px;
+      }
+    }
+    .header__row--middle {
+      margin-top: 10vh;
+    }
+    .header__row--bottom {
+      margin-top: 6vh;
+    }
+    .logo2x2 {
+      position: absolute;
+      top: 0;
+      right: -22vw;
+      z-index: 0;
+
+      @media (max-width: $mobile_l+1) {
+        position: absolute;
+        bottom: 20px;
+        left: auto;
+        right: auto;
+        top: auto;
+      }
+    }
+  }
+}

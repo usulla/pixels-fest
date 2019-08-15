@@ -1,0 +1,47 @@
+@import "../../../sass/variables.scss";
+@import "../../../sass/mixins.scss";
+.header__timer {
+  margin: 0;
+  ul {
+    margin: 0;
+  }
+  .header__timer__title {
+    margin: 0;
+    font-size: 0.86rem;
+    font-weight: normal;
+    line-height: 1.23;
+    color: #fff;
+
+    @media (max-width: $mobile_l+1) {
+      font-size: 14.5px;
+    }
+  }
+}
+.timer__content {
+  li {
+    display: inline-block;
+    text-align: center;
+    list-style-type: none;
+    padding: 0 0.6rem;
+    font-size: 0.63rem;
+
+    @media (max-width: $mobile_l+1) {
+      // font-size: 8px;
+    }
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  li span {
+    display: block;
+    font-size: 3.6rem;
+    height: 3.7rem;
+    line-height: 1;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    @media (max-width: $mobile_l+1) {
+      font-size: 51px;
+    }
+  }
+}

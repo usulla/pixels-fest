@@ -1,0 +1,41 @@
+@import "../../sass/variables.scss";
+@import "../../sass/mixins.scss";
+.logo2x2 {
+  max-width: 131px;
+  width: 8vw;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: $mobile_l+1) {
+    width: auto;
+    flex-direction: row;
+  }
+
+  .title {
+    font-size: 0.6rem;
+    padding-bottom: 10px;
+    @media (max-width: $mobile_l+1) {
+      align-self: flex-end;
+      // font-size: 10px;
+      padding-bottom: 0px;
+      padding-right: 3px;
+    }
+  }
+  .logo2x2-img {
+    width: 100%;
+    align-self: self-start;
+    @media (max-width: $mobile_l+1) {
+      width: 58px;
+      margin-right: 5px;
+    }
+  }
+  .title2 {
+    align-self: self-start;
+    padding-top: 15px;
+    width: 100%;
+    @media (max-width: $mobile_l+1) {
+      width: 60px;
+      padding-top: 0px;
+    }
+  }
+}

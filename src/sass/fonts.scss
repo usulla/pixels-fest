@@ -1,0 +1,135 @@
+// Exo 2
+@font-face {
+  font-family: 'Exo 2';
+  src: url('../webfonts/Exo2/Light/Exo2-Light.eot');
+  src: url('../webfonts/Exo2/Light/Exo2-Light.woff2') format('woff2'),
+       url('../webfonts/Exo2/Light/Exo2-Light.woff') format('woff'),
+       url('../webfonts/Exo2/Light/Exo2-Light.ttf') format('truetype'),
+       url('../webfonts/Exo2/Light/Exo2-Light.svg#Exo2-Light') format('svg'),
+       url('../webfonts/Exo2/Light/Exo2-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Exo 2';
+  src: url('../webfonts/Exo2/Regular/Exo2-Regular.eot');
+  src: url('../webfonts/Exo2/Regular/Exo2-Regular.woff2') format('woff2'),
+       url('../webfonts/Exo2/Regular/Exo2-Regular.woff') format('woff'),
+       url('../webfonts/Exo2/Regular/Exo2-Regular.ttf') format('truetype'),
+       url('../webfonts/Exo2/Regular/Exo2-Regular.svg#Exo2-Regular') format('svg'),
+       url('../webfonts/Exo2/Regular/Exo2-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Exo 2';
+  src: url('../webfonts/Exo2/Medium/Exo2-Medium.eot');
+  src: url('../webfonts/Exo2/Medium/Exo2-Medium.woff2') format('woff2'),
+       url('../webfonts/Exo2/Medium/Exo2-Medium.woff') format('woff'),
+       url('../webfonts/Exo2/Medium/Exo2-Medium.ttf') format('truetype'),
+       url('../webfonts/Exo2/Medium/Exo2-Medium.svg#Exo2-Medium') format('svg'),
+       url('../webfonts/Exo2/Medium/Exo2-Medium.eot?#iefix') format('embedded-opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Exo 2';
+  src: url('../webfonts/Exo2/SemiBold/Exo2-SemiBold.eot');
+  src: url('../webfonts/Exo2/SemiBold/Exo2-SemiBold.woff2') format('woff2'),
+       url('../webfonts/Exo2/SemiBold/Exo2-SemiBold.woff') format('woff'),
+       url('../webfonts/Exo2/SemiBold/Exo2-SemiBold.ttf') format('truetype'),
+       url('../webfonts/Exo2/SemiBold/Exo2-SemiBold.svg#Exo2-SemiBold') format('svg'),
+       url('../webfonts/Exo2/SemiBold/Exo2-SemiBold.eot?#iefix') format('embedded-opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Exo 2';
+  src: url('../webfonts/Exo2/Bold/Exo2-Bold.eot');
+  src: url('../webfonts/Exo2/Bold/Exo2-Bold.woff2') format('woff2'),
+       url('../webfonts/Exo2/Bold/Exo2-Bold.woff') format('woff'),
+       url('../webfonts/Exo2/Bold/Exo2-Bold.ttf') format('truetype'),
+       url('../webfonts/Exo2/Bold/Exo2-Bold.svg#Exo2-Bold') format('svg'),
+       url('../webfonts/Exo2/Bold/Exo2-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Exo 2';
+  src: url('../webfonts/Exo2/ExtraBold/Exo2-ExtraBold.eot');
+  src: url('../webfonts/Exo2/ExtraBold/Exo2-ExtraBold.woff2') format('woff2'),
+       url('../webfonts/Exo2/ExtraBold/Exo2-ExtraBold.woff') format('woff'),
+       url('../webfonts/Exo2/ExtraBold/Exo2-ExtraBold.ttf') format('truetype'),
+       url('../webfonts/Exo2/ExtraBold/Exo2-ExtraBold.svg#Exo2-ExtraBold') format('svg'),
+       url('../webfonts/Exo2/ExtraBold/Exo2-ExtraBold.eot?#iefix') format('embedded-opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+// Roboto
+@font-face {
+  font-family: 'Roboto';
+  src: url('../webfonts/Roboto/Thin/Roboto-Thin.eot');
+  src: url('../webfonts/Roboto/Thin/Roboto-Thin.woff2') format('woff2'),
+       url('../webfonts/Roboto/Thin/Roboto-Thin.woff') format('woff'),
+       url('../webfonts/Roboto/Thin/Roboto-Thin.ttf') format('truetype'),
+       url('../webfonts/Roboto/Thin/Roboto-Thin.svg#Roboto-Thin') format('svg'),
+       url('../webfonts/Roboto/Thin/Roboto-Thin.eot?#iefix') format('embedded-opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('../webfonts/Roboto/Light/Roboto-Light.eot');
+  src: url('../webfonts/Roboto/Light/Roboto-Light.woff2') format('woff2'),
+       url('../webfonts/Roboto/Light/Roboto-Light.woff') format('woff'),
+       url('../webfonts/Roboto/Light/Roboto-Light.ttf') format('truetype'),
+       url('../webfonts/Roboto/Light/Roboto-Light.svg#Roboto-Light') format('svg'),
+       url('../webfonts/Roboto/Light/Roboto-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('../webfonts/Roboto/Regular/Roboto-Regular.eot');
+  src: url('../webfonts/Roboto/Regular/Roboto-Regular.woff2') format('woff2'),
+       url('../webfonts/Roboto/Regular/Roboto-Regular.woff') format('woff'),
+       url('../webfonts/Roboto/Regular/Roboto-Regular.ttf') format('truetype'),
+       url('../webfonts/Roboto/Regular/Roboto-Regular.svg#Roboto-Regular') format('svg'),
+       url('../webfonts/Roboto/Regular/Roboto-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('../webfonts/Roboto/Medium/Roboto-Medium.eot');
+  src: url('../webfonts/Roboto/Medium/Roboto-Medium.woff2') format('woff2'),
+       url('../webfonts/Roboto/Medium/Roboto-Medium.woff') format('woff'),
+       url('../webfonts/Roboto/Medium/Roboto-Medium.ttf') format('truetype'),
+       url('../webfonts/Roboto/Medium/Roboto-Medium.svg#Roboto-Medium') format('svg'),
+       url('../webfonts/Roboto/Medium/Roboto-Medium.eot?#iefix') format('embedded-opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('../webfonts/Roboto/Bold/Roboto-Bold.eot');
+  src: url('../webfonts/Roboto/Bold/Roboto-Bold.woff2') format('woff2'),
+       url('../webfonts/Roboto/Bold/Roboto-Bold.woff') format('woff'),
+       url('../webfonts/Roboto/Bold/Roboto-Bold.ttf') format('truetype'),
+       url('../webfonts/Roboto/Bold/Roboto-Bold.svg#Roboto-Bold') format('svg'),
+       url('../webfonts/Roboto/Bold/Roboto-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('../webfonts/Roboto/Black/Roboto-Black.eot');
+  src: url('../webfonts/Roboto/Black/Roboto-Black.woff2') format('woff2'),
+       url('../webfonts/Roboto/Black/Roboto-Black.woff') format('woff'),
+       url('../webfonts/Roboto/Black/Roboto-Black.ttf') format('truetype'),
+       url('../webfonts/Roboto/Black/Roboto-Black.svg#Roboto-Black') format('svg'),
+       url('../webfonts/Roboto/Black/Roboto-Black.eot?#iefix') format('embedded-opentype');
+  font-weight: 700;
+  font-style: normal;
+}

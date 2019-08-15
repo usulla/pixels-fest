@@ -1,0 +1,25 @@
+@import "../../sass/variables.scss";
+@import "../../sass/mixins.scss";
+
+.left-sidebar-ul .switch-language span {
+  font-size: 0.66rem;
+}
+.switch-language {
+  z-index: 9;
+  span {
+    @media (max-width: $mobile_l+1) {
+      font-size: 23px;
+    }
+    display: inline-block;
+    text-transform: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.mobile-menu-inner .switch-language {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+}

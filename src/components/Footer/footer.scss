@@ -1,0 +1,142 @@
+@import "../../sass/variables.scss";
+@import "../../sass/mixins.scss";
+
+.footer {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 207px;
+  bottom: 0;
+  left: 0;
+  background: $black;
+  color: $white;
+  z-index: 999;
+  @media (max-width: $mobile_l+1) {
+    height: 85px;
+  }
+  .footer__content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $mobile_l+1) {
+      flex-direction: column;
+    }
+    .col1 {
+      width: 35%;
+      display: inline-block;
+      padding-left: 7vw;
+      @media (max-width: $mobile_l+1) {
+        width: 162.8px;
+        padding-left: 0vw;
+      }
+
+      img {
+        width: 70%;
+        @media (max-width: $mobile_l+1) {
+          width: 100%;
+        }
+      }
+      .soc-icons {
+        margin-top: 10px;
+        font-size: 1.3rem;
+        @media (max-width: $mobile_l+1) {
+          text-align: center;
+          margin-top: 2px;
+          margin-bottom: 2px;
+        }
+        .fa-vk {
+          margin-right: 5px;
+        }
+      }
+    }
+    .col2 {
+      width: 65%;
+      display: inline-block;
+      padding-right: 7vw;
+    }
+    .col2__item {
+      margin-right: 40px;
+
+      &:nth-child(3) {
+        margin-right: 0px;
+      }
+    }
+    .row--up {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .row--bottom {
+      opacity: 0.35;
+      font-size: 0.55rem;
+
+      @media (max-width: $mobile_l+1) {
+        font-size: 6px;
+        text-align: center;
+      }
+    }
+    .col2__1,
+    .col2__2,
+    .col2__3 {
+      width: 30.3%;
+      display: inline-block;
+    }
+    .logo2x2 {
+      width: 100%;
+      max-width: none;
+      display: block;
+      .title {
+        font-size: 0.83rem;
+        padding-bottom: 5px;
+      }
+      .logo2x2-img {
+        max-width: 86px;
+        width: calc(50% - 4px);
+        margin-right: 4px;
+      }
+      .title2 {
+        max-width: 89px;
+        width: calc(50% - 3px);
+        margin-left: 3px;
+        padding-top: 4px;
+      }
+    }
+
+    .apply {
+      width: 8.8rem;
+      max-height: 45px;
+      // height: 2.2vw;
+      height: 40px;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+      text-decoration: none;
+      font-size: 0.7rem;
+      max-width: 261px;
+      @include linear-gradient(to bottom, #f7a543, #c5e2ce 35%, #005e74 68%, #8c89ff);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .rules {
+      font-size: 0.8rem;
+      color: $white;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .col2__3 {
+      font-size: 0.6rem;
+      text-align: right;
+    }
+    .fab{
+      color:$white;
+    }
+  }
+}

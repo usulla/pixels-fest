@@ -1,0 +1,32 @@
+@import "../../../sass/variables.scss";
+@import "../../../sass/mixins.scss";
+
+.gradient-up-block {
+  display: inline-block;
+  .theme-title {
+    font-size: 1.67rem;
+
+    @media (max-width: $mobile_l+1) {
+      // font-size: 26px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover .theme-gradientblock {
+      width: 102%;
+    }
+  }
+  .theme-gradientblock {
+    height: 23px;
+    width: 9vw;
+    @include linear-gradient(to left, #f7a543, #c5e2ce, #005e74, #8c89ff);
+    @include transition(width, 0.3s, linear);
+    display: block;
+    margin-top: 2px;
+    margin-left: -5px;
+    @media (max-width: $mobile_l+1) {
+      height: 12px;
+      width: calc(100% + 10px);
+    }
+  }
+}

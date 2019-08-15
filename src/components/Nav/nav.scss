@@ -1,0 +1,99 @@
+@import "../../sass/variables.scss";
+@import "../../sass/mixins.scss";
+
+.menu {
+  z-index: 999;
+  color: $black;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  width: auto;
+  // @include transform(translateY(-270%));
+  // @include animation('fadeInY 1s cubic-bezier(.2, .6, .2, 1) 2.8s forwards');
+
+  @include keyframes(fadeInY) {
+    0% {
+      opacity: 0.2;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+
+    100% {
+      opacity: 1;
+      @include transform(translateY(0));
+    }
+  }
+
+  &__menu-ul {
+    @media (max-width: $mobile_l+1) {
+      display: none !important;
+    }
+  }
+  .menu-ul {
+    writing-mode: tb-rl;
+    transform: rotate(180deg);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: flex-end;
+
+    &__li {
+      position: relative;
+      @include transition(color);
+      border: solid 1px #000000;
+      list-style: none;
+      color: $black;
+      font-size: 41px;
+      font-size: 1.36rem;
+      width: 3vw;
+      // max-width: 56px;
+      background: $white;
+      padding: 0;
+      line-height: 1;
+      padding-bottom: 70px;
+      text-align: right;
+      @media (max-width: $mobile_l+1) {
+        // font-size: 1.4rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: $black;
+        z-index: 2;
+        position: relative;
+      }
+      &--active {
+        color: $black;
+
+        a {
+          color: $black;
+        }
+      }
+      span {
+        z-index: 1;
+        height: 0;
+        padding: 0;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        cursor: pointer;
+        @include linear-gradient(to top, #ffa38e, #522b30 49%, #00c3ff);
+        @include transition(height, 0.35s, linear);
+      }
+      &:hover {
+        cursor: pointer;
+      }
+      &:hover span {
+        height: 100%;
+      }
+      &.menu-ul__li-apply {
+        @include linear-gradient(to top, #f7a543, #c5e2ce 35%, #005e74 68%, #8c89ff);
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+import React from "react";
+import style from "./logo2x2.scss";
+import logo2x2 from "../../images/logo2x2.png";
+import logo_yeltsin from "../../images/logo_yeltsin.png";
+
+const Logo2x2 = ({ title }) => {
+    return (
+        <div className="logo2x2">
+            <div className="title">{title}</div>
+            <img className="logo2x2-img" src={logo2x2} alt="2x2" />
+            <img className="title2" src={logo_yeltsin} alt="2x2" />
+        </div>
+    );
+};
+
+export default Logo2x2;
