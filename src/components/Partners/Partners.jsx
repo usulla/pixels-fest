@@ -2,10 +2,11 @@ import React from "react";
 import style from "./partners.scss";
 import logo2x2 from "../../images/logo2x2.png";
 import logoUmaTech from "../../images/logoUmaTech_rus.png";
+import Footer from "../Footer/Footer.jsx";
 
 const Partners = ({ title, title1, title2, title3, alt1, alt3 }) => {
     return (
-        <div className="partners-page" id="partners">
+        <div className="page partners-page page__content" id="partners">
             <div className="partners-page__content">
                 <div className="mobile-title-page">{title}</div>
                 <div className="partners-page__cols">

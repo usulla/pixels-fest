@@ -20,7 +20,10 @@
 
 @media (min-width: $desctops_s) {
 }
-
+html, body{
+  height: 100%;
+  overflow: hidden;
+}
 html {
   box-sizing: border-box;
   font-size: 15px;
@@ -60,11 +63,47 @@ body {
   text-align: left;
   overflow-x: hidden;
 }
+#root{
+  height: 100%;
+}
+.home {
+  position: relative;
+  height:100%;
+}
+.pages {
+  overflow: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  width: 400vw;
+  overflow: auto;
+}
+.page.header {
+  transform: translateX(0vw);
+  display: block;
+}
+.page {
+  width: 100vw;
+  position: absolute;
+  // display: none;
+  top: 0;
+  transform: translateX(0vw);
+  z-index: 9;
 
+  &.active {
+    display: flex;
+  }
+  &.animate {
+    @include transform(translateX(0vw));
+    @include transition(transform, 0.35s, cubic-bezier(0.2, 0.6, 0.2, 1));
+  }
+}
+.page__content {
+}
 ul {
   padding: 0;
 }
-li{
+li {
   list-style-type: none;
 }
 h2 {

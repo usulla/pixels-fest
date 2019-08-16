@@ -19,8 +19,8 @@ const Program = ({ title, alt, isMobile }) => {
         );
     }
     return (
-        <div className="program-page">
-            <div className="program-page__content">
+        <div className="page program-page" id="program">
+            <div className="program-page__content page__content">
                 <img
                     className="program-page__title"
                     src={title_img_desk}

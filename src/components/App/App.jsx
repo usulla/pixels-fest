@@ -13,7 +13,10 @@ import Footer from "../Footer/Footer.jsx";
 class App extends Component {
     constructor() {
         super();
-        this.state = { isMobile: false };
+        this.state = { 
+            isMobile: false,
+            viewPageHeader: true
+         };
     }
     componentDidMount() {
         window.addEventListener("resize", this.resize.bind(this));
@@ -28,13 +31,22 @@ class App extends Component {
         this.setState({ isMobile: window.innerWidth <= 767 });
     }
     render() {
-        const { dataHeader, dataProgram, dataPartners, dataFooter, dataJury } = appData;
+        const {
+            dataHeader,
+            dataProgram,
+            dataPartners,
+            dataFooter,
+            dataJury
+        } = appData;
         return (
             <div className="home">
                 {!this.state.isMobile ? (
                     <React.Fragment>
                         <LeftSidebar />
-                        <Nav list={dataHeader.navtitle} src={dataHeader.navsrc}/>
+                        <Nav
+                            list={dataHeader.navtitle}
+                            src={dataHeader.navsrc}
+                        />
                     </React.Fragment>
                 ) : (
                     <React.Fragment>
@@ -42,11 +54,14 @@ class App extends Component {
                         <MobileMenu list={dataHeader.navtitle} />
                     </React.Fragment>
                 )}
-                <Header {...dataHeader} isMobile={this.state.isMobile} /> 
-                {/* <Program {...dataProgram} isMobile={this.state.isMobile} /> */}
-                {/* <Partners {...dataPartners} /> */}
-                {/* <Jury {...dataJury} isMobile={this.state.isMobile} /> */}
-                {/* <Footer {...dataFooter} isMobile={this.state.isMobile} />  */}
+                <div className="pages">
+                    {/* <Header {...dataHeader} order={1} isMobile={this.state.isMobile} /> */}
+                    {/* <Program {...dataProgram} order={2}  isMobile={this.state.isMobile} />
+                    <Partners {...dataPartners} order={3} />  */}
+                    <Jury {...dataJury} order={4} isMobile={this.state.isMobile} datafooter={dataFooter}/>
+                    <Footer {...dataFooter} isMobile={this.state.isMobile} /> 
+                </div>
+                
             </div>
         );
     }

@@ -1,9 +1,9 @@
 function debounce(func, wait = 60, immediate = true) {
     var timeout;
-    return function() {
+    return function () {
         var context = this,
             args = arguments;
-        var later = function() {
+        var later = function () {
             timeout = null;
             if (!immediate) func.apply(context, args);
         };
@@ -14,7 +14,6 @@ function debounce(func, wait = 60, immediate = true) {
     };
 }
 document.addEventListener('DOMContentLoaded', () => {
-
     window.scrollMetka = 0;
     if (window.innerWidth >= 768) {
         document.addEventListener('scroll', debounce(animationScroll));
@@ -25,14 +24,14 @@ window.addEventListener('resize', () => {
     if (window.innerWidth >= 768) {
         document.addEventListener('scroll', debounce(animationScroll));
     }
-    else{
+    else {
         document.removeEventListener('scroll', debounce(animationScroll));
     }
 });
 
 function animationScroll(e) {
     const pageList = document.querySelectorAll('#root > div > header, #root > div > article');
-    var pageCoord = [].map.call(pageList, function(page) {
+    var pageCoord = [].map.call(pageList, function (page) {
         return page.getBoundingClientRect().top + document.documentElement.scrollTop || document.body.scrollTop;
     });
     if (window.scrollMetka === 0 && window.metkaScrolling === 0) {
@@ -63,7 +62,7 @@ function animationScroll(e) {
         }
 
         function coordsTop() {
-            var coordsPageTop = [].map.call(pageList, function(page) {
+            var coordsPageTop = [].map.call(pageList, function (page) {
                 return page.getBoundingClientRect().top;
             });
             return coordsPageTop;
@@ -120,7 +119,7 @@ function animationScroll(e) {
                             window.scrollBy(0, result);
                             e.preventDefault;
                             e.stopPropagation;
-                            var addActivePage = (function() {
+                            var addActivePage = (function () {
                                 if (currentPage === 3) {
                                     indexNextPage = 2; //?????
                                 }

@@ -67,9 +67,9 @@
         z-index: 2;
         position: relative;
       }
-      &--active {
-        color: $black;
-
+      &.li-slide-left {
+          @include transform(translateX(79vw));
+          @include transition(transform, 0.35s, cubic-bezier(.2,.6,.2,1));
         a {
           color: $black;
         }

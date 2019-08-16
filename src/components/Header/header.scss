@@ -2,16 +2,18 @@
 @import "../../sass/mixins.scss";
 .header {
   min-height: 100vh;
-  max-height: 100vh;
-  overflow: hidden;
   background: #000;
   color: #fff;
   overflow: hidden;
+  @media (max-width: $mobile_l+1) {
+    max-height: 100vh;
+    overflow: hidden;
+  }
   .header__content {
     min-height: calc(100vh);
     margin-left: calc(3vw + 4%);
     max-width: 957px;
-    width: 50%;
+    width: 43%;
     display: flex;
     justify-content: center;
     flex-direction: column;

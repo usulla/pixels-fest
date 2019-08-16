@@ -7,7 +7,7 @@ const Timer = ({ title, days, hours, minutes, seconds }) => {
         hour = minute * 60,
         day = hour * 24;
 
-    let countDown = new Date("August 15, 2019 23:00:00").getTime(),
+    let countDown = new Date("August 23, 2019 23:00:00").getTime(),
         x = setInterval(function() {
             let now = new Date().getTime(),
                 distance = countDown - now;
@@ -36,7 +36,7 @@ const Timer = ({ title, days, hours, minutes, seconds }) => {
                 <span className="header__timer__title">{title}</span>
                 <div
                     className="header__timer__content timer__content"
-                    data-timer="August 09, 2019 23:00:00"
+                    data-timer=""
                 >
                     <ul>
                         <li class="num">
