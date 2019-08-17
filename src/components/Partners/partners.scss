@@ -2,6 +2,7 @@
 @import "../../sass/mixins.scss";
 
 .partners-page {
+  padding-left: 18vw;
   background: $black;
   min-height: calc(100vh - 207px);
   @media (max-width: $mobile_l+1) {
@@ -37,6 +38,7 @@
   }
 }
 .partners-page__cols {
+  padding-left: 14%;
   padding-top: 10vh;
   display: flex;
   flex-wrap: wrap;

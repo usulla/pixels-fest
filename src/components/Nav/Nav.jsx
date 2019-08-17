@@ -6,7 +6,6 @@ const Nav = ({ list }) => {
     const { t, i18n } = useTranslation();
     function liClick(e) {
         e.preventDefault();
-        console.log("По ссылке кликнули.");
         const activeLi = e.currentTarget;
 
         const idActiveEl = activeLi
@@ -21,21 +20,42 @@ const Nav = ({ list }) => {
                 li.classList.add("li-slide-left");
             }
         });
-        if (document.querySelector(".page.active")) {
-            document.querySelector(".page.active").classList.remove("active");
-        }
+
         document.querySelectorAll(".page").forEach(page => {
             if (page.id === idActiveEl) {
-                page.classList.add("active");
+                if (!document.querySelector(".page.active")) {
+                    page.classList.add("active");
+                } else {
+                    if (document.querySelector(".page.active2")) {
+                        document
+                            .querySelector(".page.active")
+                            .classList.remove("active");
+                        document
+                            .querySelector(".page.active2")
+                            .classList.add("active");
+                        document
+                            .querySelector(".page.active2")
+                            .classList.remove("active2");
+                        page.classList.add("active2");
+                    } else {
+                        page.classList.add("active2");
+                    }
+                }
+
                 setTimeout(function() {
                     page.classList.add("animate");
                 }, 0);
-                var pageHeight = page.querySelector(".page__content")
-                    .offsetHeight;
-                console.log(pageHeight, "pageHeight");
-                document.querySelector(
-                    ".pages"
-                ).style.height = `${pageHeight}px`;
+                // var pageHeight = page.querySelector(".page__content")
+                //     .offsetHeight;
+                // document.querySelector(
+                //     ".pages"
+                // ).style.height = `${pageHeight}px`;
+            }
+            if (idActiveEl === "jury") {
+                setTimeout(function() {
+                    document.querySelector(".jury-page").style.transform =
+                        "none";
+                }, 0);
             }
         });
     }

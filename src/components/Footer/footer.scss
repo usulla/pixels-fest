@@ -2,6 +2,7 @@
 @import "../../sass/mixins.scss";
 
 .footer {
+  overflow: hidden;
   position: absolute;
   z-index: 4;
   display: flex;

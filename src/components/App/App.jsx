@@ -30,6 +30,7 @@ class App extends Component {
     resize() {
         this.setState({ isMobile: window.innerWidth <= 767 });
     }
+    
     render() {
         const {
             dataHeader,
@@ -55,10 +56,10 @@ class App extends Component {
                     </React.Fragment>
                 )}
                 <div className="pages">
-                    {/* <Header {...dataHeader} order={1} isMobile={this.state.isMobile} /> */}
-                    {/* <Program {...dataProgram} order={2}  isMobile={this.state.isMobile} />
-                    <Partners {...dataPartners} order={3} />  */}
-                    <Jury {...dataJury} order={4} isMobile={this.state.isMobile} datafooter={dataFooter}/>
+                    <Header {...dataHeader} order={1} isMobile={this.state.isMobile} />
+                    <Program {...dataProgram} order={2}  isMobile={this.state.isMobile} />
+                    <Jury {...dataJury} order={3} isMobile={this.state.isMobile} datafooter={dataFooter}/>
+                    <Partners {...dataPartners} order={4} />
                     <Footer {...dataFooter} isMobile={this.state.isMobile} /> 
                 </div>
                 

@@ -14,7 +14,6 @@ const Jury = ({ title, members, datafooter, isMobile }) => {
     };
     return (
         <div className="jury-page page" id="jury">
-            <div className="fixedcontainer">
                 <div className="mobile-title-page">{title}</div>
                 <div className="jury-page__content page__content">
                     {members.map((member, index) => (
@@ -48,8 +47,7 @@ const Jury = ({ title, members, datafooter, isMobile }) => {
                         className="gradient-bottom"
                         style={gradientBlockStyle}
                     />
-                
-                </div>
+            
             </div>
    
         </div>
