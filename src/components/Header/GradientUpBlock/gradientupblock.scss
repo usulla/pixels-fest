@@ -1,9 +1,9 @@
 @import "../../../sass/variables.scss";
 @import "../../../sass/mixins.scss";
-
-.gradient-up-block {
-  display: inline-block;
+.gradient-up-block{
+  position:relative;
   .theme-title {
+    display: block;
     font-size: 1.67rem;
 
     @media (max-width: $mobile_l+1) {
@@ -16,17 +16,80 @@
       width: 102%;
     }
   }
+.gradient-up-block__content {
+
+  position: relative;
+  &.active{
+    display: flex;
+    align-items: center;
+
+    @include animation('widthUp .4s linear forwards');
+  }
+  &.active .theme-title:hover .theme-gradientblock{
+    width: 100%;
+  } 
+  &.active .theme-gradientblock{
+    width: 100%;
+    @include animation('heightUp .4s linear .4s forwards');
+    //height:9rem;
+    overflow: hidden;
+  }
   .theme-gradientblock {
-    height: 23px;
+    height: 20px;
+    padding:12px 15px;
     width: 9vw;
-    @include linear-gradient(to left, #f7a543, #c5e2ce, #005e74, #8c89ff);
-    @include transition(width, 0.3s, linear);
+    @include transition(all, 0.4s, linear);
+    @include linear-gradient(to left, #f7a543, #c5e2ce 35%, #005e74 68%, #8c89ff);
+   //@include transition(height, 0.4s, linear);
     display: block;
     margin-top: 2px;
     margin-left: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     @media (max-width: $mobile_l+1) {
       height: 12px;
       width: calc(100% + 10px);
     }
+  
+  }
+  span.fulltext{
+    width: 95%;
+    left: 2.5%;
+    position:absolute;
+    font-size:.8rem;
+    opacity:0;
+    display:none;
+    @include transition(all, 0.4s, linear);
+
+    &.show{
+      display:block;
+      @include transition(all, 0.4s, linear);
+    }
+    &.show.animate{
+      opacity: 1;
+    }
+  }
+}
+}
+@include keyframes(widthUp) {
+  0% {
+      width:100%;
+
+  }
+  100% {
+      width:125%;
+
+  }
+}
+@include keyframes(heightUp) {
+  0% {
+      height:20px;
+      opacity: 1;
+  }
+  100% {
+    height:8rem;
+    opacity: 0.5;
   }
 }

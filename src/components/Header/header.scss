@@ -2,6 +2,7 @@
 @import "../../sass/mixins.scss";
 .header {
   min-height: 100vh;
+  height: 100%;
   background: #000;
   color: #fff;
   overflow: hidden;
@@ -14,9 +15,10 @@
     margin-left: calc(3vw + 4%);
     max-width: 957px;
     width: 43%;
-    display: flex;
+    // display: flex;
     justify-content: center;
     flex-direction: column;
+    padding-top: 10vh;
 
     @media (min-width: $desctops_l+1) {
     }
@@ -32,6 +34,12 @@
       @media (max-width: $mobile_l+1) {
         position: static;
         margin-top: 100px;
+      }
+      &:hover .header__description {
+        @include linear-gradient(to left, #f7a543, #c5e2ce 35%, #005e74 68%, #8c89ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @include transition(background, 1s, linear);
       }
     }
     .header__row--middle {

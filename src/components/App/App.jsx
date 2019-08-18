@@ -5,6 +5,7 @@ import ToggleMenu from "../ToggleMenu/ToggleMenu.jsx";
 import MobileMenu from "../MobileMenu/MobileMenu.jsx";
 import LeftSidebar from "../LeftSidebar/LeftSidebar.jsx";
 import appData from "./appData.json";
+import "./functions.js";
 import Program from "../Program/Program.jsx";
 import Partners from "../Partners/Partners.jsx";
 import Jury from "../Jury/Jury.jsx";
@@ -18,8 +19,10 @@ class App extends Component {
             viewPageHeader: true
          };
     }
+
     componentDidMount() {
         window.addEventListener("resize", this.resize.bind(this));
+  
     }
     componentWillMount() {
         this.resize();
@@ -40,7 +43,7 @@ class App extends Component {
             dataJury
         } = appData;
         return (
-            <div className="home">
+            <div className="home" id="headerpage">
                 {!this.state.isMobile ? (
                     <React.Fragment>
                         <LeftSidebar />

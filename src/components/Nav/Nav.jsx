@@ -15,6 +15,10 @@ const Nav = ({ list }) => {
 
         const indexActiveLi = activeLi.dataset.index;
         activeLi.classList.add("li-slide-left");
+        if(document.querySelector('.menu-ul__li.active')){
+        document.querySelector('.menu-ul__li.active').classList.toggle("active")
+        }
+        activeLi.classList.toggle("active")
         document.querySelectorAll(".menu-ul__li").forEach(li => {
             if (li.dataset.index < indexActiveLi) {
                 li.classList.add("li-slide-left");
@@ -44,6 +48,7 @@ const Nav = ({ list }) => {
 
                 setTimeout(function() {
                     page.classList.add("animate");
+                    document.querySelector('.home').id=`${idActiveEl}page`;
                 }, 0);
                 // var pageHeight = page.querySelector(".page__content")
                 //     .offsetHeight;
@@ -58,7 +63,28 @@ const Nav = ({ list }) => {
                 }, 0);
             }
         });
+        if(document.querySelector('.footer')){
+            window.addEventListener('scroll', function() {
+                console.log(999)
+            var footerDetect = isScrolledIntoView(document.querySelector('.footer'));
+            var footerDetectView = footerDetect[0];
+            var footerDetectCoord = footerDetect[1];
+            if(footerDetectView){
+                console.log(444);
+                document.querySelector('.left-sidebar-ul').style.height = `calc(100% - ${window.innerHeight - footerDetectCoord}px)`;
+            }
+        })
     }
+    }
+        function isScrolledIntoView(el) {
+            var rect = el.getBoundingClientRect();
+            var elemTop = rect.top;
+            var elemBottom = rect.bottom;
+            var isVisible = (elemTop < window.innerHeight);
+            console.log( elemTop , elemBottom)
+            console.log( isVisible, ' isVisible')
+            return [isVisible, elemTop];
+        }
     return (
         <nav className="menu">
             {/* {t("dataHeader.alt")} */}

@@ -39,6 +39,7 @@ h2 {
   }
 }
 .header__description {
+  transition: background 0.2s linear;
   display: inline-block;
   //   @include animation("up_h1 2.0s cubic-bezier(.2, .6, .2, 1) 1.0s backwards");
 

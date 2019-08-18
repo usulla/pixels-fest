@@ -14,21 +14,6 @@
   // @include transform(translateY(-270%));
   // @include animation('fadeInY 1s cubic-bezier(.2, .6, .2, 1) 2.8s forwards');
 
-  @include keyframes(fadeInY) {
-    0% {
-      opacity: 0.2;
-    }
-
-    50% {
-      opacity: 0.5;
-    }
-
-    100% {
-      opacity: 1;
-      @include transform(translateY(0));
-    }
-  }
-
   &__menu-ul {
     @media (max-width: $mobile_l+1) {
       display: none !important;
@@ -57,6 +42,11 @@
       line-height: 1;
       padding-bottom: 70px;
       text-align: right;
+
+      &.active{
+        background: none;
+        border: none;
+      } 
       @media (max-width: $mobile_l+1) {
         // font-size: 1.4rem;
       }

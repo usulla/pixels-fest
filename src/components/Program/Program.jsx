@@ -4,6 +4,7 @@ import title_img_desk from "../../images/program-title-desk.png";
 import title_img_mob from "../../images/program-title-mob.png";
 
 const Program = ({ title, alt, isMobile }) => {
+
     if (isMobile) {
         return (
             <div className="program-page" id="program">

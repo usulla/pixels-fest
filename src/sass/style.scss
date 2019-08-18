@@ -69,13 +69,41 @@ body {
 .home {
   position: relative;
   height: 100%;
+  overflow: hidden;
+
+  &#headerpage {
+    .footer{
+     display:none;
+    }
+    .left-sidebar .timer, .left-sidebar .logo{
+      margin-left: -5vw;
+    }
+    .left-sidebar .switch-language{
+      order:1;
+    }
+    .left-sidebar .logo{
+      order:2;
+    }
+  }
+
+  &#programpage .pages, &#partnerspage .pages{
+     min-height: calc(100vh + 207px);
+  }
+  &#partnerspage .menu-ul__li.active a{
+    color:$white;
+  }
 }
 .pages {
-  min-height: calc(100vh + 207px);
+  // min-height: calc(100vh + 207px);
+  min-height: calc(100vh);
   display: flex;
   flex-direction: row;
   width: 400vw;
   overflow-x: hidden;
+  
+  &.fixheader{
+    min-height:calc(100vh + 5rem);
+  }
 }
 .page.header {
   transform: translateX(3vw);
