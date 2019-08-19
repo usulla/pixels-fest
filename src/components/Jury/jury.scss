@@ -4,10 +4,11 @@
 .jury-page {
   position: relative;
   min-height: calc(100vh - 207px);
+
   @media (max-width: $mobile_l+1) {
     min-height: calc(100vh - 85px);
   }
-
+  
   &:active{
     max-height: auto;
 

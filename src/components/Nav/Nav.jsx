@@ -16,10 +16,12 @@ const Nav = ({ list }) => {
 
         const indexActiveLi = activeLi.dataset.index;
         activeLi.classList.add("li-slide-left");
-        if(document.querySelector('.menu-ul__li.active')){
-        document.querySelector('.menu-ul__li.active').classList.toggle("active")
+        if (document.querySelector(".menu-ul__li.active")) {
+            document
+                .querySelector(".menu-ul__li.active")
+                .classList.toggle("active");
         }
-        activeLi.classList.toggle("active")
+        activeLi.classList.toggle("active");
         document.querySelectorAll(".menu-ul__li").forEach(li => {
             if (li.dataset.index < indexActiveLi) {
                 li.classList.add("li-slide-left");
@@ -49,7 +51,7 @@ const Nav = ({ list }) => {
 
                 setTimeout(function() {
                     page.classList.add("animate");
-                    document.querySelector('.home').id=`${idActiveEl}page`;
+                    document.querySelector(".home").id = `${idActiveEl}page`;
                 }, 0);
             }
             if (idActiveEl === "jury") {
@@ -60,31 +62,34 @@ const Nav = ({ list }) => {
             }
         });
         setTimeout(function() {
-        if(document.querySelector('.footer')){
-            leftSidebarSlideUp();
-            window.addEventListener('scroll', function() {
-                leftSidebarSlideUp();    
-        })
-    } 
-}, 0);
+            if (document.querySelector(".footer")) {
+                leftSidebarSlideUp();
+                window.addEventListener("scroll", function() {
+                    leftSidebarSlideUp();
+                });
+            }
+        }, 0);
     }
-        function leftSidebarSlideUp(){
-            console.log('1 here')
-        var footerDetect = isScrolledIntoView(document.querySelector('.footer'));
-        console.log(footerDetect,'2 here')
+    function leftSidebarSlideUp() {
+        var footerDetect = isScrolledIntoView(
+            document.querySelector(".footer")
+        );
         var footerDetectView = footerDetect[0];
         var footerDetectCoord = footerDetect[1];
-        if(footerDetectView){
-            document.querySelector('.left-sidebar-ul').style.height = `calc(100% - ${window.innerHeight - footerDetectCoord}px)`;
+        if (footerDetectView) {
+            document.querySelector(
+                ".left-sidebar-ul"
+            ).style.height = `calc(100% - ${window.innerHeight -
+                footerDetectCoord}px)`;
         }
     }
-        function isScrolledIntoView(el) {
-            var rect = el.getBoundingClientRect();
-            var elemTop = rect.top;
-            var elemBottom = rect.bottom;
-            var isVisible = (elemTop < window.innerHeight);
-            return [isVisible, elemTop];
-        }
+    function isScrolledIntoView(el) {
+        var rect = el.getBoundingClientRect();
+        var elemTop = rect.top;
+        var elemBottom = rect.bottom;
+        var isVisible = elemTop < window.innerHeight;
+        return [isVisible, elemTop];
+    }
     return (
         <nav className="menu">
             <ul className="menu-ul menu__menu-ul">
@@ -96,7 +101,9 @@ const Nav = ({ list }) => {
                         onClick={liClick}
                     >
                         <span />
-                        <a href={`#${li.src}`}>{i18n.t(`dataHeader.navtitle.${index}.title`)}</a>
+                        <a href={`#${li.src}`}>
+                            {i18n.t(`dataHeader.navtitle.${index}.title`)}
+                        </a>
                     </li>
                 ))}
             </ul>

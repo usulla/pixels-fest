@@ -92,6 +92,16 @@ body {
   &#partnerspage .menu-ul__li.active a{
     color:$white;
   }
+  &#jurypage {
+    .jury-page.active.fix{
+    max-height:100vh;
+    overflow: hidden;
+    }
+    .footer{
+      display: none;
+    }
+  }
+
 }
 .pages {
   // min-height: calc(100vh + 207px);
