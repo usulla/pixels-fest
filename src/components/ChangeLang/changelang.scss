@@ -6,7 +6,7 @@
 }
 .switch-language {
   z-index: 9;
-  span {
+  .switch-language--button{
     @media (max-width: $mobile_l+1) {
       font-size: 23px;
     }
@@ -15,9 +15,12 @@
 
     &:hover {
       cursor: pointer;
+    } 
+    &.active {
+      text-decoration:line-through;
     }
   }
-}
+} 
 .mobile-menu-inner .switch-language {
   position: absolute;
   bottom: 20px;

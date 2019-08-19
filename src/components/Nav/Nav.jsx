@@ -1,6 +1,7 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import "./nav.scss";
+import i18n from "i18next";
+import { useTranslation, initReactI18next } from "react-i18next";
 
 const Nav = ({ list }) => {
     const { t, i18n } = useTranslation();
@@ -50,11 +51,6 @@ const Nav = ({ list }) => {
                     page.classList.add("animate");
                     document.querySelector('.home').id=`${idActiveEl}page`;
                 }, 0);
-                // var pageHeight = page.querySelector(".page__content")
-                //     .offsetHeight;
-                // document.querySelector(
-                //     ".pages"
-                // ).style.height = `${pageHeight}px`;
             }
             if (idActiveEl === "jury") {
                 setTimeout(function() {
@@ -63,31 +59,34 @@ const Nav = ({ list }) => {
                 }, 0);
             }
         });
+        setTimeout(function() {
         if(document.querySelector('.footer')){
+            leftSidebarSlideUp();
             window.addEventListener('scroll', function() {
-                console.log(999)
-            var footerDetect = isScrolledIntoView(document.querySelector('.footer'));
-            var footerDetectView = footerDetect[0];
-            var footerDetectCoord = footerDetect[1];
-            if(footerDetectView){
-                console.log(444);
-                document.querySelector('.left-sidebar-ul').style.height = `calc(100% - ${window.innerHeight - footerDetectCoord}px)`;
-            }
+                leftSidebarSlideUp();    
         })
+    } 
+}, 0);
     }
+        function leftSidebarSlideUp(){
+            console.log('1 here')
+        var footerDetect = isScrolledIntoView(document.querySelector('.footer'));
+        console.log(footerDetect,'2 here')
+        var footerDetectView = footerDetect[0];
+        var footerDetectCoord = footerDetect[1];
+        if(footerDetectView){
+            document.querySelector('.left-sidebar-ul').style.height = `calc(100% - ${window.innerHeight - footerDetectCoord}px)`;
+        }
     }
         function isScrolledIntoView(el) {
             var rect = el.getBoundingClientRect();
             var elemTop = rect.top;
             var elemBottom = rect.bottom;
             var isVisible = (elemTop < window.innerHeight);
-            console.log( elemTop , elemBottom)
-            console.log( isVisible, ' isVisible')
             return [isVisible, elemTop];
         }
     return (
         <nav className="menu">
-            {/* {t("dataHeader.alt")} */}
             <ul className="menu-ul menu__menu-ul">
                 {list.map((li, index) => (
                     <li
@@ -97,7 +96,7 @@ const Nav = ({ list }) => {
                         onClick={liClick}
                     >
                         <span />
-                        <a href={`#${li.src}`}>{li.title}</a>
+                        <a href={`#${li.src}`}>{i18n.t(`dataHeader.navtitle.${index}.title`)}</a>
                     </li>
                 ))}
             </ul>

@@ -5,13 +5,12 @@ import ToggleMenu from "../ToggleMenu/ToggleMenu.jsx";
 import MobileMenu from "../MobileMenu/MobileMenu.jsx";
 import LeftSidebar from "../LeftSidebar/LeftSidebar.jsx";
 import appData from "./appData.json";
-import "./functions.js";
 import Program from "../Program/Program.jsx";
 import Partners from "../Partners/Partners.jsx";
 import Jury from "../Jury/Jury.jsx";
 import Footer from "../Footer/Footer.jsx";
-
 class App extends Component {
+    
     constructor() {
         super();
         this.state = { 
@@ -33,8 +32,9 @@ class App extends Component {
     resize() {
         this.setState({ isMobile: window.innerWidth <= 767 });
     }
-    
+
     render() {
+
         const {
             dataHeader,
             dataProgram,
