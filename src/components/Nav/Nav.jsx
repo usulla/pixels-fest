@@ -59,6 +59,14 @@ const Nav = ({ list }) => {
                     document.querySelector(".jury-page").style.transform =
                         "none";
                 }, 0);
+                setTimeout(function() {
+                    document
+                        .querySelector(".jury-page")
+                        .classList.remove("fix");
+                    document
+                        .querySelector("#jurypage")
+                        .querySelector(".footer").style.display = "flex";
+                }, 500);
             }
         });
         setTimeout(function() {

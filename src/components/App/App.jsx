@@ -8,20 +8,19 @@ import appData from "./appData.json";
 import Program from "../Program/Program.jsx";
 import Partners from "../Partners/Partners.jsx";
 import Jury from "../Jury/Jury.jsx";
+import Apply from "../Apply/Apply.jsx";
 import Footer from "../Footer/Footer.jsx";
 class App extends Component {
-    
     constructor() {
         super();
-        this.state = { 
+        this.state = {
             isMobile: false,
             viewPageHeader: true
-         };
+        };
     }
 
     componentDidMount() {
         window.addEventListener("resize", this.resize.bind(this));
-  
     }
     componentWillMount() {
         this.resize();
@@ -34,13 +33,13 @@ class App extends Component {
     }
 
     render() {
-
         const {
             dataHeader,
             dataProgram,
             dataPartners,
             dataFooter,
-            dataJury
+            dataJury,
+            dataApply
         } = appData;
         return (
             <div className="home" id="headerpage">
@@ -63,9 +62,13 @@ class App extends Component {
                     <Program {...dataProgram} order={2}  isMobile={this.state.isMobile} />
                     <Jury {...dataJury} order={3} isMobile={this.state.isMobile} datafooter={dataFooter}/>
                     <Partners {...dataPartners} order={4} />
-                    <Footer {...dataFooter} isMobile={this.state.isMobile} /> 
+                    <Apply
+                        {...dataApply}
+                        order={5}
+                        isMobile={this.state.isMobile}
+                    />
+                    <Footer {...dataFooter} isMobile={this.state.isMobile} />
                 </div>
-                
             </div>
         );
     }

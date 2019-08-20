@@ -12,7 +12,8 @@ i18n
 	interpolation: { escapeValue: false },  // React already does escaping
 	keySeparator: '.',
 	lng: 'ru', 
-	returnObjectTrees: true,                           // language to use
+	returnObjectTrees: true,
+	useSuspense :  false,                           // language to use
 	resources: {
 		en: {
 			translation: translation_en              // 'translation' is our custom namespace

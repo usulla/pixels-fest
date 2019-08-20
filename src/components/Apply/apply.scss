@@ -1,0 +1,17 @@
+@import "../../sass/variables.scss";
+@import "../../sass/mixins.scss";
+
+
+.apply-page__content{
+    form{
+        margin-left:190px;
+
+        .form-row{
+            display: block;
+
+            input, select, textarea{
+                display: block;
+            }
+        }
+    }
+}
