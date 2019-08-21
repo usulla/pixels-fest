@@ -3,7 +3,8 @@ import "./headertextblock.scss";
 import logo from "../../../images/logo.png";
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
-const HeaderTextBlock = props => {
+const HeaderTextBlock = (props) => {
+    console.log(props)
     const { t, i18n } = useTranslation();
     const { period} = props;
     return (
@@ -17,7 +18,7 @@ const HeaderTextBlock = props => {
                     <div className="header__description--margintop">
                         <span>{i18n.t('dataHeader.h1_text.description2')}</span>
                         <span className="header__description--period">
-                            {period}
+                        {i18n.t('dataHeader.h1_text.period')}
                         </span>
                     </div>
                 </h2>

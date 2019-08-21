@@ -9,16 +9,18 @@ const Header = ({ navtitle, h1_text, theme, logo2x2, timer, isMobile }) => {
     if (!isMobile) {
         return (
             <header className="page header">
-                <div className="header__content">
-                    <div className="header__row header__row--top">
-                        <HeaderTextBlock {...h1_text} />
-                        <Logo2x2 {...logo2x2} />
-                    </div>
-                    <div className="header__row header__row--middle">
-                        <GradientUpBlock {...theme} />
-                    </div>
-                    <div className="header__row header__row--bottom">
-                        <Timer {...timer} />
+                <div className="header__content page__content">
+                    <div className="header__center-block">
+                        <div className="header__row header__row--top">
+                            <HeaderTextBlock {...h1_text} />
+                            <Logo2x2 {...logo2x2} />
+                        </div>
+                        <div className="header__row header__row--middle">
+                            <GradientUpBlock {...theme} />
+                        </div>
+                        <div className="header__row header__row--bottom">
+                            <Timer {...timer} />
+                        </div>
                     </div>
                 </div>
             </header>

@@ -1,0 +1,172 @@
+@import "../../sass/variables.scss";
+@import "../../sass/mixins.scss";
+form {
+    max-width: 1171px;
+    width: 80%;
+    padding: 4vw 5vw 5vw;
+    background: $white;
+    border: solid 2px $black;
+    @media (max-width: $mobile_l+1) {
+        padding: 20px 20px 30px;
+    }
+    .form-row {
+        display: block;
+        padding-top: 30px;
+
+        @media (max-width: $mobile_l+1) {
+            padding-top: 16px;
+        }
+
+        .checkbox-row {
+            display: flex;
+
+            input {
+                order: 1;
+                width: 50px;
+                height: 50px;
+                border: solid 1px #000000;
+                -webkit-appearance: none;
+                -webkit-border-radius: 0px;
+                margin: 0;
+            }
+            span {
+                order: 2;
+                width: 100%;
+            }
+        }
+        input,
+        select,
+        textarea {
+            display: block;
+        }
+        .checkbox {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+            margin: 10px 0 0 20px;
+        }
+        .checkbox + label {
+            position: relative;
+            padding: 0 0 0 60px;
+            cursor: pointer;
+            font-size: 0.7rem;
+
+            @media (max-width: $mobile_l+1) {
+                padding: 0 0 0 45px;
+            }
+        }
+        .checkbox + label:before {
+            position: absolute;
+            left: 0;
+            height: 26px;
+            transition: 0.2s;
+            width: 30px;
+            height: 30px;
+            border: solid 1px #000000;
+            background: #fff;
+        }
+        .checkbox + label:after {
+            content: "";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #000;
+            background: #fff;
+            transition: 0.2s;
+        }
+        .checkbox:checked + label:before {
+        }
+        .checkbox:checked + label:after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f00c";
+            font-size: 15px;
+        }
+        .checkbox:focus + label:before {
+        }
+
+        label {
+            font-size: 1rem;
+        }
+        input {
+            height: 41px;
+            width: 100%;
+            border: 1px solid $black;
+            padding: 10px;
+        }
+        select {
+            -webkit-appearance: none;
+            -webkit-border-radius: 0px;
+            border-radius: 0;
+            height: 41px;
+            width: 100%;
+            border: 1px solid #000;
+            background: $white;
+            padding: 0 10px;
+
+            &:after {
+                content: "▼";
+                padding: 0 8px;
+                font-size: 12px;
+                position: absolute;
+                right: 8px;
+                top: 4px;
+                z-index: 1;
+                text-align: center;
+                width: 10%;
+                height: 100%;
+                pointer-events: none;
+                box-sizing: border-box;
+            }
+        }
+        textarea {
+            width: 100%;
+            border: 1px solid #000;
+            padding: 10px;
+            color: $black;
+        }
+        span {
+            padding-bottom: 10px;
+            display: block;
+        }
+    }
+    .form-title {
+        font-size: 1.33rem;
+        text-align: center;
+    }
+    .send-form {
+        @include linear-gradient(
+            to left,
+            #f7a543,
+            #c5e2ce 35%,
+            #005e74 68%,
+            #8c89ff
+        );
+        color: $white;
+        font-family: inherit;
+        max-width: 551px;
+        padding: 15px 0;
+        width: 70%;
+        border: none;
+        margin: 80px auto 0;
+        display: block;
+        font-size: 1.33rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: $mobile_l+1) {
+            width: 100%;
+            padding: 10px 0;
+            margin: 30px auto 0;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

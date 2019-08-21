@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import style from "./input.scss";
-class Input extends React.Component {
+class Textarea extends React.Component {
     constructor(props) {
         super(props);
         this.state = { [props.name]: "" };
@@ -12,24 +12,24 @@ class Input extends React.Component {
     render() {
         const nameState = this.props.name;
         const title = this.props.title;
-        const required = this.props.isRequired ? this.props.isRequired : null;
-        const type = this.props.type ? this.props.type : "text";
+        const rows = this.props.rows;
+        const cols = this.props.cols;
         const placeholder = this.props.iSplaceholder
             ? this.props.iSplaceholder
             : null;
         return (
             <label for={this.props.name}>
                 <span>{title}</span>
-                <input
-                    type={type}
+                <textarea
+                    rows={rows}
+                    cols={cols}
                     name={this.props.name}
                     value={this.state[nameState]}
                     onChange={this.handleChange}
-                    required={required}
                     placeholder={placeholder}
                 />
             </label>
         );
     }
 }
-export default Input;
+export default Textarea;

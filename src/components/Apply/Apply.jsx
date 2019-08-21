@@ -1,28 +1,51 @@
 import React, { Component } from "react";
 import style from "./apply.scss";
+import style2 from "../Form/form.scss";
 import Input from "../Form/Input.jsx";
+import Select from "../Form/Select.jsx";
+import Textarea from "../Form/Textarea.jsx";
+import Checkbox from "../Form/Checkbox.jsx";
+import Result from "../Form/Result.jsx";
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 import { withTranslation } from "react-i18next";
 class Apply extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: "" };
-
-        this.handleChange = this.handleChange.bind(this);
+        this.state = { success: true };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({ value: event.target.value });
-    }
-
     handleSubmit(event) {
-        alert("Отправленное имя: " + this.state.value);
         event.preventDefault();
+        const formElement = document.querySelector("form");
+        const formData = new FormData(formElement);
+        const url = window.location.href;
+        //send to server form data
+        fetch(url, {
+            method: "post",
+            body: formData
+        })
+            .then(function(response) {
+                if (response.status !== 200) {
+                    console.log(
+                        "Looks like there was a problem. Status Code: " +
+                            response.status
+                    );
+                    this.setState({ success: true });
+                    return;
+                }
+                response.json().then(function(data) {
+                    console.log(data);
+                });
+            })
+            .catch(
+                function(err) {
+                    console.log("Fetch Error :-S", err);
+                }.bind(this)
+            );
     }
     render() {
-        console.log(this.props.dataApply, "ii");
         const { t } = this.props;
         return (
             <div className="apply-page page" id="apply">
@@ -30,88 +53,105 @@ class Apply extends React.Component {
                 <div className="apply-page__content page__content">
                     <div className="form-content">
                         <form onSubmit={this.handleSubmit}>
-                            <div className="form-row">
-                                <Input title={t("dataApply.name")} />
+                            <div className="form-title">
+                                {t("dataApply.form-title")}
                             </div>
                             <div className="form-row">
-                                <Input title={t("dataApply.email")} />
+                                <Input
+                                    title={t("dataApply.name")}
+                                    name={"title"}
+                                    isRequired={"required"}
+                                />
                             </div>
                             <div className="form-row">
-                                <Input title={t("dataApply.country")} />
+                                <Input
+                                    title={t("dataApply.email")}
+                                    name={"email"}
+                                    type={"email"}
+                                    isRequired={"required"}
+                                />
                             </div>
                             <div className="form-row">
-                                <Input title={t("dataApply.website")} />
+                                <Input
+                                    title={t("dataApply.country")}
+                                    name={"country"}
+                                />
                             </div>
                             <div className="form-row">
-                                <Input title={t("dataApply.shortbiography")} />
+                                <Input
+                                    title={t("dataApply.website")}
+                                    name={"website"}
+                                />
                             </div>
                             <div className="form-row">
-                                <label>
-                                    {t("dataApply.category")}
-                                    <select
-                                        value={this.state.value}
-                                        onChange={this.handleChange}
-                                    >
-                                        {Object.keys(
-                                            this.props.category_options
-                                        ).map((li, index) => (
-                                            <option
-                                                value={i18n.t(
-                                                    `dataApply.category_options.${index}.value`
-                                                )}
-                                            >
-                                                {i18n.t(
-                                                    `dataApply.category_options.${index}.title`
-                                                )}
-                                            </option>
-                                        ))}
-                                    </select>
-                                </label>
+                                <Textarea
+                                    title={t("dataApply.shortbiography")}
+                                    name={"shortbiography"}
+                                    rows={10}
+                                    iSplaceholder={t(
+                                        "dataApply.work_short_desc_pl"
+                                    )}
+                                />
                             </div>
                             <div className="form-row">
-                                <Input title={t("dataApply.worktitle")} />
+                                <Select
+                                    options={this.props.category_options}
+                                    title={t("dataApply.category")}
+                                    name={"category"}
+                                />
                             </div>
                             <div className="form-row">
-                                <Input title={t("dataApply.worktitle_en")} />
+                                <Input
+                                    title={t("dataApply.worktitle")}
+                                    name={"worktitle"}
+                                />
                             </div>
                             <div className="form-row">
-                                <label>
-                                    {t("dataApply.work_short_desc")}
-                                    <textarea
-                                        rows="10"
-                                        cols="45"
-                                        name="text"
-                                        value={this.state.value}
-                                        onChange={this.handleChange}
-                                    />
-                                </label>
+                                <Input
+                                    title={t("dataApply.worktitle_en")}
+                                    name={"worktitle_en"}
+                                />
                             </div>
                             <div className="form-row">
-                                <Input title={t("dataApply.address")} />
+                                <Textarea
+                                    title={t("dataApply.work_short_desc")}
+                                    name={"work_short_desc"}
+                                    rows={10}
+                                    iSplaceholder={t(
+                                        "dataApply.work_short_desc_pl"
+                                    )}
+                                />
                             </div>
                             <div className="form-row">
-                            <label>
-                                    {t("dataApply.agreement1")}
-                                <input
-                                    type="checkbox"
-                                    id="agreement1"
+                                <Input
+                                    title={t("dataApply.address")}
+                                    name={"address"}
+                                />
+                            </div>
+                            <div className="form-row">
+                                <Checkbox
+                                    title={t("dataApply.agreement1")}
                                     name="agreement1"
-                                    value="agreement"
+                                    isRequired={"required"}
                                 />
-                                    </label>
                             </div>
                             <div className="form-row">
-                            <label>
-                                    {t("dataApply.agreement2")}
-                                <input
-                                    type="checkbox"
-                                    id="agreement2"
-                                    name="agreement3"
-                                    value="agreemen2"
+                                <Checkbox
+                                    title={t("dataApply.agreement2")}
+                                    name="agreement2"
+                                    isRequired={"required"}
                                 />
-                            </label>
                             </div>
-                            <input type="submit" value="Отправить" />
+                            <input
+                                type="submit"
+                                className="send-form"
+                                value={t("dataApply.button-text")}
+                            />
+                            {this.state.success ? (
+                                <Result
+                                    success_text={this.props.success_text}
+                                />
+                            ) : null}
                         </form>
                     </div>
                 </div>

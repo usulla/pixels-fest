@@ -1,0 +1,31 @@
+@import "../../sass/variables.scss";
+@import "../../sass/mixins.scss";
+
+.outer_block_result {
+    width: 90%;
+    margin: 0 auto;
+    @media (max-width: $mobile_l+1) {
+        width: 100%;
+    }
+    @include linear-gradient(
+        to left,
+        #f7a543,
+        #c5e2ce 35%,
+        #005e74 68%,
+        #8c89ff
+    );
+    padding: 10px;
+    margin-top: 30px;
+
+    .inner_block_result {
+        background: #fff;
+        padding: 15px;
+        span {
+            color: #418d6e;
+        }
+        a {
+            color: $black;
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,17 +1,20 @@
 @import "../../sass/variables.scss";
 @import "../../sass/mixins.scss";
 
+.apply-page {
+    position: relative;
+    padding-bottom: 40vh;
+    margin-left: 18vw;
+    @include linear-gradient(to bottom, #f7c1da, #ace8da, #fdc39c);
 
-.apply-page__content{
-    form{
-        margin-left:190px;
-
-        .form-row{
-            display: block;
-
-            input, select, textarea{
-                display: block;
-            }
+    @media (max-width: $mobile_l+1) {
+        margin: 0;
+        padding-bottom: 70px;
+    }
+    .apply-page__content {
+        .form-content {
+            display: flex;
+            justify-content: center;
         }
     }
 }

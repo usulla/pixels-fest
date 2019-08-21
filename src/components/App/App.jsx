@@ -9,6 +9,7 @@ import Program from "../Program/Program.jsx";
 import Partners from "../Partners/Partners.jsx";
 import Jury from "../Jury/Jury.jsx";
 import Apply from "../Apply/Apply.jsx";
+import About from "../About/About.jsx";
 import Footer from "../Footer/Footer.jsx";
 class App extends Component {
     constructor() {
@@ -39,7 +40,8 @@ class App extends Component {
             dataPartners,
             dataFooter,
             dataJury,
-            dataApply
+            dataApply,
+            dataAbout
         } = appData;
         return (
             <div className="home" id="headerpage">
@@ -49,6 +51,7 @@ class App extends Component {
                         <Nav
                             list={dataHeader.navtitle}
                             src={dataHeader.navsrc}
+                            isMobile={this.state.isMobile}
                         />
                     </React.Fragment>
                 ) : (
@@ -58,15 +61,16 @@ class App extends Component {
                     </React.Fragment>
                 )}
                 <div className="pages">
-                    <Header {...dataHeader} order={1} isMobile={this.state.isMobile} />
-                    <Program {...dataProgram} order={2}  isMobile={this.state.isMobile} />
+                     {/* <Header {...dataHeader} order={1} isMobile={this.state.isMobile} />  */}
+                    <About title2 = {dataAbout.title2} order={2} isMobile={this.state.isMobile}/>
+                    {/* <Program {...dataProgram} order={2}  isMobile={this.state.isMobile} />
                     <Jury {...dataJury} order={3} isMobile={this.state.isMobile} datafooter={dataFooter}/>
                     <Partners {...dataPartners} order={4} />
                     <Apply
                         {...dataApply}
                         order={5}
                         isMobile={this.state.isMobile}
-                    />
+                    /> */}
                     <Footer {...dataFooter} isMobile={this.state.isMobile} />
                 </div>
             </div>
