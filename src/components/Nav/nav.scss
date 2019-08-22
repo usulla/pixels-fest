@@ -61,6 +61,7 @@
           @include transform(translateX(79vw));
           //@include transition(transform, 0.45s, cubic-bezier(.2,.6,.2,1));
           @include transition(transform, 0.45s, ease);
+          
         a {
           color: $black;
         }

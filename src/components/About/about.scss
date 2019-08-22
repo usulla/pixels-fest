@@ -13,7 +13,7 @@
         #fba900
     );
 }
-.about-page__content {
+.info-page {
     height: calc(100% + 207px);
     margin-left: 3vw;
     padding: 8vh 6%;
@@ -28,6 +28,9 @@
         }
         .header__description--period {
             margin-top: 0px;
+            @media (max-width: $mobile_l+1) {
+                font-size: inherit;
+            }
         }
     }
     .center-block__col {

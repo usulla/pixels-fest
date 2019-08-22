@@ -12,7 +12,7 @@ const About = ({ title2 }) => {
     return (
         <div className="about-page page" id="about-festival">
             <div className="mobile-title-page">{t("dataAbout.title")}</div>
-            <div className="about-page__content page__content">
+            <div className="about-page__content info-page page__content">
                 <div className="center-block__col">
                     <div className="header__center-block">
                         <HeaderTextBlock />

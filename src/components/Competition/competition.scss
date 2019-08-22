@@ -1,0 +1,256 @@
+@import "../../sass/variables.scss";
+@import "../../sass/mixins.scss";
+.competition-page {
+    position: relative;
+    display: block;
+    transform: none;
+    @include linear-gradient(
+        to bottom,
+        #0093e7,
+        #f68580 35%,
+        #db92b0 68%,
+        #917cf0,
+        #85afd7,
+        #80c8ca
+    );
+    .info-page h3.title--white {
+        margin: 60px 0;
+    }
+    .info-page h3 {
+        margin: 60px 0;
+    }
+    .competition-page__content {
+        height: calc(100% + 207px);
+        margin-left: 9vw;
+        padding: 8vh 6%;
+        display: flex;
+        justify-content: center;
+        @media (max-width: $mobile_l+1) {
+            margin-left: 0vw;
+        }
+        .about_text--black:first-child {
+            margin-top: 0;
+        }
+        .about_text--white {
+            font-size: 1rem;
+        }
+        h3 span {
+            display: block;
+        }
+        .competition_text--white.text-border {
+            border: 2px solid #fff;
+            padding: 35px 70px;
+            color: #fff;
+            .categories-title {
+                font-size: 1.3rem;
+            }
+            li {
+                margin-bottom: 15px;
+                position: relative;
+                list-style-type: none; /* Убираем маркеры у списка */
+            }
+            .list-style {
+                content: "";
+                width: 24px;
+                height: 24px;
+                top: 0.3rem;
+                position: absolute;
+                @include linear-gradient(to bottom, #f59e97, #d36d89);
+            }
+            .li-text {
+                margin-left: 50px;
+                vertical-align: top;
+                display: inline-block;
+            }
+        }
+        .stage {
+            margin: 15px 0;
+            display: flex;
+            color: #fff;
+            .stage-num {
+                font-size: 12rem;
+                color: #fff;
+                line-height: 1;
+                padding-right: 25px;
+            }
+            .stage-info__date {
+                color: $black;
+                padding-left: 30px;
+            }
+            .stage-info__title {
+                font-size: 1.3rem;
+            }
+            .about_text--black {
+                margin: 15px 0;
+            }
+        }
+        .gradient-line-block {
+            position: relative;
+            &--left {
+                left: calc(-6% - 6vw);
+            }
+            &--right {
+                right: -6vw;
+                text-align: right;
+            }
+            .gradient-line {
+                &--small {
+                    width: 20%;
+                    @media (max-width: $mobile_l+1) {
+                        width: 40%;
+                    }
+                }
+                &--medium {
+                    width: 30%;
+                    @media (max-width: $mobile_l+1) {
+                        width: 53%;
+                    }
+                }
+                &--big {
+                    width: 70% !important;
+                    @media (max-width: $mobile_l+1) {
+                        width: 70% !important;
+                    }
+                }
+                &--narrow {
+                    height: 1.2vw;
+                    max-height: 18px;
+                    @media (max-width: $mobile_l+1) {
+                        height: 15px;
+                    }
+                }
+                &--wide {
+                    height: 2.5vw;
+                    max-height: 44px;
+                    @media (max-width: $mobile_l+1) {
+                        height: 27px;
+                    }
+                }
+            }
+            &.gradient-line-block--1 {
+                .gradient-line {
+                    &--1 {
+                        @include linear-gradient(
+                            to left,
+                            #0093e8,
+                            #ffa38e 20%,
+                            #9471f6 60%,
+                            #80d0c7
+                        );
+                    }
+                    &--2 {
+                        @include linear-gradient(to right, #e5a196, #76acd3);
+                    }
+                }
+            }
+            &.gradient-line-block--2 {
+                @media (max-width: $mobile_l+1) {
+                    display: none;
+                }
+                display: inline-block;
+                width: 100%;
+                height: 4.9vw;
+                .gradient-line {
+                    &--1 {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 45%;
+                        @include linear-gradient(to left, #6199c5, #c497b0);
+                    }
+                    &--2 {
+                        position: absolute;
+                        right: 0;
+                        top: 2.5vw;
+                        @include linear-gradient(to right, #fea28e, #9e9cb0);
+                    }
+                    &--3 {
+                        position: absolute;
+                        right: 0;
+                        top: 3.7vw;
+                        @include linear-gradient(to right, #91a2db, #9e9cb0);
+                    }
+                }
+            }
+            &.gradient-line-block--3 {
+                .gradient-line {
+                    &--1 {
+                        @media (max-width: $mobile_l+1) {
+                            width: 80%;
+                        }
+                        @include linear-gradient(
+                            to left,
+                            #d18dba,
+                            #ffa38e 20%,
+                            #be84cd 60%,
+                            #9f76eb
+                        );
+                    }
+                    &--2 {
+                        @include linear-gradient(to left, #ce8cbd, #bf779c);
+                    }
+                }
+            }
+            &.gradient-line-block--4 {
+                display: inline-block;
+                width: 100%;
+                height: 4.5vw;
+                @media (max-width: $mobile_l+1) {
+                    height: 42px;
+                }
+                .gradient-line {
+                    &--1 {
+                        width: 60%;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 45%;
+                        @include linear-gradient(
+                            to left,
+                            #e5b9e0,
+                            #d5b3da 49%,
+                            #db9cb1
+                        );
+                    }
+                    &--2 {
+                        @media (max-width: $mobile_l+1) {
+                            top: 27px;
+                        }
+                        position: absolute;
+                        right: 0;
+                        top: 2.8vw;
+                        width: 90%;
+                        @include linear-gradient(
+                            to right,
+                            #e5b9e0,
+                            #d5b3da 49%,
+                            #db9cb1
+                        );
+                    }
+                }
+            }
+            &.gradient-line-block--5 {
+                .gradient-line {
+                    &--1 {
+                        width: 55%;
+                        @include linear-gradient(
+                            to right,
+                            #f28888,
+                            #d99db4 49%,
+                            #d0a5c4
+                        );
+                    }
+                    &--2 {
+                        width: 85%;
+                        @include linear-gradient(
+                            to left,
+                            #e5b9e0,
+                            #e9b4ba,
+                            #fb9243
+                        );
+                    }
+                }
+            }
+        }
+    }
+}
