@@ -122,7 +122,7 @@ body {
         }
     }
     &#jurypage {
-        .jury-page.active.fix {
+        .jury-page.active.fix, .jury-page.active2.fix {
             max-height: 100vh;
             overflow: hidden;
         }
@@ -180,7 +180,7 @@ body {
         &.animate2 {
             @include transform(translateX(3vw));
             //@include transition(transform, 0.45s, cubic-bezier(0.2, 0.6, 0.2, 1));
-            @include transition(transform, 0.45s, linear);
+            @include transition(transform, 0.45s, ease);
         }
     }
 }
@@ -202,7 +202,7 @@ li {
 h2 {
     font-family: $font_family;
     @media (max-width: $mobile_l+1) {
-        font-size: 1.5rem!important;
+        font-size: 1.5rem !important;
     }
 }
 

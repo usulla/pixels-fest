@@ -2,49 +2,52 @@
 @import "../../sass/mixins.scss";
 
 .left-sidebar {
-  background: #000;
-  z-index: 999;
-  color: #fff;
-  position: fixed;
-  display: flex;
-  justify-content: flex-start;
-  height: 100vh;
-  left: 0;
-  top: 0;
-  writing-mode: tb-rl;
-  width: calc(3vw + 1px);
-  // max-width: 56px;
-
-  .left-sidebar__li.logo {
-    width: 23px;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .left-sidebar-ul {
+    background: #000;
+    z-index: 999;
+    color: #fff;
+    position: fixed;
     display: flex;
-    height: 100%;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
-    padding: 8vh 0 20px;
-  }
-  li {
-    padding: 0;
-  }
-  li.change-language,
-  li.timer {
-    transform: rotate(180deg);
-  }
-  li.timer,
-  li.logo {
-    margin-left: 0vw;
-     @include transition(margin-left, 0.45s, ease);
-  }
+    justify-content: flex-start;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    writing-mode: tb-rl;
+    width: calc(3vw + 1px);
+    // max-width: 56px;
+
+    .left-sidebar__li.logo {
+        width: 23px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .left-sidebar-ul {
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding: 8vh 0 20px;
+    }
+    li {
+        padding: 0;
+    }
+    li.change-language,
+    li.timer {
+        transform: rotate(180deg);
+        .header__timer__title, .text {
+            display: none;
+        }
+    }
+    li.timer,
+    li.logo {
+        margin-left: 0vw;
+        @include transition(margin-left, 0.45s, ease);
+    }
 }
 
-#headerpage .left-sidebar-ul{ 
-  padding-top: 8vh;
+#headerpage .left-sidebar-ul {
+    padding-top: 8vh;
 }

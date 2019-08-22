@@ -2,7 +2,7 @@
 @import "../../sass/mixins.scss";
 .about-page {
     // position: relative;
-    position:absolute;
+    position: absolute;
     @include linear-gradient(
         to bottom,
         #fba900,
@@ -11,6 +11,9 @@
         #f68580,
         #fba900
     );
+    .logo-animation{
+        width:100%;
+    }
 }
 .info-page {
     height: calc(100% + 207px);

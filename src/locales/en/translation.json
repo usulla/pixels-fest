@@ -2,7 +2,7 @@
     "dataHeader": {
         "navtitle": [
             {
-                "title": "About Festival",
+                "title": "About",
                 "src": "about-festival"
             },
             {
@@ -10,7 +10,7 @@
                 "src": "program"
             },
             {
-                "title": "Competition",
+                "title": "Contest",
                 "src": "competition"
             },
             {
@@ -22,92 +22,92 @@
                 "src": "partners"
             },
             {
-                "title": "Apply",
+                "title": "Submit your work",
                 "src": "apply"
             }
         ],
         "h1_text": {
-            "description": "INTERNATIONAL FESTIVAL AND DIGITAL COMPETITION",
-            "description2": "VIDEO ARTA",
-            "subtitle": "Media facade of the Yeltsin Center, Yekaterinburg",
+            "description": "INTERNATIONAL FESTIVAL AND CONTEST OF DIGITAL",
+            "description2": "VIDEO ART",
+            "subtitle": "The Media façade of The Yeltsin Center in Yekaterinburg",
             "period": "07—15.03"
         },
         "theme": {
-            "title": "Тема: Цифровые утопии",
-            "description": "Глобальная технологизация мира радикально меняет нашу повседневность. Сценарии техногенного будущего зачастую не сулят ничего хорошего. Будущее неопределенно, и футурологи нередко предлагают пессимистичные модели развития планеты и общества. Мы призываем задуматься на тему как «позитивных» идей, так и спекулятивных теорий будущего  —  альтернативных миров и утопических концепций."
+            "title": "Theme: Digital Utopias",
+            "description": "Global technologization radically changes our everyday life. Technological future scenarios often do not bode well. The future is uncertain and futurologists frequently come up with pessimistic models of evolution of our planet and society. We encourage you to reflect both on “positive” ideas and speculative theories related to future: alternative worlds and utopian concepts."
         },
         "logo2x2": {
-            "title": "Организаторы:"
+            "title": "Organizers"
         },
         "timer": {
-            "title": "до окончания приема работ",
-            "days": "Дней",
-            "hours": "Часов",
-            "minutes": "Минут",
-            "seconds": "Секунд"
+            "title": "deadline for applications",
+            "days": "Days",
+            "hours": "Hours",
+            "minutes": "Minutes",
+            "seconds": "Seconds"
         },
-        "alt": "PixelFest"
+        "alt": "Pixels Fest"
     },
     "dataProgram": {
-        "alt": "Находится в разработке",
-        "title": "Программа"
+        "alt": "In progress",
+        "title": "Program"
     },
     "dataPartners": {
-        "title": "Партнеры",
-        "title1": "Организатор",
-        "title2": "Партнеры",
-        "title3": "Технический директор",
+        "title": "Partners",
+        "title1": "Organizer",
+        "title2": "Partners",
+        "title3": "Technical partners",
         "alt1": "2х2",
-        "alt3": "Ума.Тех"
+        "alt3": "Uma.Tech"
     },
     "dataJury": {
-        "title": "Жюри",
+        "title": "Jury",
         "members": [
             {
-                "name": "Денис Всесвятский",
-                "profession": "директор телеканала 2х2",
-                "description": "организатор фестивалей анимации и выставок российских художников, куратор образовательных программ по обучению анимации и моушн-дизайну",
+                "name": "Denis Vsesvyatskiy",
+                "profession": "2х2 TV Channel, General Director",
+                "description": "organizer of animation festivals and exhibitions of Russian artists, curator of educational programs in animation and motion design.",
                 "img": "images/member1.png"
             },
             {
-                "name": "Анна Титовец | Intektra",
-                "profession": "независимый куратор, медиахудожник",
-                "description": "исследователь искусства новых медиа, основатель и куратор фестиваля Plums Fest. Соорганизатор и куратор множества фестивалей и выставок, участник выставок и фестивалей медиа и видеоискусства в России и за рубежом",
+                "name": "AnnaTitovets | Intektra",
+                "profession": "Independent curator, media artist",
+                "description": "new media art researcher, founder and curator of the PlumsFest festival for audiovisual arts. Co-organizer and curator of many festivals and exhibitions in the field of technological art, participant of exhibitions and festivals of media and video art, both in Russia and abroad.",
                 "img": "images/member2.png"
             },
             {
-                "name": "Илья Шипиловских",
-                "profession": "директор Арт-галереи Ельцин Центра, арт-критик",
-                "description": "исследователь искусства новых медиа, основатель и куратор фестиваля Plums Fest. Соорганизатор и куратор множества фестивалей и выставок, участник выставок и фестивалей медиа и видеоискусства в России и за рубежом",
+                "name": "Ilya Shipilovsky",
+                "profession": "Director of the Yeltsin Center Art gallery, curator",
+                "description": "Deputy-director of the Yeltsin Center museum on exhibition management. Member of the Expert Council of the Garage Museum of Contemporary Art 2017/2018 grant program. Participant of the Expert’s Panel for the prize for young artists of Cosmoscow 2018 Fair.",
                 "img": "images/member1.png"
             },
             {
-                "name": "Татьяна Ярошевская",
-                "profession": "начальник Управления культуры Администрации г. Екатеринбурга",
-                "description": "организатор фестивалей анимации и выставок российских художников, куратор образовательных программ по обучению анимации и моушн-дизайну",
+                "name": "Tatyana Yaroshevskaya",
+                "profession": "Head of the Department of Culture of the City Administration of Yekaterinburg",
+                "description": "",
                 "img": "images/member2.png"
             },
             {
-                "name": "Борис Бернаскони",
-                "profession": "архитектор, основатель бюро BERNASKONI, автор Ельцин Центра",
-                "description": "организатор фестивалей анимации и выставок российских художников, куратор образовательных программ по обучению анимации и моушн-дизайну",
+                "name": "Boris Bernaskony",
+                "profession": "Head of the B E R N A S K O N I bureau",
+                "description": "Repeatedly participated in the Venice Architectural Biennale and other international exhibitions. The author of innovative multifunctional building HyperCube and MATREX  in Skolkovo.",
                 "img": "images/member1.png"
             }
         ]
     },
     "dataFooter": {
-        "title_logo2x2": "Организаторы:",
-        "apply": "подать заявку",
-        "contest_rules": "Положение конкурса",
-        "address_title": "Место проведения:",
-        "address_city": "г. Екатеринбург",
-        "address_street": "ул. Бориса Ельцина, д. 3",
-        "license": "Международный фестиваль и конкурс цифрового видео-арта «Pixels Fest» © 2019-2020 | Все права защищены."
+        "title_logo2x2": "Organizers:",
+        "apply": "submit your work",
+        "contest_rules": "Regulations of the contest",
+        "address_title": "Venue:",
+        "address_city": "Yekaterinburg.",
+        "address_street": "3, Boris Yeltsin street",
+        "license": "International Festival and Contest of digital video art «Pixels Fest» © 2019-2020 | All rights reserved"
     },
     "dataApply": {
         "title": "Подать заявку",
-        "formTitle": "Форма подачи заявки",
-        "name": "name",
+        "form-title": "Форма подачи заявки",
+        "name": "имя и фамилия автора / название творческой команды",
         "email": "email",
         "country": "страна",
         "website": "ссылка на сайт/аккаунт в соцсетях",
@@ -131,8 +131,108 @@
                 "title": "категория4"
             }
         ],
+        "worktitle": "название работы",
+        "worktitle_en": "название работы на английском",
+        "work_short_desc": "краткое описание работы",
+        "work_short_desc_pl": "до 800 знаков с пробелами",
+        "address": "адрес местонахождения",
         "agreement1": "В случае, если моя работа войдет в шорт-лист, я даю свое согласие на показ произведения в рамках программы Фестиваля",
         "agreement2": "Я даю свое согласие на обработку персональных данных",
-        "button-text": "Загрузить работу"
+        "button-text": "загрузить работу",
+        "success_text1": "Спасибо! Ваша заявка принята.",
+        "success_text2": "Номер заявки",
+        "success_text3": "По результатам конкурса всем участникам будет отправлен ответ не позднее 20 декабря 2019 г.",
+        "success_text4": "После проверки видеофайла, мы отправим письмо на ваш почтовый ящик с указанием номера заявки и подтверждением, что ваша работа принята.",
+        "success_text5": "Если вы не получили письмо, просьба написать об этом на"
+    },
+    "dataAbout": {
+        "title": "About",
+        "description1": "Media façades in urban environment are becoming an exhibition space, a large-scale canvas transforming the space via media art.",
+        "description2": "PIXELS FEST is a new initiative aimed at broadening the frameworks of digital media art in urban environment of Yekaterinburg and creating a communication field for which the Yeltsin Center media façade will be a gigantic screen for up to date video-art works of artists from around the world.",
+        "title2": [
+            "Pixels Fest 2019–2020",
+            "The theme: «Digital Utopias»"
+        ],
+        "description3": "Global technologization of the planet, introduction of algorithms and machines at all levels of our everyday life is often perceived pessimistically, and further scenarios of the evolution of human lives, society and planet in general, proposed by philosophers and journalists, often look horrendous.",
+        "description4": "But there may be another, utopian, alternative and imaginary vision of the future.  The word “Utopia” in our case means that we encourage the artists to reflect both on “positive” ideas and speculative theories related to technological future.",
+        "description5": "We welcome your considerations about the utopian alternative worlds and unexpected aspects of future life on different levels – from micro level to the planet-scale.",
+        "description6": "The main program of the festival is formed based on the results of the open contest and will be presented on the Yeltsin Center media façade; within the framework of the festival a curated program of video-art lectures, round tables and workshops will be organized.",
+        "title3": "Program",
+        "description7": "The Yeltsin Center was opened in 2015 and has become an important cultural and public place for the citizens of Yekaterinburg. One of the main goals of the Center is to enlighten people and promote democratic values in Russia.",
+        "description8": "The Yeltsin Center has a unique media façade of 2200 square meters; practically all the surface of the building is a huge video screen. In 2017 the media façade was awarded an international SEGD prize in «Public installations» nomination.  (Artist, Prof. Stefan Hofmann)."
+    },
+    "dataCompetition": {
+        "title": "Конкурс",
+        "description1": "Медиафасад Ельцин Центра — один из самых крупных в России, и это уникальная возможность показать свое произведение на более чем 2000 квадратных метрах в публичном пространстве. С гигантским медиафасадом Ельцин Центра уже работали как российские, так и зарубежные художники, однако впервые на медиафасаде будет организован фестиваль такого масштаба и длительности.",
+        "description2": "Приглашаем художников, художественные коллективы и дизайнеров со всего мира принять участие в конкурсе цифрового видео-арта на медиафасаде Ельцин Центра. ",
+        "title2": "Подать заявку на конкурс",
+        "title3": "Тема конкурса:",
+        "title4": "ЦИФРОВЫЕ УТОПИИ",
+        "description3": "Мы предлагаем художникам задуматься на тему «позитивных» идей и спекулятивных теорий будущего, альтернативных миров и утопических концепций.",
+        "categories": {
+            "title": "Категории конкурса:",
+            "data": [
+                "Генеративный видео-арт.",
+                "Анимация 2D и 3D, сделанная цифровыми/преимущественно цифровыми средствами.",
+                "Другая анимация/видео-арт (покадровая, классическая, коллажная и пр.)."
+            ]
+        },
+        "title5": "Этапы конкурса",
+        "stage1": {
+            "num_stage": "Этап 1",
+            "date": "05.09.19–05.12.19",
+            "title": "Прием заявок с тизером конкурсной видеоработы (не менее 15 секунд)",
+            "description": "По итогам Этапа 1 жюри выбирает лонг-лист, участникам рассылаются уведомления и приглашение к созданию работы целиком."
+        },
+        "stage2": {
+            "num_stage": "Этап 2",
+            "date": "20.12.19–31.01.20",
+            "title": "Прием финальных работ (от 30 секунд до 10 минут)",
+            "description": "По итогам Этапа 2 жюри выбирает победителей, которые получают денежные призы, и шорт-лист работ, которые входят в программу показа на медиафасаде во время фестиваля."
+        },
+        "title6": "Условия участия в конкурсе",
+        "conditions": [
+            "произведения должны учитывать особенности архитектуры здания на художественном и концептуальном уровне",
+            "присланные произведения должны отражать или вступать в диалог с темой Конкурса",
+            "более 70% работы должны содержать анимированные элементы (не статика)",
+            "присланные произведения могут содержать звуковую составляющую",
+            "произведения не должны содержать титры",
+            "присланные произведения должны отвечать техническим требованиям",
+            "каждый участник может прислать до 3х заявок на конкурс"
+        ],
+        "title7": "Технические требования к работам",
+        "description9": "Присланные произведения должны быть интегрированы в маску диодного экрана [скачать]",
+        "download": "скачать",
+        "tr": [
+            "Формат видео — MP4 (кодек H.264)",
+            "Битрейт — до 10 Mbit",
+            "Частота кадров —25 fps",
+            "Глубина цвета — 16 Bit",
+            "Разрешение — 1458x448px"
+        ],
+        "title8": "Положения о конкурсе",
+        "title9": " Критерии отбора работ жюри",
+        "criteria": [
+            "использование современного изобразительного языка",
+            "использование цифровых приемов графики",
+            "высокое качество исполнения",
+            "эстетическая ценность работы",
+            "использование особенностей архитектуры здания как части художественного замысла",
+            "соответствие техническим требованиям к работе",
+            "соответствие заявленной теме фестиваля"
+        ],
+        "title10": " Победители",
+        "winners": {
+            "title1": "В результате открытого голосования членов жюри определяются:",
+            "data1": [
+                "3 победителя, по одному в каждой категории, которые получат денежный приз в размере 2000 евро.",
+                "Победители, вошедшие в шорт-лист, которые получат поощрительные призы от Телеканала 2х2 и их работы будут показаны на медиафасаде Ельцин Центра вместе с работами остальных победителей в рамках программы фестиваля."
+            ],
+            "title2": "В результате открытого зрительского онлайн голосования определяется:",
+            "data2": [
+                "1 победитель, который получит поощрительный приз от Телеканала 2х2 и возможность показа на медиафасаде Ельцин Центра вместе с работами остальных победителей в рамках программы фестиваля.",
+                "Также в рамках фестиваля будет организован один спецпоказ всех работ, присланных на Этап 2 и соответствующих положениям конкурса."
+            ]
+        }
     }
 }

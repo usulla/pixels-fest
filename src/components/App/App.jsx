@@ -38,8 +38,6 @@ class App extends Component {
         const {
             dataHeader,
             dataProgram,
-            dataPartners,
-            dataFooter,
             dataJury,
             dataApply,
             dataAbout,
@@ -63,8 +61,12 @@ class App extends Component {
                     </React.Fragment>
                 )}
                 <div className="pages">
-                    <Header {...dataHeader} order={1} isMobile={this.state.isMobile} /> 
-                    <About 
+                    <Header
+                        {...dataHeader}
+                        order={1}
+                        isMobile={this.state.isMobile}
+                    />
+                    <About
                         title2={dataAbout.title2}
                         order={2}
                         isMobile={this.state.isMobile}
@@ -87,15 +89,14 @@ class App extends Component {
                         {...dataJury}
                         order={4}
                         isMobile={this.state.isMobile}
-                        datafooter={dataFooter}
                     />
-                    <Partners {...dataPartners} order={4} />
+                    <Partners order={4} />
                     <Apply
                         {...dataApply}
                         order={5}
                         isMobile={this.state.isMobile}
                     />
-                    <Footer {...dataFooter} isMobile={this.state.isMobile} />
+                    <Footer isMobile={this.state.isMobile} />
                 </div>
             </div>
         );

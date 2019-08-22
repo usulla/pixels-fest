@@ -2,13 +2,13 @@ import React from "react";
 import style from "./jury.scss";
 import member1_photo from "../../images/member1.png";
 import member2_photo from "../../images/member2.png";
-import member3_photo from "../../images/member1.png";
-import member4_photo from "../../images/member2.png";
+import member3_photo from "../../images/member3.png";
+import member4_photo from "../../images/member4.png";
+import member5_photo from "../../images/member5.png";
 import background from "../../images/gradient-green.png";
-import Footer from "../Footer/Footer.jsx";
 import { useTranslation, initReactI18next } from "react-i18next";
 
-const Jury = ({ members, datafooter, isMobile }) => {
+const Jury = ({ members, isMobile }) => {
     const { t, i18n } = useTranslation();
     var gradientBlockStyle = {
         backgroundImage: `url(${background})`

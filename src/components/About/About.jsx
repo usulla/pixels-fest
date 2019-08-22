@@ -15,7 +15,7 @@ const About = ({ title2 }) => {
             <div className="about-page__content info-page page__content">
                 <div className="center-block__col">
                     <div className="header__center-block">
-                        <HeaderTextBlock />
+                        <HeaderTextBlock video={true}/>
                     </div>
                     <div className="gradient-line-block gradient-line-block--left gradient-line-block--1">
                         <div className="gradient-line gradient-line--1 gradient-line--medium gradient-line--narrow" />

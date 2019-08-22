@@ -42,13 +42,17 @@
       text-align: center;
       list-style-type: none;
       padding: 0 0.6rem;
-      font-size: 0.63rem;
+
   
       @media (max-width: $mobile_l+1) {
         // font-size: 8px;
       }
       &:first-child {
         padding-left: 0;
+      }
+      .text{
+        font-size: 0.63rem;
+        text-transform: none;
       }
     }
   

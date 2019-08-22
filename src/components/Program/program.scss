@@ -2,25 +2,28 @@
 @import "../../sass/mixins.scss";
 
 .program-page {
-  // min-height: calc(100vh - 207px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @include linear-gradient(to bottom, #4457cf, #bd50c1, #ea9e8d);
-  @media (max-width: $mobile_l+1) {
-    min-height: calc(100vh - 85px);
-  }
+    // min-height: calc(100vh - 207px);
+    display: flex;
+    align-items: center;
+    @include linear-gradient(to bottom, #4457cf, #bd50c1, #ea9e8d);
+    @media (max-width: $mobile_l+1) {
+        min-height: calc(100vh - 85px);
+    }
 }
 .program-page__content {
-  text-align: center;
+    text-align: center;
+    @media (min-width: $mobile_l) {
+        height: calc(100% + 207px);
+        margin-left: 6vw;
+    }
 }
 
 .program-page__title {
-  max-width: 1465px;
-  width: 75%;
+    max-width: 1465px;
+    width: 75%;
 
-  @media (max-width: $mobile_l+1) {
-    max-width: 319px;
-    width: 80vw;
-  }
+    @media (max-width: $mobile_l+1) {
+        max-width: 319px;
+        width: 80vw;
+    }
 }

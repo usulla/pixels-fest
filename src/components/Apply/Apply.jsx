@@ -6,8 +6,6 @@ import Select from "../Form/Select.jsx";
 import Textarea from "../Form/Textarea.jsx";
 import Checkbox from "../Form/Checkbox.jsx";
 import Result from "../Form/Result.jsx";
-import i18n from "i18next";
-import { useTranslation, initReactI18next } from "react-i18next";
 import { withTranslation } from "react-i18next";
 class Apply extends React.Component {
     constructor(props) {
@@ -37,7 +35,7 @@ class Apply extends React.Component {
                 }
                 response.json().then(function(data) {
                     console.log(data);
-                });
+                });   
             })
             .catch(
                 function(err) {
