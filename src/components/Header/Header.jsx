@@ -8,7 +8,7 @@ import GradientUpBlock from "./GradientUpBlock/GradientUpBlock.jsx";
 const Header = ({ navtitle, h1_text, theme, logo2x2, timer, isMobile }) => {
     if (!isMobile) {
         return (
-            <header className="page header">
+            <header className="page header active">
                 <div className="header__content page__content">
                     <div className="header__center-block">
                         <div className="header__row header__row--top">
