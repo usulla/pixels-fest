@@ -80,12 +80,12 @@ class App extends Component {
                     />
                     <Program
                         {...dataProgram}
-                        order={2}
+                        order={3}
                         isMobile={this.state.isMobile}
                     />
                     <Jury
                         {...dataJury}
-                        order={3}
+                        order={4}
                         isMobile={this.state.isMobile}
                         datafooter={dataFooter}
                     />

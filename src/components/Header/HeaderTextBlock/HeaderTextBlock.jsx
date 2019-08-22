@@ -4,7 +4,6 @@ import logo from "../../../images/logo.png";
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 const HeaderTextBlock = (props) => {
-    console.log(props)
     const { t, i18n } = useTranslation();
     const { period} = props;
     return (

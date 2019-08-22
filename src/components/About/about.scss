@@ -1,9 +1,8 @@
 @import "../../sass/variables.scss";
 @import "../../sass/mixins.scss";
 .about-page {
-    position: relative;
-    display: block;
-    transform: none;
+    // position: relative;
+    position:absolute;
     @include linear-gradient(
         to bottom,
         #fba900,

@@ -28,11 +28,18 @@ const Nav = ({ list, isMobile }) => {
                     li.classList.add("li-slide-left");
                 }
             });
-
+            var pageHeight;
             document.querySelectorAll(".page").forEach(page => {
                 if (page.id === idActiveEl) {
                     if (!document.querySelector(".page.active")) {
                         page.classList.add("active");
+                        pageHeight = page.getBoundingClientRect().height;
+                        document.querySelector(
+                            ".pages"
+                        ).style.height = `${pageHeight + 207}px`;
+                        window.addEventListener("resize", () => {
+                            pageDetHeight(page);
+                        })
                     } else {
                         if (document.querySelector(".page.active2")) {
                             document
@@ -45,9 +52,19 @@ const Nav = ({ list, isMobile }) => {
                                 .querySelector(".page.active2")
                                 .classList.remove("active2");
                             page.classList.add("active2");
+                            window.addEventListener("resize", () => {
+                                pageDetHeight(page);
+                            })
                         } else {
                             page.classList.add("active2");
+                            window.addEventListener("resize", () => {
+                                pageDetHeight(page);
+                            })
                         }
+                        pageHeight = page.getBoundingClientRect().height;
+                        document.querySelector(
+                            ".pages"
+                        ).style.height = `${pageHeight + 207}px`;
                     }
 
                     setTimeout(function() {
@@ -80,7 +97,6 @@ const Nav = ({ list, isMobile }) => {
                     });
                 }
             }, 0);
-
             function leftSidebarSlideUp() {
                 var footerDetect = isScrolledIntoView(
                     document.querySelector(".footer")
@@ -101,6 +117,12 @@ const Nav = ({ list, isMobile }) => {
                 var isVisible = elemTop < window.innerHeight;
                 return [isVisible, elemTop];
             }
+        }
+        function pageDetHeight(page) {
+            pageHeight = page.getBoundingClientRect().height;
+            console.log(pageHeight, "pageHeight2");
+            document.querySelector(".pages").style.height = `${pageHeight +
+                207}px`;
         }
     }
     return (

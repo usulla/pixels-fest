@@ -159,6 +159,7 @@ body {
     position: absolute;
     top: 0;
     transform: translateX(100vw);
+    // transform: translateX(0vw);
     z-index: 9;
     @media (max-width: $mobile_l+1) {
         display: block;
@@ -185,6 +186,7 @@ body {
 }
 .page__content {
     padding-top: 8vh;
+    padding-bottom: 8vh;
     width: 79vw;
     @media (max-width: $mobile_l+1) {
         width: 100%;

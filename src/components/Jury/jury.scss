@@ -2,7 +2,7 @@
 @import "../../sass/mixins.scss";
 
 .jury-page {
-  position: relative;
+  // position: relative;
   min-height: calc(100vh - 207px);
 
   @media (max-width: $mobile_l+1) {
@@ -20,7 +20,7 @@
     position: relative;
     width: 79vw;
     left: 3vw;
-    padding-bottom: 40vh;
+    // padding-bottom: 40vh;
 
     @media (max-width: $mobile_l+1) {
       margin-top: 60px;
