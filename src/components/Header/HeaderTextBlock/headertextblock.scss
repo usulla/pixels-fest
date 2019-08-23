@@ -38,7 +38,20 @@ h2 {
         // font-size: 32px;
     }
     @media (min-width: $desctops_l) {
-        font-size: 1.75rem;
+        font-size: 1.65rem;
+    }
+}
+.video-model{
+    position: relative;
+    z-index: 2;
+    align-self: flex-end;
+    width: 100%;
+    margin-right: -20vw;
+    height: auto;
+    margin-top: -5vh;
+    margin-bottom: -6vh;
+    @media (max-width: $mobile_l+1) {
+        display: none;
     }
 }
 .header__description {

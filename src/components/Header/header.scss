@@ -38,6 +38,7 @@
 }
 .header__row--top {
     position: relative;
+    z-index: 3;
 
     @media (max-width: $mobile_l+1) {
         position: static;
@@ -57,7 +58,11 @@
     }
 }
 .header__row--middle {
-    margin-top: 12vh;
+    position: relative;
+    z-index: 3;
+    @media (max-width: $mobile_l+1) {
+        margin-top: 12vh;
+    }
 }
 .header__row--bottom {
     margin-top: 6vh;

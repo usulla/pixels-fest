@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import style from "./apply.scss";
 import style2 from "../Form/form.scss";
 import Input from "../Form/Input.jsx";
-import Select from "../Form/Select.jsx";
+import MySelect from "../Form/MySelect.jsx";
 import Textarea from "../Form/Textarea.jsx";
 import Checkbox from "../Form/Checkbox.jsx";
 import Result from "../Form/Result.jsx";
@@ -92,7 +92,7 @@ class Apply extends React.Component {
                                 />
                             </div>
                             <div className="form-row">
-                                <Select
+                                <MySelect
                                     options={this.props.category_options}
                                     title={t("dataApply.category")}
                                     name={"category"}

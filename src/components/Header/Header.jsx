@@ -4,6 +4,7 @@ import HeaderTextBlock from "./HeaderTextBlock/HeaderTextBlock.jsx";
 import Logo2x2 from "../Logo2x2/Logo2x2.jsx";
 import Timer from "./Timer/Timer.jsx";
 import GradientUpBlock from "./GradientUpBlock/GradientUpBlock.jsx";
+import model3d from "../../images/model3d.mp4";
 
 const Header = ({ navtitle, h1_text, logo2x2, timer, isMobile }) => {
     if (!isMobile) {
@@ -15,6 +16,15 @@ const Header = ({ navtitle, h1_text, logo2x2, timer, isMobile }) => {
                             <HeaderTextBlock {...h1_text} />
                             <Logo2x2 {...logo2x2} />
                         </div>
+                        <video
+                            className="video-model"
+                            loop
+                            autoplay
+                            autoplay="autoplay"
+                        >
+                            <source src={model3d} type="video/mp4"/>
+                        </video>
+
                         <div className="header__row header__row--middle">
                             <GradientUpBlock />
                         </div>
