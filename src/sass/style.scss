@@ -90,7 +90,8 @@ body {
 .home {
     position: relative;
     height: 100%;
-    overflow: hidden;
+    // overflow: hidden;
+    overflow-x: hidden;
 
     &#headerpage {
         .footer {
@@ -147,7 +148,7 @@ body {
     }
 
     &.fixheader {
-        min-height: calc(100vh + 8rem);
+        // min-height: calc(100vh + 8rem);
     }
 }
 .page.header {

@@ -5,7 +5,7 @@
     height: 100%;
     background: #000;
     color: #fff;
-    overflow: hidden;
+    // overflow: hidden;
     @media (max-width: $mobile_l+1) {
         max-height: 100vh;
         overflow: hidden;
@@ -19,9 +19,13 @@
     flex-direction: column;
     max-width: 957px;
     width: 60%;
-    height: 100%;
     display: flex;
     justify-content: space-between;
+}
+#headerpage .header__center-block {
+    @media (min-width: $mobile_l) {
+        height: 100%;
+    }
 }
 
 @media (min-width: $desctops_l+1) {
