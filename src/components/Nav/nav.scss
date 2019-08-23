@@ -42,6 +42,9 @@
       line-height: 1;
       padding-bottom: 8vh;
       text-align: right;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
 
       &.active{
         background: none;
@@ -61,6 +64,7 @@
         color: $black;
         z-index: 2;
         position: relative;
+        line-height: .9;
       }
       &.li-slide-left {
           @include transform(translateX(79vw));

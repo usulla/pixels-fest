@@ -121,22 +121,9 @@ class Apply extends React.Component {
                                 />
                             </div>
                             <div className="form-row">
-                                <Input
-                                    title={t("dataApply.address")}
-                                    name={"address"}
-                                />
-                            </div>
-                            <div className="form-row">
                                 <Checkbox
                                     title={t("dataApply.agreement1")}
                                     name="agreement1"
-                                    isRequired={"required"}
-                                />
-                            </div>
-                            <div className="form-row">
-                                <Checkbox
-                                    title={t("dataApply.agreement2")}
-                                    name="agreement2"
                                     isRequired={"required"}
                                 />
                             </div>

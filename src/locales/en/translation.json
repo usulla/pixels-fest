@@ -105,45 +105,39 @@
         "license": "International Festival and Contest of digital video art «Pixels Fest» © 2019-2020 | All rights reserved"
     },
     "dataApply": {
-        "title": "Подать заявку",
-        "form-title": "Форма подачи заявки",
-        "name": "имя и фамилия автора / название творческой команды",
+        "title": "Submit your work",
+        "form-title": "Submit your work",
+        "name": "name of the author or of the team ",
         "email": "email",
-        "country": "страна",
-        "website": "ссылка на сайт/аккаунт в соцсетях",
-        "shortbiography": "краткая творческая биография",
-        "category": "категория конкурса",
+        "country": "country",
+        "website": "portfolio (link)",
+        "shortbiography": "brief creative biography",
+        "category": "categories of the Contest",
         "category_options": [
             {
                 "value": "cat1",
-                "title": "категория1"
+                "title": "generative video art"
             },
             {
                 "value": "cat2",
-                "title": "категория2"
+                "title": "2D and 3D animation"
             },
             {
                 "value": "cat3",
-                "title": "категория3"
-            },
-            {
-                "value": "cat4",
-                "title": "категория4"
+                "title": "Other animation/video-art"
             }
         ],
-        "worktitle": "название работы",
-        "worktitle_en": "название работы на английском",
-        "work_short_desc": "краткое описание работы",
-        "work_short_desc_pl": "до 800 знаков с пробелами",
-        "address": "адрес местонахождения",
-        "agreement1": "В случае, если моя работа войдет в шорт-лист, я даю свое согласие на показ произведения в рамках программы Фестиваля",
-        "agreement2": "Я даю свое согласие на обработку персональных данных",
-        "button-text": "загрузить работу",
-        "success_text1": "Спасибо! Ваша заявка принята.",
-        "success_text2": "Номер заявки",
-        "success_text3": "По результатам конкурса всем участникам будет отправлен ответ не позднее 20 декабря 2019 г.",
-        "success_text4": "После проверки видеофайла, мы отправим письмо на ваш почтовый ящик с указанием номера заявки и подтверждением, что ваша работа принята.",
-        "success_text5": "Если вы не получили письмо, просьба написать об этом на"
+        "worktitle": "name of the artwork",
+        "worktitle_en": "name of the artwork(in English)",
+        "work_short_desc": "brief description of the artwork ",
+        "work_short_desc_pl": "up to  800 bites with intervals",
+        "agreement1": "In case my work is shortlisted, I give my consent to its demonstration within the framework of the Festival program( check-box)",
+        "button-text": "upload",
+        "success_text1": "Thank you! Your application is accepted.",
+        "success_text2": "Application  number",
+        "success_text3": "The participants will get a feedback based on the results of the contest not later than December 20, 2019",
+        "success_text4": "After checking the video file we will send you an e-mail with your application number and confirmation of acceptance.",
+        "success_text5": "If you do not receive the e-mail, please, contact us on"
     },
     "dataAbout": {
         "title": "About",
