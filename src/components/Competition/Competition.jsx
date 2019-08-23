@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import style from "./competition.scss";
-import about1 from "../../images/about1.jpg";
+import fasade_mask from "../../images/fasade_mask.png";
+import model3d from "../../images/model3d.png";
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 
@@ -118,9 +119,12 @@ const Competition = ({ categories, conditions, trlist, criteria, winners }) => {
                         <ul className="conditions-list">
                             {conditions.map((item, index) => (
                                 <li key={index}>
-                                    {i18n.t(
-                                        `dataCompetition.conditions.${index}`
-                                    )}
+                                    <span className="list-style purple" />
+                                    <span className="li-text">
+                                        {i18n.t(
+                                            `dataCompetition.conditions.${index}`
+                                        )}
+                                    </span>
                                 </li>
                             ))}
                         </ul>
@@ -130,11 +134,26 @@ const Competition = ({ categories, conditions, trlist, criteria, winners }) => {
                         <div className="about_text--black">
                             {i18n.t("dataCompetition.description9")}
                         </div>
-                        <a href="#">{i18n.t("dataCompetition.download")}</a>
+                        <a className="download_btn" href="#">
+                            {i18n.t("dataCompetition.download")}
+                        </a>
+                        <img
+                            className="image_model"
+                            src={fasade_mask}
+                            alt="Pixels Fest"
+                        />
+                        <img
+                            className="image_model"
+                            src={model3d}
+                            alt="Pixels Fest"
+                        />
                         <ul className="tr-list">
                             {trlist.map((item, index) => (
                                 <li key={index}>
-                                    {i18n.t(`dataCompetition.tr.${index}`)}
+                                    <span className="list-style purple" />
+                                    <span className="li-text">
+                                        {i18n.t(`dataCompetition.tr.${index}`)}
+                                    </span>
                                 </li>
                             ))}
                         </ul>
@@ -142,17 +161,29 @@ const Competition = ({ categories, conditions, trlist, criteria, winners }) => {
                             {i18n.t("dataCompetition.title8")}
                         </a>
                     </div>
+                    <div className="gradient-line-block gradient-line-block--right gradient-line-block--4">
+                        <div className="gradient-line gradient-line--1 gradient-line--big gradient-line--wide" />
+                        <div className="gradient-line gradient-line--2 gradient-line--medium gradient-line--wide" />
+                        <div className="gradient-line gradient-line--3 gradient-line--small gradient-line--wide" />
+                    </div>
                     <div className="competition-item criteria-block">
                         <h3>{i18n.t("dataCompetition.title9")}</h3>
                         <ul className="conditions-list">
                             {criteria.map((item, index) => (
                                 <li key={index}>
-                                    {i18n.t(
-                                        `dataCompetition.criteria.${index}`
-                                    )}
+                                    <span className="list-style darkblue" />
+                                    <span className="li-text">
+                                        {i18n.t(
+                                            `dataCompetition.criteria.${index}`
+                                        )}
+                                    </span>
                                 </li>
                             ))}
                         </ul>
+                    </div>
+                    <div className="gradient-line-block gradient-line-block--right gradient-line-block--5">
+                        <div className="gradient-line gradient-line--1 gradient-line--big gradient-line--wide" />
+                        <div className="gradient-line gradient-line--2 gradient-line--big gradient-line--wide" />
                     </div>
                     <div className="competition-item winners-block">
                         <h3>{i18n.t("dataCompetition.title10")}</h3>
@@ -163,12 +194,19 @@ const Competition = ({ categories, conditions, trlist, criteria, winners }) => {
                             <ul className="conditions-list">
                                 {winners.data1.map((item, index) => (
                                     <li key={index}>
-                                        {i18n.t(
-                                            `dataCompetition.winners.data1.${index}`
-                                        )}
+                                        <span className="list-style blue" />
+                                        <span className="li-text">
+                                            {i18n.t(
+                                                `dataCompetition.winners.data1.${index}`
+                                            )}
+                                        </span>
                                     </li>
                                 ))}
                             </ul>
+                        </div>
+                        <div className="gradient-line-block gradient-line-block--left gradient-line-block--6">
+                            <div className="gradient-line gradient-line--1 gradient-line--medium gradient-line--narrow" />
+                            <div className="gradient-line gradient-line--2 gradient-line--medium gradient-line--narrow" />
                         </div>
                         <div className="winners-block--item">
                             <div className="about_text--white">

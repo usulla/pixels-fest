@@ -5,12 +5,7 @@
     position: absolute;
     @include linear-gradient(
         to bottom,
-        #fba900,
-        #f68580 35%,
-        #c7acd4 68%,
-        #f68580,
-        #fba900
-    );
+    #FBA900 0%, #FBA900 10%, #FC8178 18%, #C6AED7 54%, #FC8178 90%, #FBA900 100%, #FC8178 100%, #FC846E 100%, #FBA900 100%, #FBA900 100%);
     .logo-animation{
         width:100%;
     }

@@ -20,8 +20,9 @@
 
 .program-page__title {
     max-width: 1465px;
-    width: 75%;
-
+    width: 100%;
+    font-size: 3rem;
+    color:$white;
     @media (max-width: $mobile_l+1) {
         max-width: 319px;
         width: 80vw;
