@@ -16,11 +16,12 @@
     padding-left: 4%;
 }
 .header__center-block {
-    // display: flex;
-    justify-content: center;
     flex-direction: column;
     max-width: 957px;
     width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 @media (min-width: $desctops_l+1) {

@@ -37,6 +37,9 @@ h2 {
     @media (max-width: $mobile_l+1) {
         // font-size: 32px;
     }
+    @media (min-width: $desctops_l) {
+        font-size: 1.75rem;
+    }
 }
 .header__description {
     transition: background 0.2s linear;
