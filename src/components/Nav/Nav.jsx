@@ -13,49 +13,33 @@ const Nav = ({ list, isMobile }) => {
                 .querySelector("a")
                 .getAttribute("href")
                 .slice(1);
+            function slideLi(className1, className2) {
+                if (activeLi.classList.contains(className1)) {
+                    activeLi.classList.remove(className1);
+                }
+                if (document.querySelector(".menu-ul__li.active")) {
+                    document
+                        .querySelector(".menu-ul__li.active")
+                        .classList.toggle("active");
+                }
+                activeLi.classList.add("active");
+                activeLi.classList.add(className2);
 
+                document.querySelectorAll(".menu-ul__li").forEach(li => {
+                    if (
+                        className1 == "li-slide-right"
+                            ? li.dataset.index < indexActiveLi
+                            : li.dataset.index > indexActiveLi
+                    ) {
+                        li.classList.add(className2);
+                        if (li.classList.contains(className1)) {
+                            li.classList.remove(className1);
+                        }
+                    }
+                });
+            }
             const indexActiveLi = activeLi.dataset.index;
             if (!isMobile) {
-                if (!activeLi.classList.contains("li-slide-left")) {
-                    activeLi.classList.add("li-slide-left");
-                    if (activeLi.classList.contains("li-slide-right")) {
-                        activeLi.classList.remove("li-slide-right");
-                    }
-                    if (document.querySelector(".menu-ul__li.active")) {
-                        document
-                            .querySelector(".menu-ul__li.active")
-                            .classList.toggle("active");
-                    }
-                    activeLi.classList.add("active");
-                    document.querySelectorAll(".menu-ul__li").forEach(li => {
-                        if (li.dataset.index < indexActiveLi) {
-                            li.classList.add("li-slide-left");
-                            if (li.classList.contains("li-slide-right")) {
-                                li.classList.remove("li-slide-right");
-                            }
-                        }
-                    });
-                } else {
-                    activeLi.classList.add("li-slide-right");
-                    if (activeLi.classList.contains("li-slide-left")) {
-                        activeLi.classList.remove("li-slide-left");
-                    }
-                    if (document.querySelector(".menu-ul__li.active")) {
-                        document
-                            .querySelector(".menu-ul__li.active")
-                            .classList.toggle("active");
-                    }
-                    activeLi.classList.add("active");
-                    document.querySelectorAll(".menu-ul__li").forEach(li => {
-                        if (li.dataset.index > indexActiveLi) {
-                            li.classList.add("li-slide-right");
-                            if (li.classList.contains("li-slide-left")) {
-                                li.classList.remove("li-slide-left");
-                            }
-                        }
-                    });
-                }
-
                 // activeLi.addEventListener("transitionend", function(e) {
                 //     if (e.propertyName == "transform") {
                 //         activeLi.classList.toggle("active");
@@ -101,6 +85,17 @@ const Nav = ({ list, isMobile }) => {
                         }
 
                         setTimeout(function() {
+                            if (!isMobile) {
+                                if (
+                                    !activeLi.classList.contains(
+                                        "li-slide-left"
+                                    )
+                                ) {
+                                    slideLi("li-slide-right", "li-slide-left");
+                                } else {
+                                    slideLi("li-slide-left", "li-slide-right");
+                                }
+                            }
                             page.classList.add("animate");
                             document.querySelector(
                                 ".home"
@@ -114,14 +109,22 @@ const Nav = ({ list, isMobile }) => {
                             ).style.transform = "none";
                         }, 0);
                         setTimeout(function() {
-                            document
-                                .querySelector(".jury-page")
-                                .classList.remove("fix");
-                            document
-                                .querySelector("#jurypage")
-                                .querySelector(".footer").style.display =
-                                "flex";
-                        }, 500);
+                            if (
+                                document
+                                    .querySelector(".jury-page")
+                                    .classList.contains("fix")
+                            ) {
+                                document
+                                    .querySelector(".jury-page")
+                                    .classList.remove("fix");
+                            }
+                            if (document.querySelector("#jurypage")) {
+                                document
+                                    .querySelector("#jurypage")
+                                    .querySelector(".footer").style.display =
+                                    "flex";
+                            }
+                        }, 1400);
                     }
                 });
                 setTimeout(function() {
@@ -140,7 +143,7 @@ const Nav = ({ list, isMobile }) => {
                     var footerDetectCoord = footerDetect[1];
                     //footerDetectCoord !== 0 Fix for Jury page
                     if (footerDetectView && footerDetectCoord !== 0) {
-                        console.log(footerDetectCoord, 'k');
+                        console.log(footerDetectCoord, "k");
                         document.querySelector(
                             ".left-sidebar-ul"
                         ).style.height = `calc(100% - ${window.innerHeight -

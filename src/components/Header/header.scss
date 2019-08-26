@@ -14,6 +14,15 @@
 .header__content {
     min-height: calc(100vh);
     padding-left: 4%;
+    animation: fadeIn 1.4s ease forwards;
+}
+@include keyframes(fadeIn) {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 .header__center-block {
     flex-direction: column;
@@ -22,50 +31,70 @@
     display: flex;
     justify-content: space-between;
 }
+.header .header__row--video {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 2;
+    // height: 29vh;
+    margin-top: -8vh;
+    margin-bottom: -7vh;
+}
+.video-model{
+    position: relative;
+    z-index: 2;
+    align-self: flex-end;
+    width: 90%;
+    margin-right: -20vw;
+    height: auto;
+    @media (max-width: $mobile_l+1) {
+        display: none;
+    }
+}
+.header .header__row--top {
+    position: relative;
+    z-index: 3;
+}
+.header .header__row--middle {
+    position: relative;
+    z-index: 3;
+}
+.header .header__row--bottom {
+    margin-top: 6vh;
+}
 #headerpage .header__center-block {
     @media (min-width: $mobile_l) {
         height: 100%;
     }
-}
-
-@media (min-width: $desctops_l+1) {
-}
-@media (max-width: $mobile_l+1) {
-    width: 100%;
-    display: block;
-    padding: 0 20px;
-    margin-left: 0;
-}
-.header__row--top {
-    position: relative;
-    z-index: 3;
-
     @media (max-width: $mobile_l+1) {
-        position: static;
-        margin-top: 100px;
+        width: 100%;
+        display: block;
+        padding: 0 20px;
+        margin-left: 0;
     }
-    &:hover .header__description {
-        @include linear-gradient(
-            to left,
-            #f7a543,
-            #c5e2ce 35%,
-            #005e74 68%,
-            #8c89ff
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        @include transition(background, 1s, linear);
+    .header__row--top {
+        @media (max-width: $mobile_l+1) {
+            position: static;
+            margin-top: 100px;
+        }
+        &:hover .header__description {
+            @include linear-gradient(
+                to left,
+                #f7a543,
+                #c5e2ce 35%,
+                #005e74 68%,
+                #8c89ff
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            @include transition(background, 1s, linear);
+        }
     }
-}
-.header__row--middle {
-    position: relative;
-    z-index: 3;
-    @media (max-width: $mobile_l+1) {
-        margin-top: 12vh;
+    .header__row--middle {
+        @media (max-width: $mobile_l+1) {
+            margin-top: 12vh;
+        }
     }
-}
-.header__row--bottom {
-    margin-top: 6vh;
 }
 .header .logo2x2 {
     position: absolute;

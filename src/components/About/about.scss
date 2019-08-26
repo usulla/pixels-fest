@@ -1,7 +1,8 @@
 @import "../../sass/variables.scss";
 @import "../../sass/mixins.scss";
 .about-page {
-    // position: relative;
+    z-index: 11!important;
+    transform: translateX(82vw);
     position: absolute;
     @include linear-gradient(
         to bottom,
@@ -9,11 +10,14 @@
     .logo-animation{
         width:100%;
     }
+    &.active2.animate, &.active.animate{
+        transform: translateX(3vw);
+    }
 }
 .info-page {
     height: calc(100% + 207px);
     margin-left: 3vw;
-    padding: 8vh 6%;
+    padding: 8vh 5vw;
     display: flex;
     justify-content: center;
     @media (max-width: $mobile_l+1) {
@@ -47,7 +51,7 @@
             margin: 60px 0;
             @media (max-width: $mobile_l+1) {
                 margin: 25px 0;
-                font-size: 1.5rem;
+                font-size: 1.5rem
             }
         }
         .about_text--white {
@@ -56,7 +60,7 @@
             margin: 60px 0;
             @media (max-width: $mobile_l+1) {
                 margin: 25px 0;
-                font-size: 1.5rem;
+                font-size: 1.5rem!important;
             }
 
             &.text-border {
@@ -99,10 +103,10 @@
     .gradient-line-block {
         position: relative;
         &--left {
-            left: calc(-6% - 6vw);
+            left: - 6vw;
         }
         &--right {
-            right: calc(-6% - 6vw);
+            right: - 6vw;
             text-align: right;
         }
         .gradient-line {

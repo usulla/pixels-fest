@@ -2,9 +2,12 @@
 @import "../../sass/mixins.scss";
 
 .apply-page {
+    z-index: 15!important;
+    width: 82vw;
     // position: relative;
     // padding-bottom: 40vh;
-    margin-left: 18vw;
+    // margin-left: 15vw;
+    transform: translateX(97vw);
     @include linear-gradient(to bottom, #f7c1da, #ace8da, #fdc39c);
 
     @media (max-width: $mobile_l+1) {
@@ -16,5 +19,8 @@
             display: flex;
             justify-content: center;
         }
+    }
+    &.active2.animate, &.active.animate{
+        transform: translateX(18vw);
     }
 }

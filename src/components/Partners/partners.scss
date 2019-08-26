@@ -2,14 +2,18 @@
 @import "../../sass/mixins.scss";
 
 .partners-page {
-    padding-left: 15vw;
+    z-index: 14!important;;
+    transform: translateX(94vw);
     background: $black;
     min-height: calc(100vh - 207px);
     @media (max-width: $mobile_l+1) {
         min-height: calc(100vh - 85px);
         padding-left: 0vw;
     }
-
+    &.active2.animate,
+    &.active.animate {
+        transform: translateX(15vw);
+    }
     .logo_img {
         margin-top: 40px;
         margin-left: 5%;
@@ -42,7 +46,7 @@
     padding-top: 8vh;
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
+    width: 100%;
     align-items: flex-start;
     flex-direction: row;
     justify-content: center;

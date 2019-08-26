@@ -88,8 +88,8 @@ body {
     height: 100%;
 }
 #headerpage.home {
-  overflow: auto;
-  overflow-x: hidden!important;
+    overflow: auto;
+    overflow-x: hidden !important;
 }
 .home {
     position: relative;
@@ -121,7 +121,7 @@ body {
         .menu-ul__li.active a {
             color: $white;
         }
-        .page__content {
+        .partners-page__content.page__content {
             display: flex;
             align-items: flex-start;
             justify-content: center;
@@ -160,15 +160,17 @@ body {
     display: block;
 }
 .page {
+    width: 82vw;
     min-height: 100vh !important;
     display: none;
-    width: 100vw;
+
     position: absolute;
     top: 0;
     transform: translateX(100vw);
     // transform: translateX(0vw);
     z-index: 9;
     @media (max-width: $mobile_l+1) {
+        width: 100vw;
         display: block;
         transform: none;
         position: relative;
@@ -185,16 +187,22 @@ body {
     @media (min-width: $mobile_l) {
         &.animate,
         &.animate2 {
-            @include transform(translateX(3vw));
             //@include transition(transform, 0.45s, cubic-bezier(0.2, 0.6, 0.2, 1));
-            @include transition(transform, 0.45s, ease);
+            @include transition(transform, 1.3s, ease);
+
+            .page__content {
+                opacity: 1;
+            }
         }
     }
 }
 .page__content {
+    opacity: 0;
+    @include transition(opacity, 1.5s, ease);
     padding-top: 8vh;
     padding-bottom: 8vh;
     width: 79vw;
+    margin-left: 3vw;
     @media (max-width: $mobile_l+1) {
         width: 100%;
         padding-top: 100px !important;

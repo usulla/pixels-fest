@@ -71,29 +71,29 @@ class App extends Component {
                         order={2}
                         isMobile={this.state.isMobile}
                     />
+                    <Program
+                        {...dataProgram}
+                        order={3}
+                        isMobile={this.state.isMobile}
+                    />
                     <Competition
                         categories={dataCompetition.categories}
                         trlist={dataCompetition.tr}
                         conditions={dataCompetition.conditions}
                         criteria={dataCompetition.criteria}
                         winners={dataCompetition.winners}
-                        order={3}
-                        isMobile={this.state.isMobile}
-                    />
-                    <Program
-                        {...dataProgram}
-                        order={3}
+                        order={4}
                         isMobile={this.state.isMobile}
                     />
                     <Jury
                         {...dataJury}
-                        order={4}
+                        order={5}
                         isMobile={this.state.isMobile}
                     />
-                    <Partners order={4} />
+                    <Partners order={6} />
                     <Apply
                         {...dataApply}
-                        order={5}
+                        order={7}
                         isMobile={this.state.isMobile}
                     />
                     <Footer isMobile={this.state.isMobile} />

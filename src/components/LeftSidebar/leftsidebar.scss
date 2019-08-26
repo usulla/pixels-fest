@@ -29,7 +29,7 @@
         justify-content: space-between;
         align-items: center;
         margin: 0;
-        padding: 8vh 0 20px;
+        padding: 8vh 0 8vh;
     }
     li {
         padding: 0;
@@ -37,14 +37,14 @@
     li.change-language,
     li.timer {
         transform: rotate(180deg);
-        .header__timer__title, .text {
+        .header__timer__title,
+        .text {
             display: none;
         }
     }
     li.timer,
     li.logo {
-        margin-left: 0vw;
-        @include transition(margin-left, 0.45s, ease);
+        @include transition(margin-left, 0.75s, ease);
     }
 }
 
