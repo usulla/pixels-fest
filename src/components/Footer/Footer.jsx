@@ -43,13 +43,22 @@ const Footer = ({
                                 <Logo2x2 />
                             </div>
                             <div className="col2__item col2__2">
-                                <a className="apply" href="#">
-                                    {i18n.t("dataFooter.apply")}
-                                </a>
-
-                                <a className="rules" href="#">
-                                    {i18n.t("dataFooter.contest_rules")}
-                                </a>
+                                <div
+                                    className="toapply menu-ul__li"
+                                    data-index="7"
+                                >
+                                    <a className="apply" href="#apply">
+                                        {i18n.t("dataFooter.apply")}
+                                    </a>
+                                </div>
+                                <div
+                                    className="menu-ul__li tocompetition"
+                                    data-index="4"
+                                >
+                                    <a className="rules" href="#competition">
+                                        {i18n.t("dataFooter.contest_rules")}
+                                    </a>
+                                </div>
                             </div>
                             <div className="col2__item col2__3">
                                 {i18n.t("dataFooter.address_title")}
@@ -86,7 +95,9 @@ const Footer = ({
                 </div>
                 <div className="col2">
                     <div className="row--bottom">
-                        <div className="license">{i18n.t("dataFooter.license")}</div>
+                        <div className="license">
+                            {i18n.t("dataFooter.license")}
+                        </div>
                     </div>
                 </div>
             </div>

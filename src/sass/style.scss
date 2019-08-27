@@ -88,8 +88,8 @@ body {
     height: 100%;
 }
 #headerpage.home {
-    overflow: auto;
-    overflow-x: hidden !important;
+    // overflow: auto;
+    // overflow-x: hidden !important;
 }
 .move {
     opacity: 0;
@@ -103,7 +103,7 @@ body {
     &#headerpage {
         @media (min-width: $mobile_l) {
             .footer {
-                display: none;
+                display: none!important;
             }
         }
         .left-sidebar .timer,

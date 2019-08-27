@@ -5,6 +5,32 @@ import { useTranslation, initReactI18next } from "react-i18next";
 
 const Nav = ({ list, isMobile }) => {
     const { t, i18n } = useTranslation();
+    document.addEventListener("DOMContentLoaded", () => {
+        const leftPixelsLogo = document.querySelector(".left-sidebar__li.logo");
+        const footerApplyBtn = document.querySelector(".toapply.menu-ul__li");
+        const programApplyBtn = document.querySelector(
+            ".toprogram.menu-ul__li"
+        );
+        const toApplyBtn2 = document.querySelector(
+            ".toapply2.menu-ul__li"
+        );
+        const toCompetition = document.querySelector(
+            ".tocompetition.menu-ul__li"
+        );
+        
+        elemClick(leftPixelsLogo);
+        elemClick(footerApplyBtn);
+        elemClick(programApplyBtn);
+        elemClick(toApplyBtn2);
+        elemClick(toCompetition);
+        function elemClick(elem) {
+            if (elem) {
+                elem.addEventListener("click", e => {
+                    liClick(e);
+                });
+            }
+        }
+    });
     function liClick(e) {
         e.preventDefault();
         const activeLi = e.currentTarget;
@@ -54,8 +80,8 @@ const Nav = ({ list, isMobile }) => {
                 document.querySelectorAll(".menu-ul__li").forEach(li => {
                     if (
                         className1 == "li-slide-right"
-                            ? li.dataset.index < indexActiveLi
-                            : li.dataset.index > indexActiveLi
+                            ? li.dataset.index <= indexActiveLi
+                            : li.dataset.index >= indexActiveLi
                     ) {
                         li.classList.add(className2);
                         if (li.classList.contains(className1)) {
@@ -66,17 +92,11 @@ const Nav = ({ list, isMobile }) => {
             }
             const indexActiveLi = activeLi.dataset.index;
             if (!isMobile) {
-                // activeLi.addEventListener("transitionend", function(e) {
-                //     if (e.propertyName == "transform") {
-                //         activeLi.classList.toggle("active");
-                //     }
-                // });
                 var pageHeight;
                 var activePage;
                 document.querySelectorAll(".page").forEach(page => {
                     if (page.id === idActiveEl) {
                         activePage = page;
-                        console.log(activePage, "lll");
                         if (!document.querySelector(".page.active")) {
                             page.classList.add("active");
                             pageHeight = page.getBoundingClientRect().height;
@@ -108,9 +128,15 @@ const Nav = ({ list, isMobile }) => {
                                 });
                             }
                             pageHeight = page.getBoundingClientRect().height;
-                            document.querySelector(
-                                ".pages"
-                            ).style.height = `${pageHeight + 207}px`;
+                            if (activePage.id !== "header") {
+                                document.querySelector(
+                                    ".pages"
+                                ).style.height = `${pageHeight + 207}px`;
+                            } else {
+                                document.querySelector(
+                                    ".pages"
+                                ).style.height = `${pageHeight}px`;
+                            }
                         }
                     }
                     setTimeout(function() {
@@ -166,9 +192,13 @@ const Nav = ({ list, isMobile }) => {
                                         if (e.propertyName == "transform") {
                                             page.classList.add("move");
                                             if (
-                                                page.classList.contains("clear-transform")
+                                                page.classList.contains(
+                                                    "clear-transform"
+                                                )
                                             ) {
-                                                page.classList.remove("clear-transform");
+                                                page.classList.remove(
+                                                    "clear-transform"
+                                                );
                                             }
                                         }
                                     }
@@ -188,7 +218,9 @@ const Nav = ({ list, isMobile }) => {
                         ).id = `${idActiveEl}page`;
                     }, 0);
                     if (idActiveEl === "jury") {
-                        document.querySelector(".jury-page").classList.add("fix");
+                        document
+                            .querySelector(".jury-page")
+                            .classList.add("fix");
                         setTimeout(function() {
                             document
                                 .querySelector(".jury-page")
@@ -229,7 +261,6 @@ const Nav = ({ list, isMobile }) => {
                     var footerDetectCoord = footerDetect[1];
                     //footerDetectCoord !== 0 Fix for Jury page
                     if (footerDetectView && footerDetectCoord !== 0) {
-                        console.log(footerDetectCoord, "k");
                         document.querySelector(
                             ".left-sidebar-ul"
                         ).style.height = `calc(100% - ${window.innerHeight -
@@ -246,9 +277,15 @@ const Nav = ({ list, isMobile }) => {
             }
             function pageDetHeight(page) {
                 pageHeight = page.getBoundingClientRect().height;
-                console.log(pageHeight, "pageHeight2");
-                document.querySelector(".pages").style.height = `${pageHeight +
-                    207}px`;
+                if (page.id !== "header") {
+                    document.querySelector(
+                        ".pages"
+                    ).style.height = `${pageHeight + 207}px`;
+                } else {
+                    document.querySelector(
+                        ".pages"
+                    ).style.height = `${pageHeight}px`;
+                }
             }
         }
     }

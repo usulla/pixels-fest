@@ -20,7 +20,14 @@ class GradientUpBlock extends Component {
         }, 500);
         setTimeout(function() {
             document.querySelector(".fulltext").classList.add("animate");
+            headerCalcHeight();
         }, 600);
+        function headerCalcHeight() {
+            var headerPageHeight = document
+                .querySelector("#header")
+                .getBoundingClientRect().height;
+            document.querySelector(".pages").style.height = `${headerPageHeight}px`;
+        }
     };
     render() {
         const { t } = this.props;

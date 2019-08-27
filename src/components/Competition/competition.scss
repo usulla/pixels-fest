@@ -28,6 +28,9 @@
         @media (max-width: $mobile_l+1) {
             margin: 40px 0;
         }
+        a {
+            color:$white;
+        }
     }
     .info-page h3 {
         margin: 60px 0;

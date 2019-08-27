@@ -60,8 +60,8 @@ const About = ({ title2, order, isMobile }) => {
                     <div className="about_text--black">
                         {i18n.t("dataAbout.description6")}
                     </div>
-                    <h3 className="title--white">
-                        {i18n.t("dataAbout.title3")}
+                    <h3 className="title--white menu-ul__li toprogram" data-index="3">
+                    <a href="#program">{i18n.t("dataAbout.title3")}</a>
                     </h3>
                     <img className="about-image" src={about2} alt="PixelFest" />
                     <div className="about_text--black">

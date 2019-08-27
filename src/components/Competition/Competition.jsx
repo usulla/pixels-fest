@@ -30,8 +30,8 @@ const Competition = ({ categories, conditions, trlist, criteria, winners, order 
                         <div className="gradient-line gradient-line--2 gradient-line--medium gradient-line--narrow" />
                         <div className="gradient-line gradient-line--3 gradient-line--medium gradient-line--narrow" />
                     </div>
-                    <h3 className="title--white">
-                        {i18n.t("dataCompetition.title2")}
+                    <h3 className="title--white toapply menu-ul__li" data-index="7">
+                        <a href="#apply">{i18n.t("dataCompetition.title2")}</a>
                     </h3>
                     <div className="competition-item theme-block">
                         <h3>
@@ -223,8 +223,8 @@ const Competition = ({ categories, conditions, trlist, criteria, winners, order 
                             </ul>
                         </div>
                     </div>
-                    <h3 className="title--white">
-                        {i18n.t("dataCompetition.title2")}
+                    <h3 className="title--white toapply2 menu-ul__li" data-index="7">
+                        <a href="#apply">{i18n.t("dataCompetition.title2")}</a>
                     </h3>
                 </div>
             </div>

@@ -38,7 +38,7 @@
     height: 20px;
     padding:12px 15px;
     width: 9vw;
-    @include transition(all, 0.4s, linear);
+    @include transition(all, 1s, ease);
     @include linear-gradient(to left, #f7a543, #c5e2ce 35%, #005e74 68%, #8c89ff);
    //@include transition(height, 0.4s, linear);
     display: block;
@@ -62,11 +62,11 @@
     font-size:.8rem;
     opacity:0;
     display:none;
-    @include transition(all, 0.4s, linear);
+    @include transition(all, 1s, ease);
 
     &.show{
       display:block;
-      @include transition(all, 0.4s, linear);
+      @include transition(all, 1s, ease);
     }
     &.show.animate{
       opacity: 1;

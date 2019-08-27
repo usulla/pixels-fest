@@ -87,7 +87,7 @@
                 top: 0;
                 cursor: pointer;
                 @include linear-gradient(to top, #ffa38e, #522b30 49%, #00c3ff);
-                @include transition(height, 0.35s, linear);
+                @include transition(height, 0.8s, ease);
             }
             &:hover {
                 cursor: pointer;
