@@ -11,6 +11,8 @@
     @media (max-width: $mobile_l+1) {
         min-height: calc(100vh - 85px);
         padding-left: 0vw;
+        display: flex;
+        align-items: center;
     }
     &.active2.animate,
     &.active.animate {
@@ -63,6 +65,7 @@
     @media (max-width: $mobile_l+1) {
         width: 100%;
         padding-top: 0vh;
+        display: block;
     }
     .partners-page__col {
         width: 50%;
@@ -75,6 +78,9 @@
             flex-direction: column;
             align-items: center;
             margin-top: 50px;
+            &:first-child{
+                padding-top: 0;
+            }
         }
 
         &:first-child {

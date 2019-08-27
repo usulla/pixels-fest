@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "../Header/Header.jsx";
+import * as utils from "./app.js";
 import Nav from "../Nav/Nav.jsx";
 import ToggleMenu from "../ToggleMenu/ToggleMenu.jsx";
 import MobileMenu from "../MobileMenu/MobileMenu.jsx";
@@ -12,6 +13,7 @@ import Apply from "../Apply/Apply.jsx";
 import About from "../About/About.jsx";
 import Competition from "../Competition/Competition.jsx";
 import Footer from "../Footer/Footer.jsx";
+import { withTranslation } from "react-i18next";
 class App extends Component {
     constructor() {
         super();
@@ -35,6 +37,12 @@ class App extends Component {
     }
 
     render() {
+        const { t } = this.props;
+        if (this.state.isMobile) {
+            // toggle show mobile title
+            utils.showMobileTitle();
+        }
+
         const {
             dataHeader,
             dataProgram,
@@ -102,4 +110,4 @@ class App extends Component {
         );
     }
 }
-export default App;
+export default withTranslation()(App);

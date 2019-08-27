@@ -18,7 +18,7 @@ class Apply extends React.Component {
         event.preventDefault();
         const formElement = document.querySelector("form");
         const formData = new FormData(formElement);
-        const url = window.location.href;
+        const url = "/works/add";
         //send to server form data
         fetch(url, {
             method: "post",
@@ -35,7 +35,7 @@ class Apply extends React.Component {
                 }
                 response.json().then(function(data) {
                     console.log(data);
-                });   
+                });
             })
             .catch(
                 function(err) {
@@ -48,7 +48,9 @@ class Apply extends React.Component {
         const order = this.props.order;
         return (
             <div className="apply-page page" id="apply" data-order={order}>
-                <div className="mobile-title-page">{t("dataApply.title")}</div>
+                <div className="mobile-title-page">
+                    {t("dataApply.title")}
+                </div>
                 <div className="apply-page__content page__content">
                     <div className="form-content">
                         <form onSubmit={this.handleSubmit}>
@@ -58,7 +60,7 @@ class Apply extends React.Component {
                             <div className="form-row">
                                 <Input
                                     title={t("dataApply.name")}
-                                    name={"title"}
+                                    name={"author"}
                                     isRequired={"required"}
                                 />
                             </div>
@@ -96,7 +98,7 @@ class Apply extends React.Component {
                                 <MySelect
                                     options={this.props.category_options}
                                     title={t("dataApply.category")}
-                                    name={"category"}
+                                    name={"category_id"}
                                 />
                             </div>
                             <div className="form-row">

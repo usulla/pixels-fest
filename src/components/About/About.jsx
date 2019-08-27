@@ -7,7 +7,7 @@ import about2 from "../../images/about2.jpg";
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 
-const About = ({ title2, order }) => {
+const About = ({ title2, order, isMobile }) => {
     const { t, i18n } = useTranslation();
     return (
         <div className="about-page page" id="about-festival" data-order={order}>
@@ -15,7 +15,7 @@ const About = ({ title2, order }) => {
             <div className="about-page__content info-page page__content">
                 <div className="center-block__col">
                     <div className="header__center-block">
-                        <HeaderTextBlock video={true}/>
+                        <HeaderTextBlock video={true} isMobile={isMobile}/>
                     </div>
                     <div className="gradient-line-block gradient-line-block--left gradient-line-block--1">
                         <div className="gradient-line gradient-line--1 gradient-line--medium gradient-line--narrow" />

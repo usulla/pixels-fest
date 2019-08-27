@@ -24,22 +24,22 @@ class MySelect extends React.Component {
         }));
         const customStyles = {
             borderRadius: 0,
-            border: '1px solid #000',
+            border: "1px solid #000",
             padding: 10,
             height: 41,
             option: (provided, state) => ({
-              ...provided,
-              border: '1px solid #000',
-              color: !state.isSelected ? '#000' : '#fff',
-              background: !state.isSelected ? '#fff' : '#000',
-              padding: 10,
-              height: 41
+                ...provided,
+                border: "1px solid #000",
+                color: !state.isSelected ? "#000" : "#fff",
+                background: !state.isSelected ? "#fff" : "#000",
+                padding: 10,
+                height: 41
             })
-          }
+        };
         return (
             <label for={this.props.name}>
                 <span>{title}</span>
-                <Select options={options}  styles={customStyles}/>
+                <Select options={options} styles={customStyles} />
             </label>
         );
     }
