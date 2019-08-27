@@ -5,10 +5,10 @@ import logoUmaTech from "../../images/logoUmaTech_rus.png";
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 
-const Partners = () => {
+const Partners = ({order}) => {
     const { t, i18n } = useTranslation();
     return (
-        <div className="page partners-page" id="partners">
+        <div className="page partners-page" id="partners" data-order={order}>
             <div className="partners-page__content page__content">
                 <div className="mobile-title-page">
                     {t("dataPartners.title")}

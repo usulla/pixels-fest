@@ -69,13 +69,14 @@
             &.li-slide-left {
                 @include transform(translateX(79vw));
                 //@include transition(transform, 0.45s, cubic-bezier(.2,.6,.2,1));
-                @include transition(transform, 1.3s, ease) a {
+                @include transition(transform, 1.2s, ease);
+                a {
                     color: $black;
                 }
             }
             &.li-slide-right {
                 @include transform(translateX(0vw));
-                @include transition(transform, 0.75s, ease);
+                @include transition(transform, 1.2s, ease);
             }
             span {
                 z-index: 1;

@@ -2,26 +2,40 @@
 @import "../../sass/mixins.scss";
 
 .jury-page {
-  z-index: 13!important;;
+    &.move {
+        @media (min-width: $mobile_l) {
+            transform: translateX(-79vw);
+            @include transition(transform, 1.3s, ease);
+        }
+    }
+    &.clear-transform {
+        transform: none;
+    }
+    // z-index: 13 !important;
     // position: relative;
     transform: translateX(79vw);
     min-height: calc(100vh - 207px);
     left: 12vw;
     @media (max-width: $mobile_l+1) {
         min-height: calc(100vh - 85px);
+        left: 0;
+        transform: none;
+        z-index: 2;
     }
-    .jury-page__content{
-      opacity: 1!important;
+    .jury-page__content {
+        opacity: 1 !important;
     }
     .jury-page__members {
-      opacity: 0;
-      @include transition(opacity, 1.5s, ease);
-  }
+        @media (min-width: $mobile_l) {
+            opacity: 0;
+        }
+        @include transition(opacity, 1.5s, ease);
+    }
     &.active2.animate,
     &.active.animate {
-      .jury-page__members {
-        opacity: 1;
-    }
+        .jury-page__members {
+            opacity: 1;
+        }
         // transform: translateX(12vw);
     }
 
@@ -37,7 +51,8 @@
         width: 79vw;
 
         @media (max-width: $mobile_l+1) {
-            margin-top: 60px;
+            margin-top: 0px;
+            padding-bottom: 60px;
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -53,14 +68,18 @@
         padding-top: 12vh;
         @media (max-width: $mobile_l+1) {
             width: 70%;
-            margin: 0 !important;
             left: 0 !important;
             right: 0 !important;
             top: 0 !important;
+            margin:0 auto !important;
             max-width: 450px;
+            display: block;
         }
 
         &.jury-page__col1 {
+            @media (max-width: $mobile_l+1) {
+                padding-top: 0; 
+            }
         }
         &.jury-page__col2 {
             top: 5vw;

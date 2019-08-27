@@ -6,10 +6,10 @@ import Timer from "./Timer/Timer.jsx";
 import GradientUpBlock from "./GradientUpBlock/GradientUpBlock.jsx";
 import model3d from "../../images/model3d.mp4";
 
-const Header = ({ navtitle, h1_text, logo2x2, timer, isMobile }) => {
+const Header = ({ navtitle, h1_text, logo2x2, timer, isMobile, order }) => {
     if (!isMobile) {
         return (
-            <header className="page header active">
+            <header className="page header header-page active" data-order={order}>
                 <div className="header__content page__content">
                     <div className="header__center-block">
                         <div className="header__row header__row--top">
@@ -38,8 +38,8 @@ const Header = ({ navtitle, h1_text, logo2x2, timer, isMobile }) => {
         );
     }
     return (
-        <header className="header">
-            <div className="header__content">
+        <header className="header page header-page active">
+            <div className="header__content page__content">
                 <div className="header__row header__row--top">
                     <HeaderTextBlock {...h1_text} />
                 </div>

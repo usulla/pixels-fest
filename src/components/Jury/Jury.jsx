@@ -8,13 +8,13 @@ import member5_photo from "../../images/member5.png";
 import background from "../../images/gradient-green.png";
 import { useTranslation, initReactI18next } from "react-i18next";
 
-const Jury = ({ members, isMobile }) => {
+const Jury = ({ members, isMobile, order }) => {
     const { t, i18n } = useTranslation();
     var gradientBlockStyle = {
         backgroundImage: `url(${background})`
     };
     return (
-        <div className="jury-page page fix" id="jury">
+        <div className="jury-page page fix" id="jury" data-order={order}>
             <div className="mobile-title-page">{i18n.t("dataJury.title")}</div>
             <div className="jury-page__content page__content">
                 <div className="jury-page__members">

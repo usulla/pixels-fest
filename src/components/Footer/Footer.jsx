@@ -62,7 +62,6 @@ const Footer = ({
                         </div>
                         <div className="row--bottom">
                             <div className="license">
-                                {" "}
                                 {i18n.t("dataFooter.license")}
                             </div>
                         </div>
@@ -87,7 +86,7 @@ const Footer = ({
                 </div>
                 <div className="col2">
                     <div className="row--bottom">
-                        <div className="license">{license}</div>
+                        <div className="license">{i18n.t("dataFooter.license")}</div>
                     </div>
                 </div>
             </div>

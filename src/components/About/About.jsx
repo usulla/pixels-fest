@@ -7,10 +7,10 @@ import about2 from "../../images/about2.jpg";
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 
-const About = ({ title2 }) => {
+const About = ({ title2, order }) => {
     const { t, i18n } = useTranslation();
     return (
-        <div className="about-page page" id="about-festival">
+        <div className="about-page page" id="about-festival" data-order={order}>
             <div className="mobile-title-page">{t("dataAbout.title")}</div>
             <div className="about-page__content info-page page__content">
                 <div className="center-block__col">

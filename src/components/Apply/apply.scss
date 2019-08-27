@@ -2,17 +2,20 @@
 @import "../../sass/mixins.scss";
 
 .apply-page {
-    z-index: 15!important;
-    width: 82vw;
+    // z-index: 15!important;
+
     // position: relative;
     // padding-bottom: 40vh;
     // margin-left: 15vw;
-    transform: translateX(97vw);
+    @media (min-width: $mobile_l) {
+        transform: translateX(97vw);
+        width: 82vw;
+    }
     @include linear-gradient(to bottom, #f7c1da, #ace8da, #fdc39c);
 
     @media (max-width: $mobile_l+1) {
         margin: 0;
-        padding-bottom: 70px;
+        padding-bottom: 150px;
     }
     .apply-page__content {
         .form-content {
@@ -22,5 +25,8 @@
     }
     &.active2.animate, &.active.animate{
         transform: translateX(18vw);
+    }
+    &.move{
+        transform: translateX(-61vw);
     }
 }

@@ -8,6 +8,32 @@ const Nav = ({ list, isMobile }) => {
     function liClick(e) {
         e.preventDefault();
         const activeLi = e.currentTarget;
+        if (!activeLi.classList.contains("li-slide-left")) {
+            if (document.querySelector(".menu-ul__li.move-left")) {
+                document
+                    .querySelector(".menu-ul__li.move-left")
+                    .classList.remove("move-left");
+            }
+            if (document.querySelector(".menu-ul__li.move-right")) {
+                document
+                    .querySelector(".menu-ul__li.move-right")
+                    .classList.remove("move-right");
+            }
+
+            activeLi.classList.add("move-left");
+        } else {
+            if (document.querySelector(".menu-ul__li.move-left")) {
+                document
+                    .querySelector(".menu-ul__li.move-left")
+                    .classList.remove("move-left");
+            }
+            if (document.querySelector(".menu-ul__li.move-right")) {
+                document
+                    .querySelector(".menu-ul__li.move-right")
+                    .classList.remove("move-right");
+            }
+            activeLi.classList.add("move-right");
+        }
         if (!activeLi.classList.contains("active")) {
             const idActiveEl = activeLi
                 .querySelector("a")
@@ -46,8 +72,11 @@ const Nav = ({ list, isMobile }) => {
                 //     }
                 // });
                 var pageHeight;
+                var activePage;
                 document.querySelectorAll(".page").forEach(page => {
                     if (page.id === idActiveEl) {
+                        activePage = page;
+                        console.log(activePage, "lll");
                         if (!document.querySelector(".page.active")) {
                             page.classList.add("active");
                             pageHeight = page.getBoundingClientRect().height;
@@ -83,30 +112,87 @@ const Nav = ({ list, isMobile }) => {
                                 ".pages"
                             ).style.height = `${pageHeight + 207}px`;
                         }
-
-                        setTimeout(function() {
-                            if (!isMobile) {
-                                if (
-                                    !activeLi.classList.contains(
-                                        "li-slide-left"
-                                    )
-                                ) {
-                                    slideLi("li-slide-right", "li-slide-left");
-                                } else {
-                                    slideLi("li-slide-left", "li-slide-right");
-                                }
-                            }
-                            page.classList.add("animate");
-                            document.querySelector(
-                                ".home"
-                            ).id = `${idActiveEl}page`;
-                        }, 0);
                     }
+                    setTimeout(function() {
+                        if (!isMobile) {
+                            if (!activeLi.classList.contains("li-slide-left")) {
+                                slideLi("li-slide-right", "li-slide-left");
+                            } else {
+                                slideLi("li-slide-left", "li-slide-right");
+                            }
+                            if (page !== activePage) {
+                                activePage.addEventListener(
+                                    "transitionend",
+                                    function(e) {
+                                        if (e.propertyName == "transform") {
+                                            page.classList.remove("animate");
+                                        }
+                                        if (
+                                            page.classList.contains(
+                                                "clear-transform"
+                                            ) &&
+                                            activeLi.classList.contains(
+                                                "move-right"
+                                            )
+                                        ) {
+                                            page.classList.remove(
+                                                "clear-transform"
+                                            );
+                                        }
+                                    }
+                                );
+                            }
+                        }
+                        activePage.classList.add("animate");
+                        if (activeLi.classList.contains("move-left")) {
+                            if (
+                                Number(page.dataset.order) <
+                                    Number(indexActiveLi) &&
+                                !(
+                                    page.classList.contains("active") ||
+                                    page.classList.contains("active2")
+                                )
+                            ) {
+                                page.classList.add("move");
+                                if (
+                                    page.classList.contains("clear-transform")
+                                ) {
+                                    page.classList.remove("clear-transform");
+                                }
+                            } else if (page.classList.contains("active")) {
+                                activePage.addEventListener(
+                                    "transitionend",
+                                    function(e) {
+                                        if (e.propertyName == "transform") {
+                                            page.classList.add("move");
+                                            if (
+                                                page.classList.contains("clear-transform")
+                                            ) {
+                                                page.classList.remove("clear-transform");
+                                            }
+                                        }
+                                    }
+                                );
+                            }
+                        } else if (activeLi.classList.contains("move-right")) {
+                            if (
+                                Number(page.dataset.order) >=
+                                Number(indexActiveLi)
+                            ) {
+                                page.classList.remove("move");
+                            }
+                        }
+
+                        document.querySelector(
+                            ".home"
+                        ).id = `${idActiveEl}page`;
+                    }, 0);
                     if (idActiveEl === "jury") {
+                        document.querySelector(".jury-page").classList.add("fix");
                         setTimeout(function() {
-                            document.querySelector(
-                                ".jury-page"
-                            ).style.transform = "none";
+                            document
+                                .querySelector(".jury-page")
+                                .classList.add("clear-transform");
                         }, 0);
                         setTimeout(function() {
                             if (
@@ -124,7 +210,7 @@ const Nav = ({ list, isMobile }) => {
                                     .querySelector(".footer").style.display =
                                     "flex";
                             }
-                        }, 1400);
+                        }, 1300);
                     }
                 });
                 setTimeout(function() {
@@ -172,7 +258,7 @@ const Nav = ({ list, isMobile }) => {
                 {list.map((li, index) => (
                     <li
                         key={index}
-                        data-index={index + 1}
+                        data-index={index + 2}
                         className={`menu-ul__li menu-ul__li-${li.src}`}
                         onClick={liClick}
                     >

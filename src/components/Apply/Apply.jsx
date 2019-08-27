@@ -45,8 +45,9 @@ class Apply extends React.Component {
     }
     render() {
         const { t } = this.props;
+        const order = this.props.order;
         return (
-            <div className="apply-page page" id="apply">
+            <div className="apply-page page" id="apply" data-order={order}>
                 <div className="mobile-title-page">{t("dataApply.title")}</div>
                 <div className="apply-page__content page__content">
                     <div className="form-content">

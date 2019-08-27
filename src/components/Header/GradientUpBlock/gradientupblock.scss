@@ -7,7 +7,7 @@
     font-size: 1.67rem;
 
     @media (max-width: $mobile_l+1) {
-      // font-size: 26px;
+      font-size: 1.48rem;
     }
     &:hover {
       cursor: pointer;
@@ -51,6 +51,7 @@
     @media (max-width: $mobile_l+1) {
       height: 12px;
       width: calc(100% + 10px);
+      padding: 0 15px;
     }
   
   }

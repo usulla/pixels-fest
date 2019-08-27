@@ -91,6 +91,9 @@ body {
     overflow: auto;
     overflow-x: hidden !important;
 }
+.move {
+    opacity: 0;
+}
 .home {
     position: relative;
     height: 100%;
@@ -98,8 +101,10 @@ body {
     // overflow-x: hidden;
 
     &#headerpage {
-        .footer {
-            display: none;
+        @media (min-width: $mobile_l) {
+            .footer {
+                display: none;
+            }
         }
         .left-sidebar .timer,
         .left-sidebar .logo {
@@ -156,7 +161,9 @@ body {
     }
 }
 .page.header {
-    transform: translateX(3vw);
+    @media (min-width: $mobile_l) {
+        transform: translateX(3vw);
+    }
     display: block;
 }
 .page {
@@ -188,7 +195,7 @@ body {
         &.animate,
         &.animate2 {
             //@include transition(transform, 0.45s, cubic-bezier(0.2, 0.6, 0.2, 1));
-            @include transition(transform, 1.3s, ease);
+            @include transition(transform, 1.2s, ease);
 
             .page__content {
                 opacity: 1;
@@ -197,15 +204,20 @@ body {
     }
 }
 .page__content {
-    opacity: 0;
-    @include transition(opacity, 1.5s, ease);
+    @media (min-width: $mobile_l) {
+        opacity: 0;
+    }
+    @include transition(opacity, 1.4s, ease);
     padding-top: 8vh;
     padding-bottom: 8vh;
     width: 79vw;
-    margin-left: 3vw;
+    @media (min-width: $mobile_l) {
+        margin-left: 3vw;
+    }
     @media (max-width: $mobile_l+1) {
         width: 100%;
-        padding-top: 100px !important;
+        padding-top: 13vh !important;
+        padding: 0 20px;
     }
 }
 ul {
@@ -217,7 +229,7 @@ li {
 h2 {
     font-family: $font_family;
     @media (max-width: $mobile_l+1) {
-        font-size: 1.5rem !important;
+        font-size: 1.9rem !important;
     }
 }
 
@@ -242,7 +254,7 @@ h2 {
     align-items: center;
     padding-left: 20px;
     font-size: 20px;
-    border-bottom: 1px solid #fff;
+    // border-bottom: 1px solid #fff;
 }
 @media (min-width: $mobile_l) {
     .mobile-title-page {

@@ -5,11 +5,11 @@ import model3d from "../../images/model3d.png";
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 
-const Competition = ({ categories, conditions, trlist, criteria, winners }) => {
+const Competition = ({ categories, conditions, trlist, criteria, winners, order }) => {
     const { t, i18n } = useTranslation();
 
     return (
-        <div className="competition-page page" id="competition">
+        <div className="competition-page page" id="competition" data-order={order}>
             <div className="mobile-title-page">
                 {i18n.t("dataCompetition.title")}
             </div>

@@ -2,17 +2,26 @@
 @import "../../sass/mixins.scss";
 
 .program-page {
-    z-index:12!important;
+    // z-index:12!important;
     // min-height: calc(100vh - 207px);
-    transform: translateX(85vw);
+    @media (min-width: $mobile_l) {
+        transform: translateX(85vw);
+    }
     display: flex;
     align-items: center;
     @include linear-gradient(to bottom, #4457cf, #bd50c1, #ea9e8d);
     @media (max-width: $mobile_l+1) {
-        min-height: calc(100vh - 85px);
+        // min-height: calc(100vh - 85px);
+        min-height: calc(100vh);
+        z-index: 3;
+        position: relative;
     }
-    &.active2.animate,&.active.animate {
+    &.active2.animate,
+    &.active.animate {
         transform: translateX(6vw);
+    }
+    &.move {
+        transform: translateX(-73vw);
     }
 }
 .program-page__content {
@@ -20,15 +29,19 @@
     @media (min-width: $mobile_l) {
         height: calc(100% + 207px);
     }
+    @media (max-width: $mobile_l+1) {
+        padding-top:0!important;
+    }
 }
 
 .program-page__title {
     max-width: 1465px;
     width: 100%;
     font-size: 3rem;
-    color:$white;
+    color: $white;
     @media (max-width: $mobile_l+1) {
         max-width: 319px;
         width: 80vw;
+        margin: 0 auto;
     }
 }
