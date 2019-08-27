@@ -75,6 +75,16 @@ button:focus {
 button::-moz-focus-inner {
     border: 0;
 }
+:focus {
+    outline-style: none!important;
+    outline-width: 0px !important;
+    outline-color: none !important;
+}
+:active {
+    outline-style: none!important;
+    outline-width: 0px !important;
+    outline-color: none !important;
+}
 body {
     margin: 0;
     padding: 0;

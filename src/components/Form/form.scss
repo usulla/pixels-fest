@@ -109,20 +109,26 @@ form {
             border: 1px solid #000;
             background: $white;
             padding: 0 10px;
-
+        }
+        .select {
+            position: relative;
             &:after {
                 content: "▼";
                 padding: 0 8px;
-                font-size: 12px;
+                font-size: 17px;
                 position: absolute;
                 right: 8px;
-                top: 4px;
+                top: 0;
+                line-height: 44px;
                 z-index: 1;
                 text-align: center;
-                width: 10%;
+                width: 30px;
                 height: 100%;
                 pointer-events: none;
                 box-sizing: border-box;
+                @media (max-width: $mobile_l+1) {
+                    font-size: 13px;  
+                }
             }
         }
         textarea {
