@@ -10,8 +10,6 @@ import Close from "@material-ui/icons/Close";
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 
-// import { silverChalice, s, l } from "../../assets/styles/conf/_configs.scss";
-
 const styles = {
     helpTextWrapper: {
         width: "100%"
