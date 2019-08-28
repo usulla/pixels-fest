@@ -44,7 +44,7 @@ const Footer = ({
                             </div>
                             <div className="col2__item col2__2">
                                 <div
-                                    className="toapply menu-ul__li"
+                                    className="toapply1 menu-ul__li"
                                     data-index="7"
                                 >
                                     <a className="apply" href="#apply">

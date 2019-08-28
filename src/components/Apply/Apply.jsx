@@ -10,7 +10,12 @@ import { withTranslation } from "react-i18next";
 class Apply extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { success: true };
+        this.state = {
+            showResult: false,
+            success: true,
+            errors: [],
+            requestNumber: null
+        };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -18,29 +23,39 @@ class Apply extends React.Component {
         event.preventDefault();
         const formElement = document.querySelector("form");
         const formData = new FormData(formElement);
-        const url = "/works/add";
+        const url = "//pixelsfest.com/works/add";
         //send to server form data
         fetch(url, {
             method: "post",
             body: formData
         })
-            .then(function(response) {
+            .then(response => {
                 if (response.status !== 200) {
                     console.log(
                         "Looks like there was a problem. Status Code: " +
                             response.status
                     );
-                    this.setState({ success: true });
+                    this.setState({ success: false });
+                    this.setState({
+                        errors: ["Пожалуйста, повторите запрос позже"]
+                    });
                     return;
                 }
-                response.json().then(function(data) {
-                    console.log(data);
+                response.json().then((data) => {
+                    this.setState({ showResult: true });
+                    this.setState({ success: data.success });
+                    if (data.requestNumber) {
+                        this.setState({ requestNumber: data.requestNumber });
+                    }
+                    if (data.errors) {
+                        this.setState({ errors: data.errors });
+                    }
                 });
             })
             .catch(
-                function(err) {
+                (err) => {
                     console.log("Fetch Error :-S", err);
-                }.bind(this)
+                }
             );
     }
     render() {
@@ -48,12 +63,10 @@ class Apply extends React.Component {
         const order = this.props.order;
         return (
             <div className="apply-page page" id="apply" data-order={order}>
-                <div className="mobile-title-page">
-                    {t("dataApply.title")}
-                </div>
+                <div className="mobile-title-page">{t("dataApply.title")}</div>
                 <div className="apply-page__content page__content">
                     <div className="form-content">
-                        <form onSubmit={this.handleSubmit}>
+                        <form onSubmit={this.handleSubmit.bind(this)}>
                             <div className="form-title">
                                 {t("dataApply.form-title")}
                             </div>
@@ -76,6 +89,7 @@ class Apply extends React.Component {
                                 <Input
                                     title={t("dataApply.country")}
                                     name={"country"}
+                                    isRequired={"required"}
                                 />
                             </div>
                             <div className="form-row">
@@ -105,6 +119,7 @@ class Apply extends React.Component {
                                 <Input
                                     title={t("dataApply.worktitle")}
                                     name={"worktitle"}
+                                    isRequired={"required"}
                                 />
                             </div>
                             <div className="form-row">
@@ -130,14 +145,19 @@ class Apply extends React.Component {
                                     isRequired={"required"}
                                 />
                             </div>
+                            {!this.state.showResult || (this.state.showResult && !this.state.success) ? (
                             <input
                                 type="submit"
                                 className="send-form"
                                 value={t("dataApply.button-text")}
                             />
-                            {this.state.success ? (
+                            ) : null}
+                            {this.state.showResult ? (
                                 <Result
                                     success_text={this.props.success_text}
+                                    success={this.state.success}
+                                    requestNumber={this.state.requestNumber}
+                                    errors={this.state.errors}
                                 />
                             ) : null}
                         </form>
