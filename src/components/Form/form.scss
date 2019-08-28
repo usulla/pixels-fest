@@ -36,6 +36,10 @@ form {
             background: $white;
             padding: 5px;
         }
+        .file-name{
+            text-decoration: underline;
+            padding: 0 10px;
+        }
     }
     .form-row {
         display: block;

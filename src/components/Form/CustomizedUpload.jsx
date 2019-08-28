@@ -17,12 +17,19 @@ const styles = {
         width: "100%"
     },
     fab: {
-        width: "32px",
-        height: "32px",
-        minHeight: "32px",
+        width: "24px",
+        height: "24px",
+        minHeight: "24px",
         backgroundColor: "transparent",
         boxShadow: "none",
-        border: "1px solid rgba(0, 0, 0, 0.23)"
+        border: "1px solid #000"
+    },
+    close:{
+        fontSize: '1rem'
+    },
+    attach:{
+        fontSize: '1.7rem',
+        verticalAlign: 'bottom'
     }
 };
 
@@ -50,17 +57,19 @@ const CustomizedUpload = props => {
                     <div
                         className="selected-file"
                         key={index}
-                        onDelete={() => onFileDelete(file.id)}
                     >
-                        <AttachFile fontSize="small" />
+                        <AttachFile className={classes.attach} />
                         <span className="file-name">{fileName}</span>
                         <Fab
                             size="small"
                             component="span"
                             className={classes.fab}
+                            onClick={() => onFileDelete(file.id)}
                         >
-                            <Close fontSize="small" />
+                            <Close className={classes.close}
+                            />
                         </Fab>
+                       
                     </div>
                 );
             })}
@@ -81,7 +90,7 @@ const CustomizedUpload = props => {
                     return (
                         // button
                         <Fragment>
-                            <label
+                            <label 
                                 key={id}
                                 htmlFor={id}
                                 className={classes.label}
