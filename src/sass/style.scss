@@ -76,12 +76,12 @@ button::-moz-focus-inner {
     border: 0;
 }
 :focus {
-    outline-style: none!important;
+    outline-style: none !important;
     outline-width: 0px !important;
     outline-color: none !important;
 }
 :active {
-    outline-style: none!important;
+    outline-style: none !important;
     outline-width: 0px !important;
     outline-color: none !important;
 }
@@ -113,7 +113,7 @@ body {
     &#headerpage {
         @media (min-width: $mobile_l) {
             .footer {
-                display: none!important;
+                display: none !important;
             }
         }
         .left-sidebar .timer,
@@ -205,7 +205,7 @@ body {
         &.animate,
         &.animate2 {
             //@include transition(transform, 0.45s, cubic-bezier(0.2, 0.6, 0.2, 1));
-            @include transition(transform, 1.2s, ease);
+            @include transition(transform, .8s, ease);
 
             .page__content {
                 opacity: 1;
@@ -217,7 +217,7 @@ body {
     @media (min-width: $mobile_l) {
         opacity: 0;
     }
-    @include transition(opacity, 1.4s, ease);
+    @include transition(opacity, 1s, ease);
     padding-top: 8vh;
     padding-bottom: 8vh;
     width: 79vw;
@@ -267,7 +267,7 @@ h2 {
     font-size: 20px;
     // border-bottom: 1px solid #fff;
     &.show {
-        @include transition(opacity, 1s, ease);
+        @include transition(opacity, .8s, ease);
         opacity: 1;
     }
 }

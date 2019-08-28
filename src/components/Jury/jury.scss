@@ -5,7 +5,7 @@
     &.move {
         @media (min-width: $mobile_l) {
             transform: translateX(-79vw);
-            @include transition(transform, 1.3s, ease);
+            // @include transition(transform, .9s, ease);
         }
     }
     &.clear-transform {

@@ -115,15 +115,15 @@
         "category": "categories of the Contest",
         "category_options": [
             {
-                "value": "cat1",
+                "value": "1",
                 "title": "generative video art"
             },
             {
-                "value": "cat2",
+                "value": "2",
                 "title": "2D and 3D animation"
             },
             {
-                "value": "cat3",
+                "value": "3",
                 "title": "Other animation/video-art"
             }
         ],
@@ -131,7 +131,7 @@
         "worktitle_en": "name of the artwork(in English)",
         "work_short_desc": "brief description of the artwork ",
         "work_short_desc_pl": "up to  800 bites with intervals",
-        "agreement1": "In case my work is shortlisted, I give my consent to its demonstration within the framework of the Festival program( check-box)",
+        "agreement1": "By clicking the 'Submit' button, I accept the Regulations of the Contest and give consent to my contest work demonstration within the framework of the 'Pixels Fest' festival program and on the organizer's resources within the festival.",
         "button-text": "upload",
         "success_text1": "Thank you! Your application is accepted.",
         "success_text2": "Application  number",

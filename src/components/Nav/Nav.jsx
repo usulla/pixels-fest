@@ -11,13 +11,11 @@ const Nav = ({ list, isMobile }) => {
         const programApplyBtn = document.querySelector(
             ".toprogram.menu-ul__li"
         );
-        const toApplyBtn2 = document.querySelector(
-            ".toapply2.menu-ul__li"
-        );
+        const toApplyBtn2 = document.querySelector(".toapply2.menu-ul__li");
         const toCompetition = document.querySelector(
             ".tocompetition.menu-ul__li"
         );
-        
+
         elemClick(leftPixelsLogo);
         elemClick(footerApplyBtn);
         elemClick(programApplyBtn);
