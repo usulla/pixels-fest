@@ -1,0 +1,6 @@
+@import '../func/strip-unit';
+
+@mixin fluid-type($property, $min-vw, $max-vw, $min-val, $max-val) {
+	#{$property}: calc(#{$min-val} + #{strip-unit($max-val - $min-val)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+}
+

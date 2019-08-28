@@ -15,11 +15,44 @@ class Apply extends React.Component {
             showResult: false,
             success: true,
             errors: [],
-            requestNumber: null
+            requestNumber: null,
+            files: [],
+			maxFilesLength: 1
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.constructor.onFilesChoose = this.constructor.onFilesChoose.bind(
+			this
+		);
+		this.constructor.onFileDelete = this.constructor.onFileDelete.bind(
+			this
+		);
     }
+    static onFileDelete(id) {
+		const { validate } = Apply;
+		const { files } = this.state;
+		this.setState(
+			{
+				files: files.filter(file => file.id !== id)
+			},
+			() => {
+				document.getElementById(id).value = '';
+			}
+		);
+	}
+	static onFilesChoose(e) {
+		console.log(e);
 
+		const { validate } = Apply;
+		const { files, maxFilesLength } = this.state;
+
+		let readyFiles = Array.from(e.target.files).filter(file =>
+			file.type.includes('video')
+		);
+		readyFiles.forEach(file => (file.id = e.target.id));
+		readyFiles = files.concat(readyFiles).slice(0, maxFilesLength);
+
+		if (readyFiles.length) this.setState({ files: readyFiles }, validate);
+	}
     handleSubmit(event) {
         event.preventDefault();
         const formElement = document.querySelector("form");
@@ -60,6 +93,14 @@ class Apply extends React.Component {
             );
     }
     render() {
+        const {
+			onFilesChoose,
+			onFileDelete
+        } = Apply;
+        const {
+			files,
+			maxFilesLength
+		} = this.state;
         const { t } = this.props;
         const order = this.props.order;
         return (
@@ -74,7 +115,7 @@ class Apply extends React.Component {
                             <div className="form-row">
                                 <Input
                                     title={t("dataApply.name")}
-                                    name={"author"}
+                                    name={"author[]"}
                                     isRequired={"required"}
                                 />
                             </div>
@@ -141,9 +182,9 @@ class Apply extends React.Component {
                                 />
                             </div>
                             <CustomizedUpload
-									accept='image/*'
-									id='child-photo'
-									name='childPhoto'
+									accept='video/mp4'
+									id='media'
+									name='media'
 									type='file'
 									files={files}
 									maxFilesLength={maxFilesLength}

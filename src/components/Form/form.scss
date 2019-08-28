@@ -10,6 +10,33 @@ form {
         padding: 20px 20px 30px;
         width: 100%;
     }
+    .form__group--upload {
+        padding-top: 30px;
+
+        .label-uplod{
+            padding-bottom: 10px;
+            display: block;
+        }
+        .uploadfile-btn--border {
+            @include linear-gradient(
+                to left,
+                #f7a543,
+                #c5e2ce 35%,
+                #005e74 68%,
+                #8c89ff
+            );
+            width: 40%;
+            padding: 5px;
+            text-align: center;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .uploadfile-btn {
+            background: $white;
+            padding: 5px;
+        }
+    }
     .form-row {
         display: block;
         padding-top: 30px;
@@ -127,7 +154,7 @@ form {
                 pointer-events: none;
                 box-sizing: border-box;
                 @media (max-width: $mobile_l+1) {
-                    font-size: 13px;  
+                    font-size: 13px;
                 }
             }
         }
