@@ -1,14 +1,14 @@
 import React, { Fragment } from "react";
-import Chip from "@material-ui/core/Chip";
-import FormLabel from "@material-ui/core/FormLabel";
 import PropTypes from "prop-types";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import { withStyles } from "@material-ui/core/styles";
 import Fab from "@material-ui/core/Fab";
 import AttachFile from "@material-ui/icons/AttachFile";
 import Close from "@material-ui/icons/Close";
+import Tooltip from '@material-ui/core/Tooltip' 
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
+import { borderRadius } from "@material-ui/system";
 
 const styles = {
     helpTextWrapper: {
@@ -30,7 +30,18 @@ const styles = {
         verticalAlign: 'bottom'
     }
 };
-
+const LightTooltip = withStyles(theme => ({
+    tooltip: {
+      backgroundColor: '#fff',
+      color:'#000',
+      border:"solid 1px #707070",
+      boxShadow: 'none',
+      fontSize: '.9rem',
+      borderRadius: '0px',
+      fontFamily: 'FiveYearsLaterRegular", monospace, "Roboto", sans-serif',
+      top:'-10px'
+    },
+   }))(Tooltip);
 const CustomizedUpload = props => {
     const { t, i18n } = useTranslation();
     const {
@@ -58,6 +69,7 @@ const CustomizedUpload = props => {
                     >
                         <AttachFile className={classes.attach} />
                         <span className="file-name">{fileName}</span>
+                       <LightTooltip title={i18n.t("dataApply.delete")} className={classes.tooltip} placement="bottom-end">
                         <Fab
                             size="small"
                             component="span"
@@ -67,7 +79,7 @@ const CustomizedUpload = props => {
                             <Close className={classes.close}
                             />
                         </Fab>
-                       
+                        </LightTooltip>
                     </div>
                 );
             })}

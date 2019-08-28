@@ -13,7 +13,7 @@ form {
     .form__group--upload {
         padding-top: 30px;
 
-        .label-uplod{
+        .label-uplod {
             padding-bottom: 10px;
             display: block;
         }
@@ -26,9 +26,12 @@ form {
                 #8c89ff
             );
             width: 40%;
+            @media (max-width: $mobile_l+1) {
+                width: 100%;
+            }
             padding: 5px;
             text-align: center;
-            &:hover{
+            &:hover {
                 cursor: pointer;
             }
         }
@@ -36,7 +39,7 @@ form {
             background: $white;
             padding: 5px;
         }
-        .file-name{
+        .file-name {
             text-decoration: underline;
             padding: 0 10px;
         }
