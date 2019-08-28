@@ -28,9 +28,11 @@
     text-align: center;
     @media (min-width: $mobile_l) {
         height: calc(100% + 207px);
+        padding-top: 207px;
+        padding-bottom: 0;
     }
     @media (max-width: $mobile_l+1) {
-        padding-top:0!important;
+        padding-top: 0 !important;
     }
 }
 

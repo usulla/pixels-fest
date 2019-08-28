@@ -20,8 +20,21 @@
 
 @media (min-width: $desctops_s) {
 }
+@media (min-width: $mobile_l) {
+    // scrollbar {
+    //     display: none;
+    //     /*  clear useragent default style*/
+    //     -moz-appearance: none !important;
+    // }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
 html,
 body {
+    @media (min-width: $mobile_l) {
+    scrollbar-width: none;
+    }
     // height: 100%;
     // overflow: hidden;
 }
@@ -50,10 +63,12 @@ html {
 }
 html {
     box-sizing: border-box;
-  }
-  *, *:before, *:after {
+}
+*,
+*:before,
+*:after {
     box-sizing: inherit;
-  }
+}
 *,
 *:before,
 *:after {
@@ -178,10 +193,15 @@ body {
 .page.header {
     @media (min-width: $mobile_l) {
         transform: translateX(3vw);
+        padding-bottom: 0;
     }
     display: block;
 }
 .page {
+    padding-bottom: 207px;
+    @media (min-width: $mobile_l) {
+        padding-bottom: 207px;
+    }
     width: 82vw;
     min-height: 100vh !important;
     display: none;
@@ -209,8 +229,8 @@ body {
     @media (min-width: $mobile_l) {
         &.animate,
         &.animate2 {
-            //@include transition(transform, 0.45s, cubic-bezier(0.2, 0.6, 0.2, 1));
-            @include transition(transform, .8s, ease);
+            // @include transition(transform, 0.45s, cubic-bezier(0.2, 0.6, 0.2, 1));
+            @include transition(transform, 0.8s, ease);
 
             .page__content {
                 opacity: 1;
@@ -272,7 +292,7 @@ h2 {
     font-size: 20px;
     // border-bottom: 1px solid #fff;
     &.show {
-        @include transition(opacity, .8s, ease);
+        @include transition(opacity, 0.8s, ease);
         opacity: 1;
     }
 }

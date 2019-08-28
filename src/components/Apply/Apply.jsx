@@ -5,6 +5,7 @@ import Input from "../Form/Input.jsx";
 import MySelect2 from "../Form/MySelect2.jsx";
 import Textarea from "../Form/Textarea.jsx";
 import Checkbox from "../Form/Checkbox.jsx";
+import CustomizedUpload from '../Form/CustomizedUpload';
 import Result from "../Form/Result.jsx";
 import { withTranslation } from "react-i18next";
 class Apply extends React.Component {
@@ -126,6 +127,7 @@ class Apply extends React.Component {
                                 <Input
                                     title={t("dataApply.worktitle_en")}
                                     name={"worktitle_en"}
+                                    isRequired={"required"}
                                 />
                             </div>
                             <div className="form-row">
@@ -138,6 +140,17 @@ class Apply extends React.Component {
                                     )}
                                 />
                             </div>
+                            <CustomizedUpload
+									accept='image/*'
+									id='child-photo'
+									name='childPhoto'
+									type='file'
+									files={files}
+									maxFilesLength={maxFilesLength}
+									onFilesChoose={onFilesChoose}
+									onFileDelete={onFileDelete}
+									hidden
+								/>
                             <div className="form-row">
                                 <Checkbox
                                     title={t("dataApply.agreement1")}

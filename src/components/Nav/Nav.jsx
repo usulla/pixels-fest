@@ -100,7 +100,7 @@ const Nav = ({ list, isMobile }) => {
                             pageHeight = page.getBoundingClientRect().height;
                             document.querySelector(
                                 ".pages"
-                            ).style.height = `${pageHeight + 207}px`;
+                            ).style.height = `${pageHeight}px`;
                             window.addEventListener("resize", () => {
                                 pageDetHeight(page);
                             });
@@ -129,7 +129,7 @@ const Nav = ({ list, isMobile }) => {
                             if (activePage.id !== "header") {
                                 document.querySelector(
                                     ".pages"
-                                ).style.height = `${pageHeight + 207}px`;
+                                ).style.height = `${pageHeight}px`;
                             } else {
                                 document.querySelector(
                                     ".pages"
@@ -278,7 +278,7 @@ const Nav = ({ list, isMobile }) => {
                 if (page.id !== "header") {
                     document.querySelector(
                         ".pages"
-                    ).style.height = `${pageHeight + 207}px`;
+                    ).style.height = `${pageHeight}px`;
                 } else {
                     document.querySelector(
                         ".pages"
