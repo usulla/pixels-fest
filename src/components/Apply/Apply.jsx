@@ -40,7 +40,6 @@ class Apply extends React.Component {
 		);
 	}
 	static onFilesChoose(e) {
-		console.log(e);
 
 		const { validate } = Apply;
 		const { files, maxFilesLength } = this.state;

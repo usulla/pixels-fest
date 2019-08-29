@@ -39,8 +39,8 @@ const HeaderTextBlock = ( props) => {
                     <video
                         className="logo-animation"
                         loop
-                        autoplay
-                        autoplay="autoplay"
+                        autoPlay
+                        autoPlay="autoplay"
                     >
                         <source src={pf_logo_animate} type="video/webm" />
                     </video>

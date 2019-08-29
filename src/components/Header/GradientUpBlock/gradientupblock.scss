@@ -103,8 +103,12 @@
 
                 .gradient-mobpopup--text {
                     //font-size: 1.1rem;
-                    font-size: 4.5vw;
+                    font-size: 3.8vw;
                     line-height: 1.57;
+                    @media (orientation:landscape) {
+                      font-size: .9rem;
+                      line-height: 1.5;
+                  }
                 }
             }
             animation: fadeIn .4s ease;

@@ -7,6 +7,7 @@ const Nav = ({ list, isMobile }) => {
     const { t, i18n } = useTranslation();
     document.addEventListener("DOMContentLoaded", () => {
         const leftPixelsLogo = document.querySelector(".left-sidebar__li.logo");
+        const compApplyBtn = document.querySelector(".toapply.menu-ul__li");
         const footerApplyBtn = document.querySelector(".toapply1.menu-ul__li");
         const programApplyBtn = document.querySelector(
             ".toprogram.menu-ul__li"
@@ -21,6 +22,8 @@ const Nav = ({ list, isMobile }) => {
         elemClick(programApplyBtn);
         elemClick(toApplyBtn2);
         elemClick(toCompetition);
+        elemClick(compApplyBtn);
+        
         function elemClick(elem) {
             if (elem) {
                 elem.addEventListener("click", e => {

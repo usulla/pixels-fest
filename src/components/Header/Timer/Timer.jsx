@@ -54,29 +54,27 @@ const Timer = ({ title, days, hours, minutes, seconds }) => {
                 data-timer=""
             >
                 <ul>
-                    <li class="num">
+                    <li className="num">
                         <span className="days" />
                         <span className="text">
                             {i18n.t("dataHeader.timer.days")}
                         </span>
                     </li>
-                    <li class="num">
+                    <li className="num">
                         <span className="hours" />
                         <div className="text">
                             {i18n.t("dataHeader.timer.hours")}
                         </div>
                     </li>
-                    <li class="num">
+                    <li className="num">
                         <span className="minutes" />
                         <span className="text">
-                            {" "}
                             {i18n.t("dataHeader.timer.minutes")}
                         </span>
                     </li>
-                    <li class="num">
+                    <li className="num">
                         <span className="seconds" />
                         <span className="text">
-                            {" "}
                             {i18n.t("dataHeader.timer.seconds")}
                         </span>
                     </li>

@@ -22,7 +22,7 @@ class Checkbox extends React.Component {
                     onChange={this.handleChange}
                     required={required}
             />
-            <label for={this.props.name}>
+            <label htmlFor={this.props.name}>
                 <span>{title}</span>
            </label>
            </div>

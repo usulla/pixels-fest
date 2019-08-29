@@ -3,6 +3,7 @@
 .header__timer {
     padding-bottom: 20px;
     margin: 0;
+
     ul {
         margin: 0;
     }
@@ -12,15 +13,25 @@
     }
     .header__timer__title {
         margin: 0;
-        font-size: 0.9rem;
+        font-size: 0.7rem;
         font-weight: normal;
         line-height: 1.23;
         color: #fff;
+        @media (min-width: $mobile_l) {
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            display: block;
+        }
 
         @media (max-width: $mobile_l+1) {
-           // font-size: 14.5px;
-           font-size: 4vw;
+            // font-size: 14.5px;
+            font-size: 4vw;
             text-transform: uppercase;
+        }
+        @media (max-width: $mobile_l+1) and (orientation: landscape) {
+            font-size: 1rem;
+            line-height: 1.5;
+            text-align: left;
         }
     }
 }
@@ -73,6 +84,9 @@
             text-transform: uppercase;
             @media (max-width: $mobile_l+1) {
                 font-size: 12.4vw;
+            }
+            @media (max-width: $mobile_l+1) and (orientation: landscape) {
+                font-size: 3rem;
             }
         }
     }

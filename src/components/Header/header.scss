@@ -7,7 +7,7 @@
     color: #fff;
     // overflow: hidden;
     @media (max-width: $mobile_l+1) {
-        max-height: 100vh;
+        // max-height: 100vh;
         overflow: hidden;
     }
     &.move {
@@ -25,6 +25,9 @@
     min-height: calc(100vh);
     @media (min-width: $mobile_l) {
         padding-left: 4%;
+    }
+    @media (max-width: $mobile_l+1) and (orientation:landscape) {
+        padding-top: 20vh!important;
     }
     animation: fadeIn 1.4s ease forwards;
 }
@@ -72,6 +75,9 @@
     z-index: 3;
     @media (max-width: $mobile_l+1) {
         margin-top: 8vh;
+    }
+    @media (max-width: $mobile_l+1) and (orientation:landscape) {
+        margin-bottom: 24vh;
     }
 }
 .header .header__row--bottom {

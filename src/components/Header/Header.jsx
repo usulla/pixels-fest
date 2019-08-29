@@ -28,8 +28,8 @@ const Header = ({ navtitle, h1_text, logo2x2, timer, isMobile, order }) => {
                             <video
                                 className="video-model"
                                 loop
-                                autoplay
-                                autoplay="autoplay"
+                                autoPlay
+                                autoPlay="autoplay"
                             >
                                 <source src={model3d} type="video/mp4" />
                             </video>

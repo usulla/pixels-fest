@@ -18,7 +18,7 @@ class Textarea extends React.Component {
             ? this.props.iSplaceholder
             : null;
         return (
-            <label for={this.props.name}>
+            <label htmlFor={this.props.name}>
                 <span>{title}</span>
                 <textarea
                     rows={rows}

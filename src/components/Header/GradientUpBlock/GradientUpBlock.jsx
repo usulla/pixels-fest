@@ -17,10 +17,7 @@ const styles = {
         position: "absolute",
         right: "calc(5% + 10px)",
         top: "calc(2% + 10px)",
-        backgroundColor: "transparent",
-        "&$hover": {
-            backgroundColor: "transparent"
-        }
+        backgroundColor: "transparent"
     },
 
     close: {
@@ -39,11 +36,17 @@ class GradientUpBlock extends Component {
         this.setState({ showPopup: true });
         document.querySelector('.toggle-menu').style.display = 'none';
         document.body.style.overflow = 'hidden';
+        document.body.style.maxHeight = '100vh';
+        document.documentElement.style.maxHeight = '100vh';
+        document.documentElement.style.overflow = 'hidden';
     };
     hidePopup = e => {
         this.setState({ showPopup: false });
         document.querySelector('.toggle-menu').style.display = '';
         document.body.style.overflow = '';
+        document.body.style.maxHeight = '';
+        document.documentElement.style.maxHeight = '';
+        document.documentElement.style.overflow = '';
     };
     showGradientText = e => {
         const self = e.currentTarget;

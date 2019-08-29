@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import style from "./competition.scss";
 import fasade_mask from "../../images/fasade_mask.png";
 import model3d from "../../images/model3d.png";

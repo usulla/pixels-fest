@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import style from "./myselect2.scss";
 import i18n from "i18next";
-import { useTranslation, initReactI18next } from "react-i18next";
 import { withTranslation } from "react-i18next";
 class MySelect2 extends React.Component {
     constructor(props) {
@@ -17,16 +15,16 @@ class MySelect2 extends React.Component {
         const nameState = this.props.name;
         const title = this.props.title;
         return (
-            <label for={this.props.name}>
+            <label htmlFor={this.props.name}>
                 <span>{title}</span>
-                <div class="select">
+                <div className="select">
                     <select
                         value={this.state[nameState]}
                         onChange={this.handleChange}
                         name={this.props.name}
                     >
                         {Object.keys(this.props.options).map((li, index) => (
-                            <option
+                            <option key={index}
                                 value={i18n.t(
                                     `dataApply.category_options.${index}.value`
                                 )}
