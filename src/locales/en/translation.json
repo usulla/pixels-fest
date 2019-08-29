@@ -108,6 +108,7 @@
         "title": "Submit your work",
         "form-title": "Submit your work",
         "name": "name of the author or of the team ",
+        "toolip-name":"To add names of other authors, click on +",
         "email": "email",
         "country": "country",
         "website": "portfolio (link)",

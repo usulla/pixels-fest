@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Fab from "@material-ui/core/Fab";
 import AttachFile from "@material-ui/icons/AttachFile";
 import Close from "@material-ui/icons/Close";
-import Tooltip from '@material-ui/core/Tooltip' 
+import Tooltip from "@material-ui/core/Tooltip";
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 import { borderRadius } from "@material-ui/system";
@@ -15,33 +15,34 @@ const styles = {
         width: "100%"
     },
     fab: {
-        width: "24px",
-        height: "24px",
-        minHeight: "24px",
+        width: "2.5vw",
+        height: "2.5vw",
+        minHeight: "2.5vw",
         backgroundColor: "transparent",
         boxShadow: "none",
         border: "1px solid #000"
     },
-    close:{
-        fontSize: '1rem'
+    close: {
+        fontSize: "1rem"
     },
-    attach:{
-        fontSize: '1.7rem',
-        verticalAlign: 'bottom'
+    attach: {
+        fontSize: "1.7rem",
+        verticalAlign: "bottom"
     }
 };
 const LightTooltip = withStyles(theme => ({
     tooltip: {
-      backgroundColor: '#fff',
-      color:'#000',
-      border:"solid 1px #707070",
-      boxShadow: 'none',
-      fontSize: '.9rem',
-      borderRadius: '0px',
-      fontFamily: 'FiveYearsLaterRegular", monospace, "Roboto", sans-serif',
-      top:'-10px'
-    },
-   }))(Tooltip);
+        backgroundColor: "#fff",
+        color: "#000",
+        border: "solid 1px #707070",
+        boxShadow: "none",
+        fontSize: ".9rem",
+        borderRadius: "0px",
+        fontFamily: 'FiveYearsLaterRegular", monospace, "Roboto", sans-serif',
+        top: "-10px"
+    }
+}))(Tooltip);
+
 const CustomizedUpload = props => {
     const { t, i18n } = useTranslation();
     const {
@@ -63,22 +64,22 @@ const CustomizedUpload = props => {
             {files.map((file, index) => {
                 const fileName = file.name;
                 return (
-                    <div
-                        className="selected-file"
-                        key={index}
-                    >
+                    <div className="selected-file" key={index}>
                         <AttachFile className={classes.attach} />
                         <span className="file-name">{fileName}</span>
-                       <LightTooltip title={i18n.t("dataApply.delete")} className={classes.tooltip} placement="bottom-end">
-                        <Fab
-                            size="small"
-                            component="span"
-                            className={classes.fab}
-                            onClick={() => onFileDelete(file.id)}
+                        <LightTooltip
+                            title={i18n.t("dataApply.delete")}
+                            className={classes.tooltip}
+                            placement="bottom-end"
                         >
-                            <Close className={classes.close}
-                            />
-                        </Fab>
+                            <Fab
+                                size="small"
+                                component="span"
+                                className={classes.fab}
+                                onClick={() => onFileDelete(file.id)}
+                            >
+                                <Close className={classes.close} />
+                            </Fab>
                         </LightTooltip>
                     </div>
                 );
@@ -100,7 +101,7 @@ const CustomizedUpload = props => {
                     return (
                         // button
                         <Fragment>
-                            <label 
+                            <label
                                 key={id}
                                 htmlFor={id}
                                 className={classes.label}

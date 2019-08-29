@@ -5,10 +5,25 @@ import Input from "../Form/Input.jsx";
 import MySelect2 from "../Form/MySelect2.jsx";
 import Textarea from "../Form/Textarea.jsx";
 import Checkbox from "../Form/Checkbox.jsx";
-import addInput from "../Form/addInput.jsx";
 import CustomizedUpload from "../Form/CustomizedUpload";
 import Result from "../Form/Result.jsx";
+import Tooltip from "@material-ui/core/Tooltip";
+import { withStyles } from "@material-ui/core/styles";
 import { withTranslation } from "react-i18next";
+
+const LightTooltip = withStyles(theme => ({
+    tooltip: {
+        backgroundColor: "#fff",
+        color: "#000",
+        border: "solid 1px #707070",
+        boxShadow: "none",
+        fontSize: ".9rem",
+        borderRadius: "0px",
+        fontFamily: 'FiveYearsLaterRegular", monospace, "Roboto", sans-serif',
+        top: "-10px"
+    }
+}))(Tooltip);
+
 class Apply extends React.Component {
     constructor(props) {
         super(props);
@@ -35,10 +50,10 @@ class Apply extends React.Component {
         this.setState(prevState => ({
             inputs: prevState.inputs.concat([newInput])
         }));
-        var pageHeight = document.querySelector('#apply').getBoundingClientRect().height;
-        document.querySelector(
-            ".pages"
-        ).style.height = `${pageHeight + 207}px`;
+        var pageHeight = document
+            .querySelector("#apply")
+            .getBoundingClientRect().height;
+        document.querySelector(".pages").style.height = `${pageHeight + 207}px`;
     };
     static onFileDelete(id) {
         const { validate } = Apply;
@@ -106,6 +121,7 @@ class Apply extends React.Component {
         const { files, maxFilesLength } = this.state;
         const { t } = this.props;
         const order = this.props.order;
+        const { classes } = this.props;
         return (
             <div className="apply-page page" id="apply" data-order={order}>
                 <div className="mobile-title-page">{t("dataApply.title")}</div>
@@ -121,20 +137,25 @@ class Apply extends React.Component {
                                     name={"author[]"}
                                     isRequired={"required"}
                                 />
-                                <div
-                                    className="add-input"
-                                    onClick={this.addInput}
+                                <LightTooltip
+                                    title={t("dataApply.toolip-name")}
+                                    placement="bottom-end"
                                 >
-                                    +
-                                </div>
-                            </div>
-                          
-                            {this.state.inputs.map(input => (
-                                  <div className="form-row with-add-btn">
-                                    <Input key={input} name={"author[]"} />
+                                    <div
+                                        className="add-input"
+                                        onClick={this.addInput}
+                                    >
+                                        +
                                     </div>
-                                ))}
-                           
+                                </LightTooltip>
+                            </div>
+
+                            {this.state.inputs.map(input => (
+                                <div className="form-row with-add-btn">
+                                    <Input key={input} name={"author[]"} />
+                                </div>
+                            ))}
+
                             <div className="form-row">
                                 <Input
                                     title={t("dataApply.email")}
