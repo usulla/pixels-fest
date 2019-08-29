@@ -6,6 +6,8 @@
     // min-height: calc(100vh - 207px);
     @media (min-width: $mobile_l) {
         transform: translateX(85vw);
+        min-height: calc(100vh + 207px)!important;
+        padding-bottom:0;
     }
     display: flex;
     align-items: center;
@@ -28,8 +30,9 @@
     text-align: center;
     @media (min-width: $mobile_l) {
         height: calc(100% + 207px);
-        padding-top: 207px;
+        // padding-top: 207px;
         padding-bottom: 0;
+        margin-top: -207px;
     }
     @media (max-width: $mobile_l+1) {
         padding-top: 0 !important;

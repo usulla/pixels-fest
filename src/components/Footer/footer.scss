@@ -119,7 +119,7 @@
       text-decoration: none;
       font-size: 0.7rem;
       max-width: 261px;
-      @include linear-gradient(to bottom, #f7a543, #c5e2ce 35%, #005e74 68%, #8c89ff);
+      @include linear-gradient(to left, #f7a543, #c5e2ce 35%, #005e74 68%, #8c89ff);
 
       &:hover {
         cursor: pointer;

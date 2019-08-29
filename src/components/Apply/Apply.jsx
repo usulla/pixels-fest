@@ -50,10 +50,13 @@ class Apply extends React.Component {
         this.setState(prevState => ({
             inputs: prevState.inputs.concat([newInput])
         }));
-        var pageHeight = document
-            .querySelector("#apply")
-            .getBoundingClientRect().height;
-        document.querySelector(".pages").style.height = `${pageHeight + 207}px`;
+        if (!this.props.isMobile) {
+            var pageHeight = document
+                .querySelector("#apply")
+                .getBoundingClientRect().height;
+            document.querySelector(".pages").style.height = `${pageHeight +
+                207}px`;
+        }
     };
     static onFileDelete(id) {
         const { validate } = Apply;
@@ -83,11 +86,15 @@ class Apply extends React.Component {
         event.preventDefault();
         const formElement = document.querySelector("form");
         const formData = new FormData(formElement);
+        const currentLangBtn = document.querySelector('.switch-language--button.active');
+        var currentLang = 'ru';
+        currentLangBtn.classList.contains('button-ru') ? currentLang = 'ru' : currentLang = 'en';
+        formData.append('lang', currentLang);
         const url = "//pixelsfest.com/works/add";
         //send to server form data
         fetch(url, {
             method: "post",
-            body: formData
+            body: formData,
         })
             .then(response => {
                 if (response.status !== 200) {
@@ -109,6 +116,9 @@ class Apply extends React.Component {
                     }
                     if (data.errors) {
                         this.setState({ errors: data.errors });
+                    }
+                    if (data.success) {
+                        document.form.reset();
                     }
                 });
             })
@@ -238,11 +248,11 @@ class Apply extends React.Component {
                             </div>
                             {!this.state.showResult ||
                             (this.state.showResult && !this.state.success) ? (
-                                <input
-                                    type="submit"
-                                    className="send-form"
-                                    value={t("dataApply.button-text")}
-                                />
+                                    <input
+                                        type="submit"
+                                        className="send-form"
+                                        value={t("dataApply.button-text")}
+                                    />
                             ) : null}
                             {this.state.showResult ? (
                                 <Result
@@ -250,6 +260,7 @@ class Apply extends React.Component {
                                     success={this.state.success}
                                     requestNumber={this.state.requestNumber}
                                     errors={this.state.errors}
+                                    isMobile={this.props.isMobile}
                                 />
                             ) : null}
                         </form>

@@ -34,19 +34,19 @@ class GradientUpBlock extends Component {
     }
     showPopup = e => {
         this.setState({ showPopup: true });
-        document.querySelector('.toggle-menu').style.display = 'none';
-        document.body.style.overflow = 'hidden';
-        document.body.style.maxHeight = '100vh';
-        document.documentElement.style.maxHeight = '100vh';
-        document.documentElement.style.overflow = 'hidden';
+        document.querySelector(".toggle-menu").style.display = "none";
+        document.body.style.overflow = "hidden";
+        document.body.style.maxHeight = "100vh";
+        document.documentElement.style.maxHeight = "100vh";
+        document.documentElement.style.overflow = "hidden";
     };
     hidePopup = e => {
         this.setState({ showPopup: false });
-        document.querySelector('.toggle-menu').style.display = '';
-        document.body.style.overflow = '';
-        document.body.style.maxHeight = '';
-        document.documentElement.style.maxHeight = '';
-        document.documentElement.style.overflow = '';
+        document.querySelector(".toggle-menu").style.display = "";
+        document.body.style.overflow = "";
+        document.body.style.maxHeight = "";
+        document.documentElement.style.maxHeight = "";
+        document.documentElement.style.overflow = "";
     };
     showGradientText = e => {
         const self = e.currentTarget;
@@ -76,50 +76,50 @@ class GradientUpBlock extends Component {
         const { classes } = this.props;
         return (
             <div className="gradient-up-block">
-                <span className="theme-title">
-                    {t("dataHeader.theme.title")}
-                    {!this.props.isMobile ? (
+                {!this.props.isMobile ? (
+                    <span
+                        className="theme-title"
+                        onClick={this.showGradientText}
+                    >
+                        {t("dataHeader.theme.title")}
                         <div className="gradient-up-block__content">
-                            <div
-                                className="theme-gradientblock"
-                                onClick={this.showGradientText}
-                            />
+                            <div className="theme-gradientblock" />
                             <span className="fulltext">
                                 {this.state.showGradientText
                                     ? t("dataHeader.theme.description")
                                     : null}
                             </span>
                         </div>
-                    ) : (
+                    </span>
+                ) : (
+                    <span className="theme-title" onClick={this.showPopup}>
+                        {t("dataHeader.theme.title")}
                         <div className="gradient-up-block__content">
-                            <div
-                                className="theme-gradientblock"
-                                onClick={this.showPopup}
-                            />
+                            <div className="theme-gradientblock" />
                         </div>
-                    )}
-                    {this.props.isMobile && this.state.showPopup ? (
-                        <Fragment>
-                            <div className="gradient-mobpopup">
-                                <div className="gradient-mobpopup--inner">
-                                    <Fab
-                                        size="small"
-                                        component="span"
-                                        className={classes.fab}
-                                        onClick={this.hidePopup}
-                                    >
-                                        <Close className={classes.close} />
-                                    </Fab>
-                                    <div className="gradient-mobpopup--text">
-                                        {t("dataHeader.theme.description")}
-                                    </div>
-                                    <Timer />
+                    </span>
+                )}
+                {this.props.isMobile && this.state.showPopup ? (
+                    <Fragment>
+                        <div className="gradient-mobpopup">
+                            <div className="gradient-mobpopup--inner">
+                                <Fab
+                                    size="small"
+                                    component="span"
+                                    className={classes.fab}
+                                    onClick={this.hidePopup}
+                                >
+                                    <Close className={classes.close} />
+                                </Fab>
+                                <div className="gradient-mobpopup--text">
+                                    {t("dataHeader.theme.description")}
                                 </div>
+                                <Timer />
                             </div>
-                            <div className="gradient-mobpopup-bg"></div>
-                        </Fragment>
-                    ) : null}
-                </span>
+                        </div>
+                        <div className="gradient-mobpopup-bg"></div>
+                    </Fragment>
+                ) : null}
             </div>
         );
     }

@@ -23,10 +23,11 @@
             justify-content: center;
         }
     }
-    &.active2.animate, &.active.animate{
+    &.active2.animate,
+    &.active.animate {
         transform: translateX(18vw);
     }
-    &.move{
+    &.move {
         transform: translateX(-61vw);
     }
 }

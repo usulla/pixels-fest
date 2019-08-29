@@ -13,20 +13,22 @@ class Result extends React.Component {
     handleChange(event) {
         this.setState({ [this.props.name]: event.target.value });
     }
-    componentDidUpdate(){
-        var pageHeight = document.querySelector('#apply').getBoundingClientRect().height;
-        document.querySelector(
-            ".pages"
-        ).style.height = `${pageHeight + 207}px`;
-        
+    componentDidUpdate() {
+        if (!this.props.isMobile) {
+            var pageHeight = document
+                .querySelector("#apply")
+                .getBoundingClientRect().height;
+            document.querySelector(".pages").style.height = `${pageHeight +
+                207}px`;
+        }
     }
-    
+
     render() {
         const { t } = this.props;
         const requestNumber = this.props.requestNumber;
         const successStatus = this.props.success;
         const errors = this.props.errors;
-        console.log(errors, 'errors')
+        console.log(errors, "errors");
         if (successStatus) {
             return (
                 <div className="outer_block_result">

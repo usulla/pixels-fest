@@ -97,6 +97,9 @@ form {
             @media (max-width: $mobile_l+1) {
                 align-self: flex-end;
             }
+            &:hover {
+                cursor: pointer;
+            }
         }
         .checkbox-row {
             display: flex;
