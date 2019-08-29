@@ -9,7 +9,7 @@
     background: $black;
     min-height: calc(100vh - 207px)!important;
     @media (max-width: $mobile_l+1) {
-        min-height: calc(100vh - 85px);
+        min-height: 100vh!important;
         padding-left: 0vw;
         display: flex;
         align-items: center;

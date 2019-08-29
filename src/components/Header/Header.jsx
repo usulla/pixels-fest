@@ -9,11 +9,19 @@ import model3d from "../../images/model3d.mp4";
 const Header = ({ navtitle, h1_text, logo2x2, timer, isMobile, order }) => {
     if (!isMobile) {
         return (
-            <header className="page header header-page active" data-order={order} id="header">
+            <header
+                className="page header header-page active"
+                data-order={order}
+                id="header"
+            >
                 <div className="header__content page__content">
                     <div className="header__center-block">
                         <div className="header__row header__row--top">
-                            <HeaderTextBlock h1_text={h1_text} isMobile={isMobile} video={false}/>
+                            <HeaderTextBlock
+                                h1_text={h1_text}
+                                isMobile={isMobile}
+                                video={false}
+                            />
                             <Logo2x2 {...logo2x2} />
                         </div>
                         <div className="header__row header__row--video">
@@ -27,7 +35,7 @@ const Header = ({ navtitle, h1_text, logo2x2, timer, isMobile, order }) => {
                             </video>
                         </div>
                         <div className="header__row header__row--middle">
-                            <GradientUpBlock />
+                            <GradientUpBlock isMobile={isMobile}/>
                         </div>
                         <div className="header__row header__row--bottom">
                             <Timer {...timer} />
@@ -41,10 +49,10 @@ const Header = ({ navtitle, h1_text, logo2x2, timer, isMobile, order }) => {
         <header className="header page header-page active" id="header">
             <div className="header__content page__content">
                 <div className="header__row header__row--top">
-                    <HeaderTextBlock  h1_text={h1_text} />
+                    <HeaderTextBlock h1_text={h1_text} />
                 </div>
                 <div className="header__row header__row--middle">
-                    <GradientUpBlock />
+                    <GradientUpBlock isMobile={isMobile} />
                 </div>
                 <Logo2x2 {...logo2x2} />
             </div>

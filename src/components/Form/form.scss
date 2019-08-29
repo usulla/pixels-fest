@@ -63,6 +63,16 @@ form {
                 -webkit-appearance: none;
                 -webkit-border-radius: 0px;
                 margin: 0;
+                @media (max-width: $mobile_l+1) {
+                    -webkit-appearance: none;
+                    border-radius: 0 !important;
+                }
+            }
+            textarea {
+                @media (max-width: $mobile_l+1) {
+                    border-radius: 0 !important;
+                    -webkit-appearance: none;
+                }
             }
             span {
                 order: 2;

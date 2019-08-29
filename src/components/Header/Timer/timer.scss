@@ -1,72 +1,79 @@
 @import "../../../sass/variables.scss";
 @import "../../../sass/mixins.scss";
 .header__timer {
-  padding-bottom: 20px;
-  margin: 0;
-  ul {
+    padding-bottom: 20px;
     margin: 0;
-  }
-  .header__timer__title {
-    margin: 0;
-    font-size: .9rem;
-    font-weight: normal;
-    line-height: 1.23;
-    color: #fff;
-
-    @media (max-width: $mobile_l+1) {
-      font-size: 14.5px;
+    ul {
+        margin: 0;
     }
-  }
+    @media (max-width: $mobile_l+1) {
+        padding-bottom: 0;
+        margin: 0 auto;
+    }
+    .header__timer__title {
+        margin: 0;
+        font-size: 0.9rem;
+        font-weight: normal;
+        line-height: 1.23;
+        color: #fff;
+
+        @media (max-width: $mobile_l+1) {
+           // font-size: 14.5px;
+           font-size: 4vw;
+            text-transform: uppercase;
+        }
+    }
 }
 .timer__content {
-  li {
-    display: inline-block;
-    text-align: center;
-    list-style-type: none;
-  } 
-  li span {
-    display: block;
-    line-height: 1;
-    padding-bottom: 5px;
-    text-transform: uppercase;
-  }
+    li {
+        display: inline-block;
+        text-align: center;
+        list-style-type: none;
+    }
+    li span {
+        display: block;
+        line-height: 1;
+        padding-bottom: 5px;
+        text-transform: uppercase;
+    }
 }
 .left-sidebar__li .timer__content {
-  li span {
-    padding-bottom: 9px;
- }
-}
-.header{
-  .timer__content {
-    li {
-      display: inline-block;
-      text-align: center;
-      list-style-type: none;
-      padding: 0 0.6rem;
-
-  
-      @media (max-width: $mobile_l+1) {
-        // font-size: 8px;
-      }
-      &:first-child {
-        padding-left: 0;
-      }
-      .text{
-        font-size: 0.63rem;
-        text-transform: none;
-      }
-    }
-  
     li span {
-      display: block;
-      font-size: 3.6rem;
-      line-height: 1;
-      padding-bottom: 5px;
-      text-transform: uppercase;
-      @media (max-width: $mobile_l+1) {
-        font-size: 51px;
-      }
+        padding-bottom: 9px;
     }
-  }
 }
+.header {
+    .timer__content {
+        li {
+            display: inline-block;
+            text-align: center;
+            list-style-type: none;
+            padding: 0 0.6rem;
 
+            @media (max-width: $mobile_l+1) {
+                // font-size: 8px;
+            }
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+            .text {
+                font-size: 0.63rem;
+                text-transform: none;
+            }
+        }
+
+        li span {
+            display: block;
+            font-size: 3.6rem;
+            line-height: 1;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            @media (max-width: $mobile_l+1) {
+                font-size: 12.4vw;
+            }
+        }
+    }
+}
