@@ -2,7 +2,8 @@
 @import "../../sass/mixins.scss";
 form {
     max-width: 1171px;
-    width: 80%;
+    // width: 80%;
+    width:70%;
     padding: 4vw 5vw 5vw;
     background: $white;
     border: solid 2px $black;
@@ -38,6 +39,9 @@ form {
         .uploadfile-btn {
             background: $white;
             padding: 5px;
+            @media (min-width: $desctops_l) {
+                padding: 13px;
+            }
         }
         .file-name {
             text-decoration: underline;
@@ -50,11 +54,46 @@ form {
 
         @media (max-width: $mobile_l+1) {
             padding-top: 16px;
+            display: flex;
+            justify-content: space-between;
         }
-
+        &.with-add-btn {
+            label {
+                display: inline-block;
+                width: 88%;
+                @media (max-width: $mobile_l+1) {
+                    width: 80%;
+                }
+            }
+        }
+        .add-input {
+            width: 41px;
+            height: 41px;
+            border: 1px solid #000;
+            border-radius: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            line-height: 34px;
+            display: block;
+            font-weight: 300;
+            font-family: sans-serif;
+            float: right;
+            margin-top: calc(12px + 1rem);
+            margin-top: calc(12px + 1rem);
+            @media (min-width: $desctops_l) {
+                width: 71px;
+                height: 71px;
+                line-height: 61px;
+            }
+            @media (max-width: $mobile_l+1) {
+                align-self: flex-end;
+            }
+        }
         .checkbox-row {
             display: flex;
-
             input {
                 order: 1;
                 width: 50px;
@@ -83,6 +122,7 @@ form {
         select,
         textarea {
             display: block;
+            font-size:.9rem;
         }
         .checkbox {
             position: absolute;
@@ -95,7 +135,9 @@ form {
             padding: 0 0 0 60px;
             cursor: pointer;
             font-size: 0.7rem;
-
+            @media (min-width: $desctops_l) {
+                padding: 0 0 0 90px;
+            }
             @media (max-width: $mobile_l+1) {
                 padding: 0 0 0 45px;
             }
@@ -109,6 +151,10 @@ form {
             height: 30px;
             border: solid 1px #000000;
             background: #fff;
+            @media (min-width: $desctops_l) {
+                width: 50px;
+                height: 50px;
+            }
         }
         .checkbox + label:after {
             content: "";
@@ -123,26 +169,35 @@ form {
             border: 1px solid #000;
             background: #fff;
             transition: 0.2s;
-        }
-        .checkbox:checked + label:before {
+            @media (min-width: $desctops_l) {
+                width: 50px;
+                height: 50px;
+            }
         }
         .checkbox:checked + label:after {
             font-family: "Font Awesome 5 Free";
             font-weight: 900;
             content: "\f00c";
             font-size: 15px;
-        }
-        .checkbox:focus + label:before {
+            @media (min-width: $desctops_l) {
+                font-size: 20px;
+            }
         }
 
         label {
             font-size: 1rem;
+            @media (max-width: $mobile_l+1) {
+                width: 100%;
+            }
         }
         input {
             height: 41px;
             width: 100%;
             border: 1px solid $black;
             padding: 10px;
+            @media (min-width: $desctops_l) {
+                height: 71px;
+            }
         }
         select {
             -webkit-appearance: none;
@@ -153,6 +208,9 @@ form {
             border: 1px solid #000;
             background: $white;
             padding: 0 10px;
+            @media (min-width: $desctops_l) {
+                height: 71px;
+            }
         }
         .select {
             position: relative;
@@ -170,8 +228,12 @@ form {
                 height: 100%;
                 pointer-events: none;
                 box-sizing: border-box;
+
                 @media (max-width: $mobile_l+1) {
                     font-size: 13px;
+                }
+                @media (min-width: $desctops_l) {
+                    line-height: 73px;
                 }
             }
         }

@@ -33,7 +33,7 @@
 html,
 body {
     @media (min-width: $mobile_l) {
-    scrollbar-width: none;
+        scrollbar-width: none;
     }
     // height: 100%;
     // overflow: hidden;
@@ -236,6 +236,12 @@ body {
             }
         }
     }
+}
+.fix-apply#apply{
+    z-index: 20;
+}
+.fix-apply.menu{
+    z-index: 19;
 }
 .page__content {
     @media (min-width: $mobile_l) {

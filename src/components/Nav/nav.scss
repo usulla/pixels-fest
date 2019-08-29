@@ -14,6 +14,9 @@
     // @include transform(translateY(-270%));
     // @include animation('fadeInY 1s cubic-bezier(.2, .6, .2, 1) 2.8s forwards');
 
+    @media (min-width: $mobile_l) {
+        width: 11%;
+    }
     &__menu-ul {
         @media (max-width: $mobile_l+1) {
             display: none !important;
@@ -68,14 +71,14 @@
             &.li-slide-left {
                 @include transform(translateX(79vw));
                 //@include transition(transform, 0.45s, cubic-bezier(.2,.6,.2,1));
-                @include transition(transform, .8s, ease);
+                @include transition(transform, 0.8s, ease);
                 a {
                     color: $black;
                 }
             }
             &.li-slide-right {
                 @include transform(translateX(0vw));
-                @include transition(transform, .8s, ease);
+                @include transition(transform, 0.8s, ease);
             }
             span {
                 z-index: 1;
@@ -86,7 +89,7 @@
                 top: 0;
                 cursor: pointer;
                 @include linear-gradient(to top, #ffa38e, #522b30 49%, #00c3ff);
-                @include transition(height, .8s, ease);
+                @include transition(height, 0.8s, ease);
             }
             &:hover {
                 cursor: pointer;

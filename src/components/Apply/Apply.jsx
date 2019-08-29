@@ -5,7 +5,8 @@ import Input from "../Form/Input.jsx";
 import MySelect2 from "../Form/MySelect2.jsx";
 import Textarea from "../Form/Textarea.jsx";
 import Checkbox from "../Form/Checkbox.jsx";
-import CustomizedUpload from '../Form/CustomizedUpload';
+import addInput from "../Form/addInput.jsx";
+import CustomizedUpload from "../Form/CustomizedUpload";
 import Result from "../Form/Result.jsx";
 import { withTranslation } from "react-i18next";
 class Apply extends React.Component {
@@ -17,41 +18,52 @@ class Apply extends React.Component {
             errors: [],
             requestNumber: null,
             files: [],
-			maxFilesLength: 1
+            maxFilesLength: 1,
+            inputs: []
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.constructor.onFilesChoose = this.constructor.onFilesChoose.bind(
-			this
-		);
-		this.constructor.onFileDelete = this.constructor.onFileDelete.bind(
-			this
-		);
+            this
+        );
+        this.constructor.onFileDelete = this.constructor.onFileDelete.bind(
+            this
+        );
     }
+    addInput = e => {
+        // const inputName = e.currentTarget.dataset.name;
+        var newInput = "input-${this.state.inputs.length}";
+        this.setState(prevState => ({
+            inputs: prevState.inputs.concat([newInput])
+        }));
+        var pageHeight = document.querySelector('#apply').getBoundingClientRect().height;
+        document.querySelector(
+            ".pages"
+        ).style.height = `${pageHeight + 207}px`;
+    };
     static onFileDelete(id) {
-		const { validate } = Apply;
-		const { files } = this.state;
-		this.setState(
-			{
-				files: files.filter(file => file.id !== id)
-			},
-			() => {
-				document.getElementById(id).value = '';
-			}
-		);
-	}
-	static onFilesChoose(e) {
+        const { validate } = Apply;
+        const { files } = this.state;
+        this.setState(
+            {
+                files: files.filter(file => file.id !== id)
+            },
+            () => {
+                document.getElementById(id).value = "";
+            }
+        );
+    }
+    static onFilesChoose(e) {
+        const { validate } = Apply;
+        const { files, maxFilesLength } = this.state;
 
-		const { validate } = Apply;
-		const { files, maxFilesLength } = this.state;
+        let readyFiles = Array.from(e.target.files).filter(file =>
+            file.type.includes("video")
+        );
+        readyFiles.forEach(file => (file.id = e.target.id));
+        readyFiles = files.concat(readyFiles).slice(0, maxFilesLength);
 
-		let readyFiles = Array.from(e.target.files).filter(file =>
-			file.type.includes('video')
-		);
-		readyFiles.forEach(file => (file.id = e.target.id));
-		readyFiles = files.concat(readyFiles).slice(0, maxFilesLength);
-
-		if (readyFiles.length) this.setState({ files: readyFiles }, validate);
-	}
+        if (readyFiles.length) this.setState({ files: readyFiles }, validate);
+    }
     handleSubmit(event) {
         event.preventDefault();
         const formElement = document.querySelector("form");
@@ -74,7 +86,7 @@ class Apply extends React.Component {
                     });
                     return;
                 }
-                response.json().then((data) => {
+                response.json().then(data => {
                     this.setState({ showResult: true });
                     this.setState({ success: data.success });
                     if (data.requestNumber) {
@@ -85,21 +97,13 @@ class Apply extends React.Component {
                     }
                 });
             })
-            .catch(
-                (err) => {
-                    console.log("Fetch Error :-S", err);
-                }
-            );
+            .catch(err => {
+                console.log("Fetch Error :-S", err);
+            });
     }
     render() {
-        const {
-			onFilesChoose,
-			onFileDelete
-        } = Apply;
-        const {
-			files,
-			maxFilesLength
-		} = this.state;
+        const { onFilesChoose, onFileDelete } = Apply;
+        const { files, maxFilesLength } = this.state;
         const { t } = this.props;
         const order = this.props.order;
         return (
@@ -111,13 +115,26 @@ class Apply extends React.Component {
                             <div className="form-title">
                                 {t("dataApply.form-title")}
                             </div>
-                            <div className="form-row">
+                            <div className="form-row with-add-btn">
                                 <Input
                                     title={t("dataApply.name")}
                                     name={"author[]"}
                                     isRequired={"required"}
                                 />
+                                <div
+                                    className="add-input"
+                                    onClick={this.addInput}
+                                >
+                                    +
+                                </div>
                             </div>
+                          
+                            {this.state.inputs.map(input => (
+                                  <div className="form-row with-add-btn">
+                                    <Input key={input} name={"author[]"} />
+                                    </div>
+                                ))}
+                           
                             <div className="form-row">
                                 <Input
                                     title={t("dataApply.email")}
@@ -181,16 +198,16 @@ class Apply extends React.Component {
                                 />
                             </div>
                             <CustomizedUpload
-									accept='video/mp4'
-									id='media'
-									name='media'
-									type='file'
-									files={files}
-									maxFilesLength={maxFilesLength}
-									onFilesChoose={onFilesChoose}
-									onFileDelete={onFileDelete}
-									hidden
-								/>
+                                accept="video/mp4"
+                                id="media"
+                                name="media"
+                                type="file"
+                                files={files}
+                                maxFilesLength={maxFilesLength}
+                                onFilesChoose={onFilesChoose}
+                                onFileDelete={onFileDelete}
+                                hidden
+                            />
                             <div className="form-row">
                                 <Checkbox
                                     title={t("dataApply.agreement1")}
@@ -198,12 +215,13 @@ class Apply extends React.Component {
                                     isRequired={"required"}
                                 />
                             </div>
-                            {!this.state.showResult || (this.state.showResult && !this.state.success) ? (
-                            <input
-                                type="submit"
-                                className="send-form"
-                                value={t("dataApply.button-text")}
-                            />
+                            {!this.state.showResult ||
+                            (this.state.showResult && !this.state.success) ? (
+                                <input
+                                    type="submit"
+                                    className="send-form"
+                                    value={t("dataApply.button-text")}
+                                />
                             ) : null}
                             {this.state.showResult ? (
                                 <Result

@@ -23,7 +23,7 @@ const Nav = ({ list, isMobile }) => {
         elemClick(toApplyBtn2);
         elemClick(toCompetition);
         elemClick(compApplyBtn);
-        
+
         function elemClick(elem) {
             if (elem) {
                 elem.addEventListener("click", e => {
@@ -34,6 +34,9 @@ const Nav = ({ list, isMobile }) => {
     });
     function liClick(e) {
         e.preventDefault();
+        // if (document.querySelector(".fix-apply")) {
+        //     document.querySelector(".fix-apply").classList.remove("fix-apply");
+        // }
         const activeLi = e.currentTarget;
         if (!activeLi.classList.contains("li-slide-left")) {
             if (document.querySelector(".menu-ul__li.move-left")) {
@@ -147,6 +150,12 @@ const Nav = ({ list, isMobile }) => {
                             } else {
                                 slideLi("li-slide-left", "li-slide-right");
                             }
+                            // if (activePage.id == "apply") {
+                            //     activePage.classList.add("fix-apply");
+                            //     document
+                            //         .querySelector(".menu")
+                            //         .classList.add("fix-apply");
+                            // }
                             if (page !== activePage) {
                                 activePage.addEventListener(
                                     "transitionend",
