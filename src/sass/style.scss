@@ -26,14 +26,21 @@
     //     /*  clear useragent default style*/
     //     -moz-appearance: none !important;
     // }
-    ::-webkit-scrollbar {
-        display: none;
-    }
+
 }
 html,
 body {
     @media (min-width: $mobile_l) {
         scrollbar-width: none;
+        ::-webkit-scrollbar {
+            display: none;  /* WebKit */
+            width: 0;
+            height: 0;
+        }
+        overflow: -moz-scrollbars-none;
+
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* IE 10+ */
     }
     // height: 100%;
     // overflow: hidden;
