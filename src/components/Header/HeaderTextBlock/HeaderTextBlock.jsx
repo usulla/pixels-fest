@@ -4,7 +4,7 @@ import logo from "../../../images/logo.png";
 import pf_logo_animate from "../../../images/pf_logo_animate.webm";
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
-const HeaderTextBlock = ( props) => {
+const HeaderTextBlock = props => {
     const { t, i18n } = useTranslation();
     const video = props.video;
     const isMobile = props.isMobile;
@@ -17,6 +17,8 @@ const HeaderTextBlock = ( props) => {
                 <div className="header__description">
                     <h2>
                         {i18n.t("dataHeader.h1_text.description")}
+                        <br />
+                        {i18n.t("dataHeader.h1_text.description1")}
                         <div className="header__description--margintop">
                             <span>
                                 {i18n.t("dataHeader.h1_text.description2")}
@@ -48,6 +50,8 @@ const HeaderTextBlock = ( props) => {
                 <div className="header__description">
                     <h2>
                         {i18n.t("dataHeader.h1_text.description")}
+                        <br />
+                        {i18n.t("dataHeader.h1_text.description1")}
                         <div className="header__description--margintop">
                             <span>
                                 {i18n.t("dataHeader.h1_text.description2")}
@@ -73,6 +77,8 @@ const HeaderTextBlock = ( props) => {
                 <div className="header__description">
                     <h2>
                         {i18n.t("dataHeader.h1_text.description")}
+                        <br />
+                        {i18n.t("dataHeader.h1_text.description1")}
                         <div className="header__description--margintop">
                             <span>
                                 {i18n.t("dataHeader.h1_text.description2")}

@@ -13,23 +13,24 @@
             cursor: pointer;
         }
         &:hover .theme-gradientblock {
-            width: 102%;
+            width: 125%;
         }
     }
     .gradient-up-block__content {
         position: relative;
         &.active {
+            width: 125%;
             display: flex;
             align-items: center;
 
-            @include animation("widthUp .4s linear forwards");
+            // @include animation("widthUp .4s linear forwards");
         }
         &.active .theme-title:hover .theme-gradientblock {
-            width: 100%;
+            width: 125%;
         }
         &.active .theme-gradientblock {
             width: 100%;
-            @include animation("heightUp .4s linear .4s forwards");
+            @include animation("heightUp .4s linear 0s forwards");
             //height:9rem;
             overflow: hidden;
         }
@@ -37,7 +38,7 @@
             height: 20px;
             padding: 12px 15px;
             width: 9vw;
-            @include transition(all, 1s, ease);
+            @include transition(all, .7s, ease);
             @include linear-gradient(
                 to left,
                 #f7a543,
@@ -48,7 +49,7 @@
             //@include transition(height, 0.4s, linear);
             display: block;
             margin-top: 2px;
-            margin-left: -5px;
+            // margin-left: -5px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -66,11 +67,11 @@
             font-size: 0.8rem;
             opacity: 0;
             display: none;
-            @include transition(all, 1s, ease);
+            @include transition(all, .4s, ease);
 
             &.show {
                 display: block;
-                @include transition(all, 1s, ease);
+                @include transition(all, .4s, ease);
             }
             &.show.animate {
                 opacity: 1;
@@ -111,7 +112,7 @@
                   }
                 }
             }
-            animation: fadeIn .4s ease;
+            animation: fadeIn .2s ease;
         }
         @include keyframes(fadeIn) {
             0% {
@@ -136,14 +137,14 @@
     }
 }
 
-@include keyframes(widthUp) {
-    0% {
-        width: 100%;
-    }
-    100% {
-        width: 125%;
-    }
-}
+// @include keyframes(widthUp) {
+//     0% {
+//         width: 100%;
+//     }
+//     100% {
+//         width: 125%;
+//     }
+// }
 @include keyframes(heightUp) {
     0% {
         height: 20px;

@@ -25,18 +25,21 @@ const Jury = ({ members, isMobile, order }) => {
                                 1}`}
                         >
                             <div className="member-round">
-                                <img
-                                    className="member-img"
-                                    src={member.img}
-                                    alt={i18n.t(
-                                        `dataJury.members.${index}.name`
-                                    )}
-                                />
-                                <div className="member-hover">
-                                    <div className="member-description">
-                                        {i18n.t(
-                                            `dataJury.members.${index}.description`
+                                <div className="hidden-img">
+                                    <img
+                                        className="member-img"
+                                        src={member.img}
+                                        alt={i18n.t(
+                                            `dataJury.members.${index}.name`
                                         )}
+                                    />
+
+                                    <div className="member-hover">
+                                        <div className="member-description">
+                                            {i18n.t(
+                                                `dataJury.members.${index}.description`
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

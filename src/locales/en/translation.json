@@ -28,6 +28,7 @@
         ],
         "h1_text": {
             "description": "INTERNATIONAL FESTIVAL AND CONTEST OF DIGITAL",
+            "description1": "AND CONTEST OF DIGITAL",
             "description2": "VIDEO ART",
             "subtitle": "The Media façade of The Yeltsin Center in Yekaterinburg",
             "period": "07—15.03"
@@ -67,31 +68,31 @@
                 "name": "Denis Vsesvyatskiy",
                 "profession": "2х2 TV Channel, General Director",
                 "description": "organizer of animation festivals and exhibitions of Russian artists, curator of educational programs in animation and motion design.",
-                "img": "images/member1.png"
+                "img": "images/member1.jpg"
             },
             {
                 "name": "AnnaTitovets | Intektra",
                 "profession": "Independent curator, media artist",
                 "description": "new media art researcher, founder and curator of the PlumsFest festival for audiovisual arts. Co-organizer and curator of many festivals and exhibitions in the field of technological art, participant of exhibitions and festivals of media and video art, both in Russia and abroad.",
-                "img": "images/member2.png"
+                "img": "images/member2.jpg"
             },
             {
                 "name": "Ilya Shipilovsky",
                 "profession": "Director of the Yeltsin Center Art gallery, curator",
                 "description": "Deputy-director of the Yeltsin Center museum on exhibition management. Member of the Expert Council of the Garage Museum of Contemporary Art 2017/2018 grant program. Participant of the Expert’s Panel for the prize for young artists of Cosmoscow 2018 Fair.",
-                "img": "images/member1.png"
+                "img": "images/member3.jpg"
             },
             {
                 "name": "Tatyana Yaroshevskaya",
                 "profession": "Head of the Department of Culture of the City Administration of Yekaterinburg",
                 "description": "",
-                "img": "images/member2.png"
+                "img": "images/member4.jpg"
             },
             {
                 "name": "Boris Bernaskony",
                 "profession": "Head of the B E R N A S K O N I bureau",
                 "description": "Repeatedly participated in the Venice Architectural Biennale and other international exhibitions. The author of innovative multifunctional building HyperCube and MATREX  in Skolkovo.",
-                "img": "images/member1.png"
+                "img": "images/member5.jpg"
             }
         ]
     },
@@ -223,7 +224,7 @@
         "winners": {
             "title1": "By open voting the juries define:",
             "data1": [
-                "3 winners, one for each category, who will receive the prize of 2000 Euro.",
+                "3 winners, one for each category, who will receive the prize of 140 000 rubles.",
                 "Winners included into the shortlist, who will receive incentive prizes of  2х2 TV channel and whose works will be demonstrated on the media façade of the Yeltsin Center together with other works of the winners within the framework of the Festival."
             ],
             "title2": "Online public voting defines:",

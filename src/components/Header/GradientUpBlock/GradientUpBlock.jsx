@@ -57,18 +57,18 @@ class GradientUpBlock extends Component {
         document.querySelector(".pages").classList.add("fixheader");
         setTimeout(function() {
             document.querySelector(".fulltext").classList.add("show");
-        }, 500);
+        }, 250);
         setTimeout(function() {
             document.querySelector(".fulltext").classList.add("animate");
             headerCalcHeight();
-        }, 600);
+        }, 350);
         function headerCalcHeight() {
             var headerPageHeight = document
                 .querySelector("#header")
                 .getBoundingClientRect().height;
             document.querySelector(
                 ".pages"
-            ).style.height = `${headerPageHeight}px`;
+            ).style.height = `${headerPageHeight+50}px`;
         }
     };
     render() {

@@ -58,7 +58,7 @@
         }
     }
     .center-block__col {
-        max-width: 1300px;
+        max-width: 1800px;
         width: 100%;
         .header__center-block {
             width: 72%;
@@ -88,8 +88,8 @@
 
             &.text-border {
                 margin: 60px -15px 60px -15px;
-                border: 2px solid #fff;
-                padding: 15px;
+                border: 4px solid #fff;
+                padding: 50px;
                 @media (max-width: $mobile_l+1) {
                     margin: 25px -10px 25px -10px;
                     font-size: 1.8rem!important;
@@ -130,10 +130,10 @@
     .gradient-line-block {
         position: relative;
         &--left {
-            left: -6vw;
+            left: -8vw;
         }
         &--right {
-            right: -6vw;
+            right: -5vw;
             text-align: right;
         }
         .gradient-line {

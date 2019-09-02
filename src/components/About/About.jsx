@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import style from "./about.scss";
 import HeaderTextBlock from "../Header/HeaderTextBlock/HeaderTextBlock.jsx";
 import style2 from "../Header/HeaderTextBlock/headertextblock.scss";
@@ -15,7 +15,7 @@ const About = ({ title2, order, isMobile }) => {
             <div className="about-page__content info-page page__content">
                 <div className="center-block__col">
                     <div className="header__center-block">
-                        <HeaderTextBlock video={true} isMobile={isMobile}/>
+                        <HeaderTextBlock video={true} isMobile={isMobile} />
                     </div>
                     <div className="gradient-line-block gradient-line-block--left gradient-line-block--1">
                         <div className="gradient-line gradient-line--1 gradient-line--medium gradient-line--narrow" />
@@ -39,9 +39,12 @@ const About = ({ title2, order, isMobile }) => {
                     <img className="about-image" src={about1} alt="PixelFest" />
                     <h3>
                         {title2.map((item, index) => (
-                            <span key={index}>
-                                {i18n.t(`dataAbout.title2.${index}`)}
-                            </span>
+                            <Fragment>
+                                <span key={index}>
+                                    {i18n.t(`dataAbout.title2.${index}`)}
+                                </span>
+                                <br />
+                            </Fragment>
                         ))}
                     </h3>
                     <div className="about_text--black">
@@ -60,8 +63,11 @@ const About = ({ title2, order, isMobile }) => {
                     <div className="about_text--black">
                         {i18n.t("dataAbout.description6")}
                     </div>
-                    <h3 className="title--white menu-ul__li toprogram" data-index="3">
-                    <a href="#program">{i18n.t("dataAbout.title3")}</a>
+                    <h3
+                        className="title--white menu-ul__li toprogram"
+                        data-index="3"
+                    >
+                        <a href="#program">{i18n.t("dataAbout.title3")}</a>
                     </h3>
                     <img className="about-image" src={about2} alt="PixelFest" />
                     <div className="about_text--black">

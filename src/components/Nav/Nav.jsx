@@ -126,43 +126,51 @@ const Nav = ({ list, isMobile }) => {
                                     pageDetHeight(page);
                                 });
                                 (function fixCurrentScroll() {
-                                    console.log(document.querySelector('.page.active'), document.querySelector('.page.active2'))
-                                    
+                                    console.log(
+                                        document.querySelector(".page.active"),
+                                        document.querySelector(".page.active2")
+                                    );
+
                                     const currentScroll = window.pageYOffset;
                                     document.querySelector(
                                         ".pages"
                                     ).style.maxHeight = "calc(100vh + 207px)";
-                                    document.querySelector(".pages").style.overflow = "hidden";
-                                    document.querySelector('.page.active').style.marginTop = `-${currentScroll}px`;
+                                    document.querySelector(
+                                        ".pages"
+                                    ).style.overflow = "hidden";
+                                    document.querySelector(
+                                        ".page.active"
+                                    ).style.marginTop = `-${currentScroll}px`;
                                 })();
                                 (function scrollToTop() {
-                                   var currentScroll =
+                                    var currentScroll =
                                         document.documentElement.scrollTop ||
                                         document.body.scrollTop;
                                     if (currentScroll > 0) {
-                                        console.log('scroll')
+                                        console.log("scroll");
                                         window.scrollTo(0, 0);
                                     }
                                 })();
-                                page.addEventListener(
-                                    "transitionend",
-                                    function(e) {
-                                        if (e.propertyName == "transform") {
-                                            // pageHeight = page.getBoundingClientRect()
-                                            //     .height;
-                                            // document.querySelector(
-                                            //     ".pages"
-                                            // ).style.height = `${pageHeight}px`;
-                                            document.querySelector(
-                                                ".pages"
-                                            ).style.maxHeight = "";
-                                            document.querySelector(
-                                                ".pages"
-                                            ).style.overflow = "";
-                                            document.querySelector('.page.active').style.marginTop = '';
-                                        }
+                                page.addEventListener("transitionend", function(
+                                    e
+                                ) {
+                                    if (e.propertyName == "transform") {
+                                        // pageHeight = page.getBoundingClientRect()
+                                        //     .height;
+                                        // document.querySelector(
+                                        //     ".pages"
+                                        // ).style.height = `${pageHeight}px`;
+                                        document.querySelector(
+                                            ".pages"
+                                        ).style.maxHeight = "";
+                                        document.querySelector(
+                                            ".pages"
+                                        ).style.overflow = "";
+                                        document.querySelector(
+                                            ".page.active"
+                                        ).style.marginTop = "";
                                     }
-                                );
+                                });
                             } else {
                                 page.classList.add("active2");
                                 window.addEventListener("resize", () => {
@@ -173,7 +181,6 @@ const Nav = ({ list, isMobile }) => {
                                 document.querySelector(
                                     ".pages"
                                 ).style.height = `${pageHeight}px`;
-
                             }
 
                             pageHeight = page.getBoundingClientRect().height;
@@ -200,7 +207,8 @@ const Nav = ({ list, isMobile }) => {
                                     "transitionend",
                                     function(e) {
                                         if (e.propertyName == "transform") {
-                                            page.classList.remove("animate");
+                                            // page.classList.remove("animate");
+                                            document.querySelector('.page.active').classList.remove("animate");
                                         }
                                         if (
                                             page.classList.contains(

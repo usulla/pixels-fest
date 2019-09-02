@@ -82,7 +82,7 @@
             }
         }
         &.jury-page__col2 {
-            top: 5vw;
+            top: 8vw;
         }
         &.jury-page__col3 {
             left: 7vw;
@@ -98,9 +98,12 @@
         position: relative;
         width: 100%;
         font-size: 0.83rem;
-        @include transition(transform, .6s, ease);
+        @include transition(transform, 0.6s, ease);
         img {
-            width: 100%;
+            width: 104%;
+            margin-left: -2%;
+            height: 104%;
+            margin-top: -2%;
         }
         &:hover {
             cursor: pointer;
@@ -114,11 +117,24 @@
             opacity: 1;
         }
     }
+    .hidden-img {
+        position: relative;
+        width: 24vw;
+        overflow: hidden;
+        text-align: center;
+        margin: 0 auto;
+        border-radius: 100%;
+        height: 24vw;
+        @media (max-width: $mobile_l+1) {
+            width: 61vw;
+            height: 61vw;
+        }
+    }
     .member-title {
         text-align: center;
         margin-top: 15px;
         @media (max-width: $mobile_l+1) {
-            margin-top: 25px;
+            margin-top: 30px;
         }
     }
     .member-name {
@@ -137,22 +153,16 @@
         @include transition;
         opacity: 0;
         position: absolute;
-        top: 1.3%;
-        left: 1.3%;
         display: flex;
         align-items: center;
         justify-content: center;
         background: rgba(0, 0, 0, 0.6);
         border-radius: 100%;
-        width: 97.8%;
-        height: 96.7%;
+        width: 104%;
+        height: 104%;
+        left: -2%;
+        top: -2%;
 
-        @media (max-width: $mobile_l+1) {
-            height: 96.5%;
-            width: 97.5%;
-            top: 1.5%;
-            left: 1.3%;
-        }
 
         .member-description {
             width: 80%;
