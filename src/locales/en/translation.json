@@ -90,7 +90,7 @@
             },
             {
                 "name": "Boris Bernaskony",
-                "profession": "Head of the B E R N A S K O N I bureau",
+                "profession": "Head of the <span>BERNASKONI</span> bureau",
                 "description": "Repeatedly participated in the Venice Architectural Biennale and other international exhibitions. The author of innovative multifunctional building HyperCube and MATREX  in Skolkovo.",
                 "img": "images/member5.jpg"
             }

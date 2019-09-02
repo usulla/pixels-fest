@@ -19,7 +19,7 @@ const LightTooltip = withStyles(theme => ({
         boxShadow: "none",
         fontSize: ".9rem",
         borderRadius: "0px",
-        fontFamily: 'FiveYearsLaterRegular", monospace, "Roboto", sans-serif',
+        fontFamily: "'FiveYearsLaterRegular', monospace, Roboto, sans-serif",
         top: "-10px"
     }
 }))(Tooltip);
@@ -86,15 +86,19 @@ class Apply extends React.Component {
         event.preventDefault();
         const formElement = document.querySelector("form");
         const formData = new FormData(formElement);
-        const currentLangBtn = document.querySelector('.switch-language--button.active');
-        var currentLang = 'ru';
-        currentLangBtn.classList.contains('button-ru') ? currentLang = 'ru' : currentLang = 'en';
-        formData.append('lang', currentLang);
+        const currentLangBtn = document.querySelector(
+            ".switch-language--button.active"
+        );
+        var currentLang = "ru";
+        currentLangBtn.classList.contains("button-ru")
+            ? (currentLang = "ru")
+            : (currentLang = "en");
+        formData.append("lang", currentLang);
         const url = "//pixelsfest.com/works/add";
         //send to server form data
         fetch(url, {
             method: "post",
-            body: formData,
+            body: formData
         })
             .then(response => {
                 if (response.status !== 200) {
@@ -150,6 +154,7 @@ class Apply extends React.Component {
                                 <LightTooltip
                                     title={t("dataApply.toolip-name")}
                                     placement="bottom-end"
+                                    className='light-tooltip'
                                 >
                                     <div
                                         className="add-input"
@@ -248,11 +253,11 @@ class Apply extends React.Component {
                             </div>
                             {!this.state.showResult ||
                             (this.state.showResult && !this.state.success) ? (
-                                    <input
-                                        type="submit"
-                                        className="send-form"
-                                        value={t("dataApply.button-text")}
-                                    />
+                                <input
+                                    type="submit"
+                                    className="send-form"
+                                    value={t("dataApply.button-text")}
+                                />
                             ) : null}
                             {this.state.showResult ? (
                                 <Result

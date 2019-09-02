@@ -7,6 +7,7 @@ form {
     padding: 4vw 5vw 5vw;
     background: $white;
     border: solid 2px $black;
+    border-right: 5px solid $black;
     @media (max-width: $mobile_l+1) {
         padding: 20px 20px 30px;
         width: 100%;
@@ -78,21 +79,17 @@ form {
             border: 1px solid #000;
             border-radius: 100%;
             text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-size: 1.2rem;
-            line-height: 34px;
+            line-height: 39px;
             display: block;
             font-weight: 300;
-            font-family: sans-serif;
+            // font-family: sans-serif;
             float: right;
-            margin-top: calc(12px + 1rem);
-            margin-top: calc(12px + 1rem);
+            margin-top: calc(11px + 1.1rem);
             @media (min-width: $desctops_l) {
                 width: 71px;
                 height: 71px;
-                line-height: 61px;
+                line-height: 69px;
             }
             @media (max-width: $mobile_l+1) {
                 align-self: flex-end;
@@ -130,6 +127,8 @@ form {
         input,
         select,
         textarea {
+            font-family: "FiveYearsLaterRegular", monospace, "Roboto",
+                sans-serif;
             display: block;
             font-size: 0.9rem;
         }
@@ -210,6 +209,9 @@ form {
         }
         select {
             -webkit-appearance: none;
+            -moz-appearance: none;
+            -o-appearance: none;
+            appearance: none;
             -webkit-border-radius: 0px;
             border-radius: 0;
             height: 41px;
@@ -220,6 +222,9 @@ form {
             @media (min-width: $desctops_l) {
                 height: 71px;
             }
+        }
+        select::-ms-expand {
+            display: none;
         }
         .select {
             position: relative;

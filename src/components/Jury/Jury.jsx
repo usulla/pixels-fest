@@ -47,11 +47,14 @@ const Jury = ({ members, isMobile, order }) => {
                                 <div className="member-name">
                                     {i18n.t(`dataJury.members.${index}.name`)}
                                 </div>
-                                <div className="member-profession">
-                                    {i18n.t(
-                                        `dataJury.members.${index}.profession`
-                                    )}
-                                </div>
+                                <div
+                                    className="member-profession"
+                                    dangerouslySetInnerHTML={{
+                                        __html: i18n.t(
+                                            `dataJury.members.${index}.profession`
+                                        )
+                                    }}
+                                ></div>
                             </div>
                         </div>
                     ))}

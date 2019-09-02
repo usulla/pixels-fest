@@ -38,7 +38,7 @@ const LightTooltip = withStyles(theme => ({
         boxShadow: "none",
         fontSize: ".9rem",
         borderRadius: "0px",
-        fontFamily: 'FiveYearsLaterRegular", monospace, "Roboto", sans-serif',
+        fontFamily: "'FiveYearsLaterRegular', monospace, Roboto, sans-serif",
         top: "-10px"
     }
 }))(Tooltip);

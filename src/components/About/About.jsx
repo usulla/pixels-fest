@@ -39,8 +39,8 @@ const About = ({ title2, order, isMobile }) => {
                     <img className="about-image" src={about1} alt="PixelFest" />
                     <h3>
                         {title2.map((item, index) => (
-                            <Fragment>
-                                <span key={index}>
+                            <Fragment key={index}>
+                                <span>
                                     {i18n.t(`dataAbout.title2.${index}`)}
                                 </span>
                                 <br />

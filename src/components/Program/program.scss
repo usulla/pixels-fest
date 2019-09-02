@@ -7,6 +7,7 @@
     @media (min-width: $mobile_l) {
         transform: translateX(85vw);
         min-height: calc(100vh + 207px)!important;
+        height: calc(100vh + 207px);
         padding-bottom:0;
     }
     display: flex;
@@ -29,7 +30,7 @@
 .program-page__content {
     text-align: center;
     @media (min-width: $mobile_l) {
-        height: calc(100% + 207px);
+        // height: calc(100% + 207px);
         // padding-top: 207px;
         padding-bottom: 0;
         margin-top: -207px;

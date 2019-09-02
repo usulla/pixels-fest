@@ -22,9 +22,20 @@ class App extends Component {
             viewPageHeader: true
         };
     }
-
     componentDidMount() {
         window.addEventListener("resize", this.resize.bind(this));
+        if (
+            !this.state.isMobile &&
+            document.querySelector(".page.header").classList.contains("active")
+        ) {
+          
+            var headerPageHeight = document
+                .querySelector("#header")
+                .getBoundingClientRect().height;
+            document.querySelector(
+                ".pages"
+            ).style.height = `${headerPageHeight + 50}px`;
+        }
     }
     componentWillMount() {
         this.resize();
