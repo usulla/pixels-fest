@@ -189,7 +189,7 @@
     .gradient-bottom {
         background-repeat: repeat-x;
         background-size: contain;
-        position: fixed;
+        position: fixed!important;
         bottom: 0;
         left: 0;
         width: 100vw;

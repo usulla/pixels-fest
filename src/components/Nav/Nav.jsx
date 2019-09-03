@@ -115,22 +115,30 @@ const Nav = ({ list, isMobile }) => {
                                 document
                                     .querySelector(".page.active")
                                     .classList.remove("active");
+
                                 document
                                     .querySelector(".page.active2")
                                     .classList.add("active");
+                                // alert(
+                                //     `${document.querySelector(
+                                //         ".page.active2"
+                                //     )} 'ADD active'`
+                                // );
+                                // alert(
+                                //     `${document.querySelector(
+                                //         ".page.active2"
+                                //     )} 'REMOVE active2'`
+                                // );
                                 document
                                     .querySelector(".page.active2")
                                     .classList.remove("active2");
+
                                 page.classList.add("active2");
+                                // alert(`${page} 'ADD active2'`);
                                 window.addEventListener("resize", () => {
                                     pageDetHeight(page);
                                 });
                                 (function fixCurrentScroll() {
-                                    console.log(
-                                        document.querySelector(".page.active"),
-                                        document.querySelector(".page.active2")
-                                    );
-
                                     const currentScroll = window.pageYOffset;
                                     document.querySelector(
                                         ".pages"
@@ -147,7 +155,6 @@ const Nav = ({ list, isMobile }) => {
                                         document.documentElement.scrollTop ||
                                         document.body.scrollTop;
                                     if (currentScroll > 0) {
-                                        console.log("scroll");
                                         window.scrollTo(0, 0);
                                     }
                                 })();
@@ -202,13 +209,37 @@ const Nav = ({ list, isMobile }) => {
                             //         .querySelector(".menu")
                             //         .classList.add("fix-apply");
                             // }
+                            activePage.addEventListener(
+                                "transitionend",
+                                function(e) {
+                                    if (e.propertyName == "transform") {
+                                        if (
+                                            !page.classList.contains(
+                                                "active2"
+                                            ) &&
+                                            page.classList.contains("animate")
+                                        ) {
+                                            // alert('remove')
+                                            page.classList.remove("animate");
+                                            //document.querySelector('.page.active').classList.remove("animate");
+                                        }
+                                    }
+                                }
+                            );
                             if (page !== activePage) {
                                 activePage.addEventListener(
                                     "transitionend",
                                     function(e) {
                                         if (e.propertyName == "transform") {
-                                            // page.classList.remove("animate");
-                                            document.querySelector('.page.active').classList.remove("animate");
+                                            // if ((!page.classList.contains("active") || !page.classList.contains("active2")) && page.classList.contains('animate')) {
+                                            //     page.classList.remove(
+                                            //         "animate"
+                                            //     );
+                                            //     // alert(
+                                            //     //     `${page} 'REMOVE ANIMATE'`
+                                            //     // );
+                                            //     //document.querySelector('.page.active').classList.remove("animate");
+                                            // }
                                         }
                                         if (
                                             page.classList.contains(
@@ -226,7 +257,10 @@ const Nav = ({ list, isMobile }) => {
                                 );
                             }
                         }
-                        activePage.classList.add("animate");
+                        // activePage.classList.add("animate");
+                        document
+                            .querySelector(".page.active2")
+                            .classList.add("animate");
                         if (activeLi.classList.contains("move-left")) {
                             if (
                                 Number(page.dataset.order) <
@@ -262,10 +296,17 @@ const Nav = ({ list, isMobile }) => {
                                 );
                             }
                         } else if (activeLi.classList.contains("move-right")) {
+                            console.log(activeLi, "move-right");
                             if (
                                 Number(page.dataset.order) >=
                                 Number(indexActiveLi)
                             ) {
+                                console.log(
+                                    Number(page.dataset.order) >=
+                                        Number(indexActiveLi),
+                                    "NUM",
+                                    page
+                                );
                                 page.classList.remove("move");
                             }
                         }
