@@ -11,6 +11,9 @@
     right: 0;
     top: 0;
     width: auto;
+    @supports ( overflow: -moz-scrollbars-none ){
+        display: block;
+      }
     // @include transform(translateY(-270%));
     // @include animation('fadeInY 1s cubic-bezier(.2, .6, .2, 1) 2.8s forwards');
 
@@ -38,12 +41,12 @@
             // max-width: 56px;
             background: $white;
             padding: 0;
-            line-height: 1;
+            // line-height: 1;
             padding-bottom: 8vh;
             text-align: right;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
+            // display: flex;
+            // justify-content: flex-end;
+            // align-items: center;
 
             &.active {
                 background: none;
@@ -65,9 +68,13 @@
                 z-index: 2;
                 position: relative;
                 line-height: 0.9;
+                width:100%;
             }
             &.li-slide-left {
                 @include transform(translateX(79vw));
+                @supports ( overflow: -moz-scrollbars-none ){
+                    @include transform(translateX(calc(79vw - 17px)));
+                  }
                 //@include transition(transform, 0.45s, cubic-bezier(.2,.6,.2,1));
                 @include transition(transform, 0.8s, ease);
                 a {

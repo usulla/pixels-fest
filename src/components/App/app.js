@@ -1,3 +1,27 @@
+export function detectBrowserType() {
+    console.log(99)
+    if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
+        return ('Opera');
+    }
+    else if (navigator.userAgent.indexOf("Chrome") != -1) {
+        return ('Chrome');
+    }
+    else if (navigator.userAgent.indexOf("Safari") != -1) {
+        return ('Safari');
+    }
+    else if (navigator.userAgent.indexOf("Firefox") != -1) {
+        var indexNumStart = navigator.userAgent.indexOf('rv:');
+        var version = navigator.userAgent.slice(indexNumStart + 3, indexNumStart + 5);
+        return ['Firefox', Number(version)];
+    }
+    else if ((navigator.userAgent.indexOf("MSIE") != -1) || (!!document.documentMode == true)) //IF IE > 10
+    {
+        return ('IE');
+    }
+    else {
+        return ('unknown');
+    }
+}
 export function showMobileTitle() {
     document.addEventListener('DOMContentLoaded', () => {
         detectViewMobTitle();
@@ -122,8 +146,8 @@ export function showMobileTitle() {
                         .classList.remove("show");
                 }
             }
-             // Apply
-             if (applyPageTop < 5 ) {
+            // Apply
+            if (applyPageTop < 5) {
                 if (
                     !applyPage.querySelector(".mobile-title-page.show")
                 ) {

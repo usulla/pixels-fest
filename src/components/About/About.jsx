@@ -6,16 +6,31 @@ import about1 from "../../images/about1.jpg";
 import about2 from "../../images/about2.jpg";
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
+import { detectBrowserType } from "../App/app.js";
+import { object } from "prop-types";
 
 const About = ({ title2, order, isMobile }) => {
     const { t, i18n } = useTranslation();
+    if (typeof detectBrowserType() !== "object") {
+        var browserType = detectBrowserType();
+        var version = detectBrowserType();
+    } else {
+        var browserType = detectBrowserType()[0];
+        var version = detectBrowserType()[1];
+    }
+
+    var video;
+    browserType == "IE" || (browserType == "Firefox" && version < 50)
+        ? (video = false)
+        : (video = true);
+    console.log(browserType, "browserType");
     return (
         <div className="about-page page" id="about-festival" data-order={order}>
             <div className="mobile-title-page">{t("dataAbout.title")}</div>
             <div className="about-page__content info-page page__content">
                 <div className="center-block__col">
                     <div className="header__center-block">
-                        <HeaderTextBlock video={true} isMobile={isMobile} />
+                        <HeaderTextBlock video={video} isMobile={isMobile} />
                     </div>
                     <div className="gradient-line-block gradient-line-block--left gradient-line-block--1">
                         <div className="gradient-line gradient-line--1 gradient-line--medium gradient-line--narrow" />

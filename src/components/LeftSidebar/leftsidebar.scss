@@ -16,7 +16,7 @@
     // max-width: 56px;
 
     .left-sidebar__li.logo {
-        width: 23px;
+        width: 1.2rem;
 
         img {
             width: 100%;
@@ -33,6 +33,7 @@
     }
     li {
         padding: 0;
+        width: 1.2rem;
     }
     li.change-language,
     li.timer {
@@ -50,4 +51,27 @@
 
 #headerpage .left-sidebar-ul {
     padding-top: 8vh;
+}
+// Only for IE >= 9
+@media screen and (min-width: $mobile_l) and (min-width: 0\0) and (min-resolution: +72dpi) {
+    #headerpage {
+        li.change-language {
+            top: 6vh;
+        }
+    }
+    li.change-language,
+    li.timer {
+        width: 1.2rem;
+        height: 1.2rem;
+        .switch-language {
+            height: 15vh;
+        }
+        .header__timer {
+            height: 20vh;
+        }
+    }
+    li.change-language {
+        top: -20%;
+        position: relative;
+    }
 }

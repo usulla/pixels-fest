@@ -28,7 +28,6 @@ class App extends Component {
             !this.state.isMobile &&
             document.querySelector(".page.header").classList.contains("active")
         ) {
-          
             var headerPageHeight = document
                 .querySelector("#header")
                 .getBoundingClientRect().height;
@@ -53,7 +52,6 @@ class App extends Component {
             // toggle show mobile title
             utils.showMobileTitle();
         }
-
         const {
             dataHeader,
             dataProgram,

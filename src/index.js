@@ -10,23 +10,34 @@ import translation_en from "./locales/en/translation.json";
 import translation_ru from "./locales/ru/translation.json";
 
 i18n
-  .init({
-	interpolation: { escapeValue: false },  // React already does escaping
-	keySeparator: '.',
-	lng: 'ru', 
-	returnObjectTrees: true,
-	useSuspense :  false,                           // language to use
-	resources: {
-		en: {
-			translation: translation_en              // 'translation' is our custom namespace
-		},
-		ru: {
-			translation: translation_ru
-		},
-	}
-});
+	.init({
+		interpolation: { escapeValue: false },  // React already does escaping
+		keySeparator: '.',
+		lng: 'ru',
+		returnObjectTrees: true,
+		useSuspense: false,                           // language to use
+		resources: {
+			en: {
+				translation: translation_en              // 'translation' is our custom namespace
+			},
+			ru: {
+				translation: translation_ru
+			},
+		}
+	});
 ReactDOM.render((
 	<I18nextProvider i18n={i18n}>
 		<App />
 	</I18nextProvider>
-	), document.getElementById('root'));
+), document.getElementById('root'));
+
+// const rootElement = document.getElementById("root");
+// if (rootElement.hasChildNodes()) {
+// 	hydrate(<I18nextProvider i18n={i18n}>
+// 		<App />
+// 	</I18nextProvider>, rootElement);
+// } else {
+// 	render(<I18nextProvider i18n={i18n}>
+// 		<App />
+// 	</I18nextProvider>, rootElement);
+// }

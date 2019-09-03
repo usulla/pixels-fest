@@ -29,10 +29,10 @@ const Footer = ({
                             alt="Pixels Fest"
                         />
                         <div className="soc-icons">
-                            <a href="" target="_blank">
+                            <a href="https://vk.com/public186021227" target="_blank">
                                 <i className="fab fa-vk" />
                             </a>
-                            <a href="" target="_blank">
+                            <a href="https://www.facebook.com/Pixelsfest-103530694360822/" target="_blank">
                                 <i className="fab fa-facebook-square" />
                             </a>
                         </div>
@@ -85,10 +85,16 @@ const Footer = ({
                 <div className="col1">
                     <img className="footer__logo" src={logo} alt="Pixel Fest" />
                     <div className="soc-icons">
-                        <a href="" target="_blank">
+                        <a
+                            href="https://vk.com/public186021227"
+                            target="_blank"
+                        >
                             <i className="fab fa-vk" />
                         </a>
-                        <a href="" target="_blank">
+                        <a
+                            href="https://www.facebook.com/Pixelsfest-103530694360822/"
+                            target="_blank"
+                        >
                             <i className="fab fa-facebook-square" />
                         </a>
                     </div>

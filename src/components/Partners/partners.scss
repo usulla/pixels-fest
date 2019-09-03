@@ -24,8 +24,14 @@
     .logo_img {
         margin-top: 40px;
         margin-left: 5%;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 30px;
         @media (max-width: $mobile_l+1) {
-            margin-top: 20px;
+            margin-top: 30px;
+            &:nth-child(3){
+                margin-top: 50px;
+            }
         }
     }
     .partners-page__content {

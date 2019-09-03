@@ -26,21 +26,25 @@
     //     /*  clear useragent default style*/
     //     -moz-appearance: none !important;
     // }
-
 }
 html,
 body {
     @media (min-width: $mobile_l) {
         scrollbar-width: none;
         ::-webkit-scrollbar {
-            display: none;  /* WebKit */
+            display: none; /* WebKit */
             width: 0;
             height: 0;
         }
-        overflow: -moz-scrollbars-none;
+        ::-moz-scrollbar {
+            display: none; /* WebKit */
+            width: 0;
+            height: 0;
+        }
+        // overflow: -moz-scrollbars-none;
 
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none;  /* IE 10+ */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE 10+ */
     }
     // height: 100%;
     // overflow: hidden;
@@ -84,7 +88,7 @@ html {
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: $black;
-    font-size: .6rem;
+    font-size: 0.6rem;
     font-family: "FiveYearsLaterRegular", monospace, "Roboto", sans-serif;
 }
 
@@ -246,10 +250,10 @@ body {
         }
     }
 }
-.fix-apply#apply{
+.fix-apply#apply {
     z-index: 20;
 }
-.fix-apply.menu{
+.fix-apply.menu {
     z-index: 19;
 }
 .page__content {
