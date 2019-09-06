@@ -16,12 +16,13 @@ import Footer from "../Footer/Footer.jsx";
 import { withTranslation } from "react-i18next";
 class App extends Component {
     constructor() {
-        super();
+        super(); 
         this.state = {
             isMobile: false,
             viewPageHeader: true
         };
     }
+    
     componentDidMount() {
         window.addEventListener("resize", this.resize.bind(this));
         if (
