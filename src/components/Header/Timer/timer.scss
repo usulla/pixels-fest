@@ -48,9 +48,16 @@
         text-transform: uppercase;
     }
 }
+
 .left-sidebar__li .timer__content {
     li span {
         padding-bottom: 9px;
+    }
+}
+
+.header__row.header__row--bottom {
+    .header__timer__content.timer__content {
+        height: 4.8rem;
     }
 }
 .header {

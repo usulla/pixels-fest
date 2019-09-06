@@ -52,8 +52,10 @@
 #headerpage .left-sidebar-ul {
     padding-top: 8vh;
 }
-// Only for IE >= 9
-@media screen and (min-width: $mobile_l) and (min-width: 0\0) and (min-resolution: +72dpi) {
+// Only for IE and Edge
+@media screen and (min-width: $mobile_l) and (min-width: 0\0) {
+    // @media screen and (min-width: $mobile_l) and (-ms-high-contrast: active),
+    //     (-ms-high-contrast: none) {
     #headerpage {
         li.change-language {
             top: 6vh;
@@ -67,7 +69,29 @@
             height: 15vh;
         }
         .header__timer {
-            height: 20vh;
+            height: 23vh;
+        }
+    }
+    li.change-language {
+        top: -20%;
+        position: relative;
+    }
+}
+@supports (-ms-ime-align: auto) {
+    #headerpage {
+        li.change-language {
+            top: 6vh;
+        }
+    }
+    li.change-language,
+    li.timer {
+        width: 1.2rem;
+        height: 1.2rem;
+        .switch-language {
+            height: 15vh;
+        }
+        .header__timer {
+            height: 23vh;
         }
     }
     li.change-language {

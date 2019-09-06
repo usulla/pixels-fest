@@ -27,7 +27,7 @@
             }
         ],
         "h1_text": {
-            "description": "INTERNATIONAL FESTIVAL AND CONTEST OF DIGITAL",
+            "description": "INTERNATIONAL FESTIVAL",
             "description1": "AND CONTEST OF DIGITAL",
             "description2": "VIDEO ART",
             "subtitle": "The Media façade of The Yeltsin Center in Yekaterinburg",
@@ -55,7 +55,7 @@
     },
     "dataPartners": {
         "title": "Partners",
-        "title1": "Organizer",
+        "title1": "Organizers",
         "title2": "Partners",
         "title3": "Technical partners",
         "alt1": "2х2",
@@ -100,6 +100,7 @@
         "title_logo2x2": "Organizers:",
         "apply": "submit your work",
         "contest_rules": "Regulations of the contest",
+        "regulations":"/Regulations_en.pdf",
         "address_title": "Venue:",
         "address_city": "Yekaterinburg.",
         "address_street": "3, Boris Yeltsin street",
@@ -166,7 +167,7 @@
         "description2": "Artists, artistic groups and designers from all over the world are invited to participate in the contest of digital video-art on the media façade of Yeltsin Center",
         "title2": "Submit your work",
         "title3": "The Theme:",
-        "title4": "ЦИФРОВЫЕ УТОПИИ",
+        "title4": "Digital Utopias",
         "description3": "We encourage the artists to come up with their reflections both on “positive” ideas and speculative theories related to technological future, alternative worlds and utopian concepts.",
         "categories": {
             "title": "Categories of the Contest:",
@@ -202,7 +203,7 @@
         "title7": "Technical requirements",
         "description9": "Submitted artworks should be integrated into the screen mas",
         "download": "[download]",
-        "download_url":"https://drive.google.com/uc?export=download&confirm=no_antivirus&id=16BsdrTVnGDPPwkneY4it1BUPmcv51UJm",
+        "download_url":"https://drive.google.com/uc?export=download&confirm=no_antivirus&id=1jKtqR1RfUrDZNpxi9Rs7nNdtDPQy6YfN",
         "tr": [
             "Video format — MP4 (H.264)",
             "Bitrate —up to 10 Mbit",

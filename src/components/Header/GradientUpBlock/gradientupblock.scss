@@ -38,7 +38,7 @@
             height: 20px;
             padding: 12px 15px;
             width: 9vw;
-            @include transition(all, .7s, ease);
+            @include transition(all, 0.7s, ease);
             @include linear-gradient(
                 to left,
                 #f7a543,
@@ -67,11 +67,14 @@
             font-size: 0.8rem;
             opacity: 0;
             display: none;
-            @include transition(all, .4s, ease);
+            @media screen and (min-width: 0\0) {
+                top: 20%;
+            }
+            @include transition(all, 0.4s, ease);
 
             &.show {
                 display: block;
-                @include transition(all, .4s, ease);
+                @include transition(all, 0.4s, ease);
             }
             &.show.animate {
                 opacity: 1;
@@ -106,13 +109,13 @@
                     //font-size: 1.1rem;
                     font-size: 3.8vw;
                     line-height: 1.57;
-                    @media (orientation:landscape) {
-                      font-size: .9rem;
-                      line-height: 1.5;
-                  }
+                    @media (orientation: landscape) {
+                        font-size: 0.9rem;
+                        line-height: 1.5;
+                    }
                 }
             }
-            animation: fadeIn .2s ease;
+            animation: fadeIn 0.2s ease;
         }
         @include keyframes(fadeIn) {
             0% {

@@ -29,13 +29,14 @@ const Header = ({ navtitle, h1_text, logo2x2, timer, isMobile, order }) => {
                                 className="video-model"
                                 loop
                                 autoPlay
+                                muted
                                 autoPlay="autoplay"
                             >
                                 <source src={model3d} type="video/mp4" />
                             </video>
                         </div>
                         <div className="header__row header__row--middle">
-                            <GradientUpBlock isMobile={isMobile}/>
+                            <GradientUpBlock isMobile={isMobile} />
                         </div>
                         <div className="header__row header__row--bottom">
                             <Timer {...timer} />

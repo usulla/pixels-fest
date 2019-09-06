@@ -29,11 +29,23 @@ const Footer = ({
                             alt="Pixels Fest"
                         />
                         <div className="soc-icons">
-                            <a href="https://vk.com/public186021227" target="_blank">
+                            <a
+                                href="https://vk.com/public186021227"
+                                target="_blank"
+                            >
                                 <i className="fab fa-vk" />
                             </a>
-                            <a href="https://www.facebook.com/Pixelsfest-103530694360822/" target="_blank">
+                            <a
+                                href="https://www.facebook.com/Pixelsfest-103530694360822/"
+                                target="_blank"
+                            >
                                 <i className="fab fa-facebook-square" />
+                            </a>
+                            <a className="emailto"
+                                href="mailto:support@pixelsfest.com"
+                                target="_blank"
+                            >
+                              support@pixelsfest.com  
                             </a>
                         </div>
                     </div>
@@ -51,11 +63,12 @@ const Footer = ({
                                         {i18n.t("dataFooter.apply")}
                                     </a>
                                 </div>
-                                <div
-                                    className="menu-ul__li tocompetition"
-                                    data-index="4"
-                                >
-                                    <a className="rules" href="#competition">
+                                <div className="tocompetition">
+                                    <a
+                                        className="rules"
+                                        target="_blank"
+                                        href={i18n.t("dataFooter.regulations")}
+                                    >
                                         {i18n.t("dataFooter.contest_rules")}
                                     </a>
                                 </div>
@@ -97,6 +110,12 @@ const Footer = ({
                         >
                             <i className="fab fa-facebook-square" />
                         </a>
+                        <a className="emailto"
+                                href="mailto:support@pixelsfest.com"
+                                target="_blank"
+                            >
+                              support@pixelsfest.com  
+                            </a>
                     </div>
                 </div>
                 <div className="col2">

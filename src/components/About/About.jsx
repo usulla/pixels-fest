@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 import style from "./about.scss";
 import HeaderTextBlock from "../Header/HeaderTextBlock/HeaderTextBlock.jsx";
 import style2 from "../Header/HeaderTextBlock/headertextblock.scss";
@@ -23,7 +23,6 @@ const About = ({ title2, order, isMobile }) => {
     browserType == "IE" || (browserType == "Firefox" && version < 50)
         ? (video = false)
         : (video = true);
-    console.log(browserType, "browserType");
     return (
         <div className="about-page page" id="about-festival" data-order={order}>
             <div className="mobile-title-page">{t("dataAbout.title")}</div>

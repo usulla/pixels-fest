@@ -33,7 +33,36 @@ class App extends Component {
                 .getBoundingClientRect().height;
             document.querySelector(
                 ".pages"
-            ).style.height = `${headerPageHeight + 50}px`;
+            ).style.height = `${headerPageHeight}px`;
+        }
+        if (document.querySelector(".video-model")) {
+            const video = document.querySelector(".video-model");
+            var playPromise = video.play();
+
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(_ => {
+                    })
+                    .catch(error => {
+                    });
+            }
+        }
+        if (document.querySelector(".logo-animation")) {
+            const video = document.querySelector(".logo-animation");
+            // Show loading animation.
+            var playPromise = video.play();
+
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(_ => {
+                        // Automatic playback started!
+                        // Show playing UI.
+                    })
+                    .catch(error => {
+                        // Auto-play was prevented
+                        // Show paused UI.
+                    });
+            }
         }
     }
     componentWillMount() {

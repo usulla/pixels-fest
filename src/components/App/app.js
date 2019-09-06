@@ -1,5 +1,4 @@
 export function detectBrowserType() {
-    console.log(99)
     if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
         return ('Opera');
     }

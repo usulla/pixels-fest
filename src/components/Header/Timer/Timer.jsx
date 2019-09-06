@@ -10,7 +10,7 @@ const Timer = ({ title, days, hours, minutes, seconds }) => {
         hour = minute * 60,
         day = hour * 24;
 
-    let countDown = new Date("September 05, 2019 23:59:00").getTime(),
+    let countDown = new Date("December 05, 2019 23:59:00").getTime(),
         x = setInterval(function() {
             let now = new Date().getTime(),
                 distance = countDown - now;

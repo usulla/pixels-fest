@@ -28,7 +28,6 @@ class Result extends React.Component {
         const requestNumber = this.props.requestNumber;
         const successStatus = this.props.success;
         const errors = this.props.errors;
-        console.log(errors, "errors");
         if (successStatus) {
             return (
                 <div className="outer_block_result">

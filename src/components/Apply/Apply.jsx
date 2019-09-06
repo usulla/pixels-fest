@@ -10,7 +10,14 @@ import Result from "../Form/Result.jsx";
 import Tooltip from "@material-ui/core/Tooltip";
 import { withStyles } from "@material-ui/core/styles";
 import { withTranslation } from "react-i18next";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles(theme => ({
+    progress: {
+        margin: theme.spacing(2)
+    }
+}));
 const LightTooltip = withStyles(theme => ({
     tooltip: {
         backgroundColor: "#fff",
@@ -34,7 +41,8 @@ class Apply extends React.Component {
             requestNumber: null,
             files: [],
             maxFilesLength: 1,
-            inputs: []
+            inputs: [],
+            waitingResult: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.constructor.onFilesChoose = this.constructor.onFilesChoose.bind(
@@ -83,6 +91,7 @@ class Apply extends React.Component {
         if (readyFiles.length) this.setState({ files: readyFiles }, validate);
     }
     handleSubmit(event) {
+        this.setState({ waitingResult: true });
         event.preventDefault();
         const formElement = document.querySelector("form");
         const formData = new FormData(formElement);
@@ -94,7 +103,7 @@ class Apply extends React.Component {
             ? (currentLang = "ru")
             : (currentLang = "en");
         formData.append("lang", currentLang);
-        const url = "//pixelsfest.com/works/add";
+        const url = "https://pixelsfest.com/works/add";
         //send to server form data
         fetch(url, {
             method: "post",
@@ -113,8 +122,10 @@ class Apply extends React.Component {
                     return;
                 }
                 response.json().then(data => {
-                    this.setState({ showResult: true });
+                    this.setState({ waitingResult: false });
                     this.setState({ success: data.success });
+                    this.setState({ showResult: true });
+
                     if (data.requestNumber) {
                         this.setState({ requestNumber: data.requestNumber });
                     }
@@ -122,12 +133,19 @@ class Apply extends React.Component {
                         this.setState({ errors: data.errors });
                     }
                     if (data.success) {
-                        document.form.reset();
+                        document.querySelector(".form-apply").reset();
                     }
                 });
             })
             .catch(err => {
                 console.log("Fetch Error :-S", err);
+                this.setState({ success: false });
+                this.setState({
+                    errors: [
+                        "Превышен максимальный размер файла 150Мб. Загрузите, пожалуйста, файл меньшего размера"
+                    ]
+                });
+                this.setState({ showResult: true });
             });
     }
     render() {
@@ -141,7 +159,10 @@ class Apply extends React.Component {
                 <div className="mobile-title-page">{t("dataApply.title")}</div>
                 <div className="apply-page__content page__content">
                     <div className="form-content">
-                        <form onSubmit={this.handleSubmit.bind(this)}>
+                        <form
+                            className="form-apply"
+                            onSubmit={this.handleSubmit.bind(this)}
+                        >
                             <div className="form-title">
                                 {t("dataApply.form-title")}
                             </div>
@@ -151,10 +172,11 @@ class Apply extends React.Component {
                                     name={"author[]"}
                                     isRequired={"required"}
                                 />
+
                                 <LightTooltip
                                     title={t("dataApply.toolip-name")}
                                     placement="bottom-end"
-                                    className='light-tooltip'
+                                    className="light-tooltip"
                                 >
                                     <div
                                         className="add-input"
@@ -251,13 +273,21 @@ class Apply extends React.Component {
                                     isRequired={"required"}
                                 />
                             </div>
-                            {!this.state.showResult ||
-                            (this.state.showResult && !this.state.success) ? (
+                            {(!this.state.showResult &&
+                                !this.state.waitingResult) ||
+                            (this.state.showResult &&
+                                !this.state.success &&
+                                !this.state.waitingResult) ? (
                                 <input
                                     type="submit"
                                     className="send-form"
                                     value={t("dataApply.button-text")}
                                 />
+                            ) : null}
+                            {this.state.waitingResult ? (
+                                <div className="circular">
+                                    <CircularProgress />
+                                </div>
                             ) : null}
                             {this.state.showResult ? (
                                 <Result

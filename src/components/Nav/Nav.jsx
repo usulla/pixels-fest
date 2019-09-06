@@ -32,12 +32,34 @@ const Nav = ({ list, isMobile }) => {
             }
         }
     });
+    function gradientUpBlockClose() {
+        const gradientUpBlock = document.querySelector(
+            ".gradient-up-block__content"
+        );
+        const gradientUpBlockFullText = gradientUpBlock.querySelector(
+            ".fulltext"
+        );
+        if (gradientUpBlock.classList.contains("active")) {
+            gradientUpBlock.classList.remove("active");
+        }
+        if (gradientUpBlockFullText.classList.contains("show")) {
+            gradientUpBlockFullText.classList.remove("show");
+            gradientUpBlockFullText.classList.remove("animate");
+        }
+    }
     function liClick(e) {
         e.preventDefault();
-        // if (document.querySelector(".fix-apply")) {
-        //     document.querySelector(".fix-apply").classList.remove("fix-apply");
-        // }
-        const activeLi = e.currentTarget;
+        var activeLi;
+        setTimeout(gradientUpBlockClose, 600);
+        if (e.currentTarget.parentNode.classList.contains("menu-ul")) {
+            activeLi = e.currentTarget;
+        } else {
+            document.querySelectorAll("li.menu-ul__li").forEach(li => {
+                if (li.dataset.index == e.currentTarget.dataset.index) {
+                    activeLi = li;
+                }
+            });
+        }
         if (!activeLi.classList.contains("li-slide-left")) {
             if (document.querySelector(".menu-ul__li.move-left")) {
                 document
@@ -115,7 +137,6 @@ const Nav = ({ list, isMobile }) => {
                                 document
                                     .querySelector(".page.active")
                                     .classList.remove("active");
-
                                 document
                                     .querySelector(".page.active2")
                                     .classList.add("active");
@@ -281,7 +302,13 @@ const Nav = ({ list, isMobile }) => {
                                     "transitionend",
                                     function(e) {
                                         if (e.propertyName == "transform") {
-                                            page.classList.add("move");
+                                            if (
+                                                page.classList.contains(
+                                                    "active"
+                                                )
+                                            ) {
+                                                page.classList.add("move");
+                                            }
                                             if (
                                                 page.classList.contains(
                                                     "clear-transform"
@@ -296,17 +323,10 @@ const Nav = ({ list, isMobile }) => {
                                 );
                             }
                         } else if (activeLi.classList.contains("move-right")) {
-                            console.log(activeLi, "move-right");
                             if (
                                 Number(page.dataset.order) >=
                                 Number(indexActiveLi)
                             ) {
-                                console.log(
-                                    Number(page.dataset.order) >=
-                                        Number(indexActiveLi),
-                                    "NUM",
-                                    page
-                                );
                                 page.classList.remove("move");
                             }
                         }

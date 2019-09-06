@@ -24,6 +24,10 @@ const Partners = ({order}) => {
                             src={logo2x2}
                             alt={t("dataPartners.alt1")}
                         />
+                        <img
+                            className="logo2x2 logo_img"
+                            src={logo_yeltsin}
+                        />
                     </div>
                     {/* <div className="partners-page__col partners-page__col2">
                         <div className="partners-page__title">
@@ -38,10 +42,6 @@ const Partners = ({order}) => {
                             className="logo2x2 logo_img"
                             src={logoUmaTech}
                             alt={t("dataPartners.alt3")}
-                        />
-                         <img
-                            className="logo2x2 logo_img"
-                            src={logo_yeltsin}
                         />
                        
                     </div>

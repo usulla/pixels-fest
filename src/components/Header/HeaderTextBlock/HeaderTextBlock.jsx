@@ -43,6 +43,7 @@ const HeaderTextBlock = props => {
                         loop
                         autoPlay
                         autoPlay="autoplay"
+                        muted
                     >
                         <source src={pf_logo_animate} type="video/webm" />
                     </video>

@@ -157,7 +157,7 @@ const Competition = ({ categories, conditions, trlist, criteria, winners, order 
                                 </li>
                             ))}
                         </ul>
-                        <a className="text-a" href="#">
+                        <a className="text-a"  target="_blank" href={i18n.t("dataFooter.regulations")}>
                             {i18n.t("dataCompetition.title8")}
                         </a>
                     </div>

@@ -55,9 +55,9 @@
     },
     "dataPartners": {
         "title": "Партнеры",
-        "title1": "Организатор",
+        "title1": "Организаторы",
         "title2": "Партнеры",
-        "title3": "Технические парнеры",
+        "title3": "Технические партнеры",
         "alt1": "2х2",
         "alt3": "Ума.Тех"
     },
@@ -100,6 +100,7 @@
         "title_logo2x2": "Организаторы:",
         "apply": "подать заявку",
         "contest_rules": "Положения конкурса",
+        "regulations":"/Regulations_ru.pdf",
         "address_title": "Место проведения:",
         "address_city": "г. Екатеринбург",
         "address_street": "ул. Бориса Ельцина, д. 3",
@@ -202,7 +203,7 @@
         "title7": "Технические требования к работам",
         "description9": "Присланные произведения должны быть интегрированы в маску диодного экрана",
         "download":"[скачать]",
-        "download_url":"https://drive.google.com/uc?export=download&confirm=no_antivirus&id=1jKtqR1RfUrDZNpxi9Rs7nNdtDPQy6YfN",
+        "download_url":"https://drive.google.com/uc?export=download&confirm=no_antivirus&id=16BsdrTVnGDPPwkneY4it1BUPmcv51UJm",
         "tr": [
             "Формат видео — MP4 (кодек H.264)",
             "Битрейт — до 10 Mbit",
