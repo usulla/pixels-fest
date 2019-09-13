@@ -10,8 +10,8 @@ const Logo2x2 = ({ title }) => {
     return (
         <div className="logo2x2">
             <div className="title">{i18n.t("dataHeader.logo2x2.title")}</div>
-            <img className="logo2x2-img" src={logo2x2} alt="2x2" />
-            <img className="title2" src={logo_yeltsin} alt="2x2" />
+            <a href="https://2x2tv.ru/" target="_blank"><img className="logo2x2-img" src={logo2x2} alt="2x2" /></a>
+            <a href="https://yeltsin.ru" target="_blank"><img className="title2" src={logo_yeltsin} alt="elcin" /></a>
         </div>
     );
 };

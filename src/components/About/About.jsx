@@ -20,9 +20,10 @@ const About = ({ title2, order, isMobile }) => {
     }
 
     var video;
-    browserType == "IE" || (browserType == "Firefox" && version < 50)
+    browserType == "IE" || browserType == "iPad" || (browserType == "Firefox" && version < 50)
         ? (video = false)
         : (video = true);
+        
     return (
         <div className="about-page page" id="about-festival" data-order={order}>
             <div className="mobile-title-page">{t("dataAbout.title")}</div>

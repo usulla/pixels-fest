@@ -19,15 +19,17 @@ const Partners = ({order}) => {
                         <div className="partners-page__title">
                             {t("dataPartners.title1")}
                         </div>
+                        <a href="https://2x2tv.ru" target="_blank">
                         <img
                             className="logo2x2 logo_img"
                             src={logo2x2}
                             alt={t("dataPartners.alt1")}
-                        />
+                        /></a>
+                        <a href="https://yeltsin.ru" target="_blank">
                         <img
                             className="logo2x2 logo_img"
                             src={logo_yeltsin}
-                        />
+                        /></a>
                     </div>
                     {/* <div className="partners-page__col partners-page__col2">
                         <div className="partners-page__title">
@@ -38,11 +40,12 @@ const Partners = ({order}) => {
                         <div className="partners-page__title">
                             {t("dataPartners.title3")}
                         </div>
+                        <a href="https://uma.tech/" target="_blank">
                         <img
                             className="logo2x2 logo_img"
                             src={logoUmaTech}
                             alt={t("dataPartners.alt3")}
-                        />
+                        /></a>
                        
                     </div>
                     <div className="partners-page__col partners-page__col4" />

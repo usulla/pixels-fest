@@ -6,7 +6,10 @@ export function detectBrowserType() {
         return ('Chrome');
     }
     else if (navigator.userAgent.indexOf("Safari") != -1) {
-        return ('Safari');
+        if(navigator.userAgent.match(/iPad/i) != null){
+            return ('iPad');
+        }
+        return ('Safari');  
     }
     else if (navigator.userAgent.indexOf("Firefox") != -1) {
         var indexNumStart = navigator.userAgent.indexOf('rv:');
