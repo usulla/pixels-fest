@@ -83,9 +83,9 @@
                 "img": "images/member3.jpg"
             },
             {
-                "name": "Tatyana Yaroshevskaya",
-                "profession": "Head of the Department of Culture of the City Administration of Yekaterinburg",
-                "description": "",
+                "name": "Thorsten Bauer",
+                "profession": "Media-Artist, Curator, Creative Director and co-founder of URBANSCREEN",
+                "description": "URBANSCREEN is famous for video installations on the facade of the Sydney Opera House, Hamburg Museum of Modern Art, and video artworks for light festivals in Luxembourg, Berlin and Sao Paulo. As the co-founder of URBANSCREEN, he is considered one of the pioneers of projection mapping.",
                 "img": "images/member4.jpg"
             },
             {
@@ -93,6 +93,18 @@
                 "profession": "Head of the <span>BERNASKONI</span> bureau",
                 "description": "Repeatedly participated in the Venice Architectural Biennale and other international exhibitions. The author of innovative multifunctional building HyperCube and MATREX  in Skolkovo.",
                 "img": "images/member5.jpg"
+            },
+            {
+                "name": "Joanie Lemercier",
+                "profession": "Founder of Studio Joanie Lemercier",
+                "description": "French artist primarily focused on projections of light in space and its influence on our perception. Lemercier turned his focus on installations and gallery work, and exhibited at China Museum of Digital Art (Beijing), Art Basel Miami and Sundance film festival 2013.",
+                "img": "images/member6.jpg"
+            },
+            {
+                "name": "Juliette Bibasse",
+                "profession": "The head of Studio Joanie Lemercier",
+                "description": "Since 2009, she has been applying her skills to the digital art scene. Quest curator for the exhibition of STRP festival 2019 in Eindhoven. In 2019 she co founded SALOON Brussels, network for women working in the art scenes.",
+                "img": "images/member7.jpg"
             }
         ]
     },
