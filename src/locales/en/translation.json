@@ -120,6 +120,9 @@
     },
     "dataApply": {
         "title": "Submit your work",
+        "description9": "Submitted artworks should be integrated into the screen mas",
+        "download": "[download]",
+        "download_url":"/tech_eng.rar",
         "form-title": "Submit your work",
         "name": "name of the author or of the team ",
         "toolip-name":"To add names of other authors, click on +",
@@ -213,10 +216,10 @@
             "each participant can send up to 3 artworks for the contest"
         ],
         "title7": "Technical requirements",
-        "description9": "Submitted artworks should be integrated into the screen mas",
         "download": "[download]",
         "download_url":"/tech_eng.rar",
         "tr": [
+            "Submitted artworks should be integrated into the screen mas",
             "Video format — MP4 (H.264)",
             "Bitrate —up to 10 Mbit",
             "Frame rate—25 fps",

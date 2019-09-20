@@ -166,6 +166,11 @@ class Apply extends React.Component {
                             <div className="form-title">
                                 {t("dataApply.form-title")}
                             </div>
+                            <div className="text1">{t("dataApply.description9")}
+                            <a className="download_btn" href={t("dataApply.download_url")}>
+                                {t("dataApply.download")}
+                            </a>
+                            </div>
                             <div className="form-row with-add-btn">
                                 <Input
                                     title={t("dataApply.name")}

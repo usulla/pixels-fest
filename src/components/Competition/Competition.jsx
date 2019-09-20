@@ -131,9 +131,6 @@ const Competition = ({ categories, conditions, trlist, criteria, winners, order 
                     </div>
                     <div className="competition-item tr-block">
                         <h3>{i18n.t("dataCompetition.title7")}</h3>
-                        <div className="about_text--black">
-                            {i18n.t("dataCompetition.description9")}
-                        </div>
                         <a className="download_btn" href={i18n.t("dataCompetition.download_url")}>
                             {i18n.t("dataCompetition.download")}
                         </a>
