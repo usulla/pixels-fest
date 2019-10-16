@@ -120,9 +120,9 @@
     },
     "dataApply": {
         "title": "Submit your work",
-        "description9": "Submitted artworks should be integrated into the screen mas",
+        "description9": "Submitted artworks should be integrated into the screen mask",
         "download": "[download]",
-        "download_url":"/tech_eng.rar",
+        "download_url":"/tech_eng.zip",
         "form-title": "Submit your work",
         "name": "name of the author or of the team ",
         "toolip-name":"To add names of other authors, click on +",
@@ -217,9 +217,9 @@
         ],
         "title7": "Technical requirements",
         "download": "[download]",
-        "download_url":"/tech_eng.rar",
+        "download_url":"/tech_eng.zip",
         "tr": [
-            "Submitted artworks should be integrated into the screen mas",
+            "Submitted artworks should be integrated into the screen mask",
             "Video format — MP4 (H.264)",
             "Bitrate —up to 10 Mbit",
             "Frame rate—25 fps",
